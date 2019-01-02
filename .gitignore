@@ -1,2 +1,9 @@
 vim81/
-vimfiles/
+compiler/
+doc/
+ftdetect/
+ftplugin/
+indent/
+keymap/
+plugin/
+syntax/
