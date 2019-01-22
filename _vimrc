@@ -56,7 +56,7 @@ endif
 "prevents cursor from sliding back when pressing esc in insert mode(It's not working as i want)
 "inoremap <silent> <Esc> <Esc>`^
 cd/
-cd Users\Manko\Documents\GameMakerStudio2\2 
+cd Users\Manko\Documents\GameMakerStudio2\Kingdom Lost 
 "e Users\Manko\Documents\GameMakerStudio2\2\scripts\scr_movement\scr_movement.gml
 "vs Users\Manko\Documents\GameMakerStudio2\2\scripts\scr_mcCtrl\scr_mcCtrl.gml
 "cd Users\Manko\Documents\GameMakerStudio2\2\scripts
