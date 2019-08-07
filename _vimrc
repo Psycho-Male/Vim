@@ -72,12 +72,13 @@ nnoremap <S-L> gt
 map <C-o> i/*<ESC>
 map <C-c> a*/<ESC>
 "Game maker show debug message
-map <C-z> oshow_debug_message(" " + string());<ESC>14hi
+map <C-z> oshow_debug_message(" " + string());<ESC>2F"p<ESC>f(pF"i=<SPACE><ESC>kdd
 "Pressing ,ss will toggle and untoggle spell checking
 map <C-s> :setlocal spell!<cr>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
-map <F5> :w<ENTER>:!1.py<ENTER>
+nmap <F5> :w<ENTER>:!1.py<ENTER>
+nmap <F2> :tabdo windo set syntax=gml<CR>
 "nohl
 map mm :nohl<ENTER>
 "processing
@@ -89,3 +90,10 @@ set incsearch
 set foldmethod=manual
 set showcmd
 autocmd FileType text setlocal textwidth = 112
+"Set custom tab name
+"Usage: :let t:mytablabel = 'my_tab_name'
+function! GuiTabLabel()
+  return exists('t:mytablabel') ? t:mytablabel : ''
+endfunction
+:set guitablabel=%{GuiTabLabel()}
+:set go+=e
