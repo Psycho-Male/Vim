@@ -31,7 +31,7 @@ filetype indent plugin on
 syntax on
 "pathogen
 "call pathogen#infect()
-colorscheme edar 
+colorscheme tone 
 set background=dark
 "game maker syntax
 "set syntax=gml.vim
@@ -79,6 +79,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <F5> :w<ENTER>:!1.py<ENTER>
 nmap <F2> :tabdo windo set syntax=gml<CR>
+nmap <F3> :let t:mytablabel = ''<Left>
 "nohl
 map mm :nohl<ENTER>
 "processing
