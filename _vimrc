@@ -96,5 +96,7 @@ autocmd FileType text setlocal textwidth = 112
 function! GuiTabLabel()
   return exists('t:mytablabel') ? t:mytablabel : ''
 endfunction
-:set guitablabel=%{GuiTabLabel()}
-:set go+=e
+set guitablabel=%{GuiTabLabel()}
+set go+=e
+set guifont=Consolas:h9
+unmap <C-X>
