@@ -223,6 +223,8 @@ syn keyword gmlCameraFunction camera_create camera_create_view camera_destroy ca
 
 syn keyword gmlLayerFunction layer_exists layer_get_id layer_get_depth layer_get_id_at_depth layer_get_name layer_get_all layer_get_all_elements layer_get_element_layer layer_get_element_type layer_get_x layer_get_y layer_get_hspeed layer_get_vspeed layer_create layer_destroy layer_x layer_y layer_hspeed layer_vspeed layer_add_instance layer_has_instance layer_instance_get_instance layer_destroy_instance layer_element_move layer_set_visible layer_get_visible layer_depth layer_force_draw_depth layer_is_draw_depth_forced layer_get_forced_depth layer_script_begin layer_script_end layer_shader layer_get_script_begin layer_get_script_end layer_get_shader layer_set_target_room layer_get_target_room layer_reset_target_room instance_deactivate_layer instance_activate_layer
 
+syn keyword gmlTilemapFunction layer_tilemap_get_id layer_tilemap_exists layer_tilemap_create layer_tilemap_destroy tilemap_tileset tilemap_x tilemap_y tilemap_set tilemap_set_at_pixel tilemap_set_mask tilemap_set_global_mask tilemap_set_width tilemap_set_height tilemap_get_mask tilemap_get_global_mask tilemap_get_tileset tilemap_get_frame tilemap_get_tile_width tilemap_get_tile_height tilemap_get_width tilemap_get_height tilemap_get_x tilemap_get_y tilemap_get tilemap_get_at_pixel tilemap_get_cell_x_at_pixel tilemap_get_cell_y_at_pixel draw_tilemap
+
 syn match gmlVariableName '\v\I\i{,63}' contained
 syn match gmlReal '\v<-?(\d+\.)?\d+>'
 
@@ -347,6 +349,7 @@ hi def link gmlAssetFunction              gmlFunction
 hi def link gmlBackgroundFunction         gmlFunction
 hi def link gmlBackgroundTileFunction     gmlFunction
 hi def link gmlLayerFunction              gmlFunction
+hi def link gmlTilemapFunction            gmlFunction
 hi def link gmlFontFunction               gmlFunction
 hi def link gmlAudioFunction              gmlFunction
 hi def link gmlAudioEmitterFunction       gmlFunction
