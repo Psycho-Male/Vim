@@ -26,16 +26,12 @@ set cmdheight=2 "set command windows to 2 lines
 au GUIEnter * simalt ~x
 "Set syntax automatically each time gml file has opened
 autocmd BufNewFile,BufRead *.gml set syntax=gml
+autocmd BufNewFile,BufRead *.story set syntax=story
 
 filetype indent plugin on
 syntax on
-"pathogen
-"call pathogen#infect()
 colorscheme tone 
 set background=dark
-"game maker syntax
-"set syntax=gml.vim
-"set filetype=gml
 set ruler
 set hlsearch
 set autoindent
@@ -53,14 +49,8 @@ if has("gui_running")
 	"256 color
 	set t_Co=256
 endif
-"prevents cursor from sliding back when pressing esc in insert mode(It's not working as i want)
-"inoremap <silent> <Esc> <Esc>`^
 cd/
 cd Users\Manko\Documents\GameMakerStudio2\Kingdom Lost 
-"e Users\Manko\Documents\GameMakerStudio2\2\scripts\scr_movement\scr_movement.gml
-"vs Users\Manko\Documents\GameMakerStudio2\2\scripts\scr_mcCtrl\scr_mcCtrl.gml
-"cd Users\Manko\Documents\GameMakerStudio2\2\scripts
-"macro button
 nnoremap <Space> @
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-H> <C-W><C-H>
@@ -68,7 +58,7 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <S-H> gT
 nnoremap <S-L> gt
-"comment open/comment close java
+"comment open/comment close
 map <C-o> i/*<ESC>
 map <C-c> a*/<ESC>
 "Game maker show debug message
@@ -99,4 +89,4 @@ endfunction
 set guitablabel=%{GuiTabLabel()}
 set go+=e
 set guifont=Consolas:h9
-unmap <C-X>
+"unmap <C-X>
