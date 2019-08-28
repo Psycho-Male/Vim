@@ -26,7 +26,7 @@ set cmdheight=2 "set command windows to 2 lines
 au GUIEnter * simalt ~x
 "Set syntax automatically each time gml file has opened
 autocmd BufNewFile,BufRead *.gml set syntax=gml
-autocmd BufNewFile,BufRead *.story set syntax=story
+autocmd BufNewFile,BufRead *.txt set syntax=story
 
 filetype indent plugin on
 syntax on
@@ -80,7 +80,7 @@ map mm :nohl<ENTER>
 set incsearch
 set foldmethod=manual
 set showcmd
-autocmd FileType text setlocal textwidth = 112
+"autocmd FileType text setlocal textwidth = 112
 "Set custom tab name
 "Usage: :let t:mytablabel = 'my_tab_name'
 function! GuiTabLabel()
