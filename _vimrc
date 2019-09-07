@@ -58,6 +58,7 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <S-H> gT
 nnoremap <S-L> gt
+nnoremap <S-W> :tabclose<CR>
 "comment open/comment close
 map <C-o> i/*<ESC>
 map <C-c> a*/<ESC>
