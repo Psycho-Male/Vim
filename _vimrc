@@ -22,15 +22,12 @@ set visualbell "Visual alert instead of sound
 set expandtab
 set softtabstop=4 "disabled tabstop=4
 set cmdheight=2 "set command windows to 2 lines
-"Open fullscreen
-au GUIEnter * simalt ~x
 "Set syntax automatically each time gml file has opened
 autocmd BufNewFile,BufRead *.gml set syntax=gml
 autocmd BufNewFile,BufRead *.txt set syntax=story
 
-filetype indent plugin on
 syntax on
-colorscheme tone 
+colorscheme edar
 set background=dark
 set ruler
 set hlsearch
@@ -68,9 +65,14 @@ map <C-z> oshow_debug_message(" " + string());<ESC>2F"p<ESC>f(pF"i=<SPACE><ESC>k
 map <C-s> :setlocal spell!<cr>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <leader>vv :vs<CR>
+nmap <leader>ss :sp<CR>
+nmap gx gf<CR>:vs<CR>:e #<CR>
 nmap <F5> :w<ENTER>:!1.py<ENTER>
 nmap <F2> :tabdo windo set syntax=gml<CR>
 nmap <F3> :let t:mytablabel = ''<Left>
+nnoremap <Left> :bprevious<CR>
+nnoremap <Right> :bnext<CR>
 "nohl
 map mm :nohl<ENTER>
 "processing
@@ -90,4 +92,6 @@ endfunction
 set guitablabel=%{GuiTabLabel()}
 set go+=e
 set guifont=Consolas:h9
-"unmap <C-X>
+unmap <C-X>
+"Start gvim in fullscreen mode
+autocmd GUIEnter * simalt ~x
