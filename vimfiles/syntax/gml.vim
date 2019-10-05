@@ -13,6 +13,7 @@ syn keyword gmlStatement break return continue exit
 syn keyword gmlLabel case default
 syn keyword gmlRepeat while for repeat do while
 syn keyword gmlWith with
+syn keyword gmlDefine macro enum
 syn match gmlDefine '\v#define.*'
 syn keyword gmlTodo contained TODO FIXME NOTE XXX
 "added globalvar
@@ -81,7 +82,7 @@ syn keyword gmlBackgroundTileFunction tile_layer_depth tile_layer_find tile_laye
 
 syn keyword gmlFontFunction font_get_name font_get_fontname font_get_first font_get_last font_get_italic font_get_bold font_get_size font_get_texture font_get_uvs font_set_cache_size font_exists font_add font_add_sprite font_add_sprite_ext font_replace font_replace_sprite font_replace_sprite_ext font_delete
 
-syn keyword gmlAudioFunction audio_exists audio_get_name audio_get_type audio_play_sound audio_play_sound_at audio_pause_sound audio_pause_all audio_resume_sound audio_resume_all audio_stop_sound audio_stop_all audio_is_playing audio_is_paused audio_create_stream audio_destroy_stream audio_sound_set_track_position audio_sound_get_track_position audio_sound_length audio_sound_pitch audio_sound_get_pitch audio_falloff_set_model audio_sound_gain audio_sound_get_gain audio_master_gain audio_set_master_gain audio_get_master_gain audio_channel_num audio_debug audio_system
+syn keyword gmlAudioFunction audio_exists audio_get_name audio_get_type audio_play_sound audio_play_sound_at audio_pause_sound audio_pause_all audio_resume_sound audio_resume_all audio_stop_sound audio_stop_all audio_is_playing audio_is_paused audio_create_stream audio_destroy_stream audio_sound_set_track_position audio_sound_get_track_position audio_sound_length audio_sound_pitch audio_sound_get_pitch audio_falloff_set_model audio_sound_gain audio_sound_get_gain audio_master_gain audio_set_master_gain audio_get_master_gain audio_channel_num audio_debug audio_system audio_group_load audio_group_unload audio_group_is_loaded audio_group_load_progress audio_group_name audio_group_stop_all audio_group_set_gain
 
 syn keyword gmlAudioEmitterFunction audio_emitter_create audio_emitter_exists audio_emitter_position audio_emitter_velocity audio_emitter_falloff audio_emitter_gain audio_emitter_pitch audio_emitter_free audio_play_sound_on audio_emitter_get_gain audio_emitter_get_pitch audio_emitter_get_x audio_emitter_get_y audio_emitter_get_z audio_emitter_get_vx audio_emitter_get_vy audio_emitter_get_vz
 
@@ -315,6 +316,8 @@ syn match gmlEventNumberConstant '\v<ev_user(1[0-5]|[0-9])>'
 
 syn keyword gmlColorConstant c_aqua c_black c_blue c_dkgray c_fuschia c_gray c_green c_lime c_ltgray c_maroon c_navy c_olive c_orange c_purple c_red c_silver c_teal c_white c_yellow
 
+syn keyword gmlDrawAlignConstant fa_left fa_center fa_right fa_top fa_middle fa_bottom
+
 syn sync fromstart
 
 " Link syntax groups to common highlighting groups
@@ -421,6 +424,7 @@ hi def link gmlShaderConstant             gmlConstant
 hi def link gmlEventTypeConstant          gmlConstant
 hi def link gmlEventNumberConstant        gmlConstant
 hi def link gmlColorConstant              gmlConstant
+hi def link gmlDrawAlignConstant          gmlConstant
 
 hi def link gmlConstant                   Constant
 
