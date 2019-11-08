@@ -226,6 +226,8 @@ syn keyword gmlLayerFunction layer_exists layer_get_id layer_get_depth layer_get
 
 syn keyword gmlTilemapFunction layer_tilemap_get_id layer_tilemap_exists layer_tilemap_create layer_tilemap_destroy tilemap_tileset tilemap_x tilemap_y tilemap_set tilemap_set_at_pixel tilemap_set_mask tilemap_set_global_mask tilemap_set_width tilemap_set_height tilemap_get_mask tilemap_get_global_mask tilemap_get_tileset tilemap_get_frame tilemap_get_tile_width tilemap_get_tile_height tilemap_get_width tilemap_get_height tilemap_get_x tilemap_get_y tilemap_get tilemap_get_at_pixel tilemap_get_cell_x_at_pixel tilemap_get_cell_y_at_pixel draw_tilemap
 
+syn keyword gmlVariableFunction variable_instance_exists variable_instance_get variable_instance_set variable_instance_get_names
+
 syn match gmlVariableName '\v\I\i{,63}' contained
 syn match gmlReal '\v<-?(\d+\.)?\d+>'
 
@@ -353,6 +355,7 @@ hi def link gmlBackgroundFunction         gmlFunction
 hi def link gmlBackgroundTileFunction     gmlFunction
 hi def link gmlLayerFunction              gmlFunction
 hi def link gmlTilemapFunction            gmlFunction
+hi def link gmlVariableFunction            gmlFunction
 hi def link gmlFontFunction               gmlFunction
 hi def link gmlAudioFunction              gmlFunction
 hi def link gmlAudioEmitterFunction       gmlFunction

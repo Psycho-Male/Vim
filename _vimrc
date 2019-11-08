@@ -59,20 +59,22 @@ nnoremap <S-W> :tabclose<CR>
 "comment open/comment close
 map <C-o> i/*<ESC>
 map <C-c> a*/<ESC>
-"Game maker show debug message
-map <C-z> oshow_debug_message(" " + string());<ESC>2F"p<ESC>f(pF"i=<SPACE><ESC>kdd
 "Pressing ,ss will toggle and untoggle spell checking
 map <C-s> :setlocal spell!<cr>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
-nmap <leader>vv :vs<CR>
-nmap <leader>ss :sp<CR>
 nmap gx gf<CR>:vs<CR>:e #<CR>
 nmap <F5> :w<ENTER>:!1.py<ENTER>
 nmap <F2> :tabdo windo set syntax=gml<CR>
 nmap <F3> :let t:mytablabel = ''<Left>
 nnoremap <Left> :bprevious<CR>
 nnoremap <Right> :bnext<CR>
+"GAMEMAKER MACROS
+map <C-z> oshow_debug_message(": " + string());<ESC>2F"p<ESC>f(pF"kdd
+nmap <silent> <leader>cw f"lvf"h~
+nmap <silent> <leader>cc oshow_debug_message("");<ESC>2hi
+nmap <silent> <leader>cx oshow_debug_message(""+string());<ESC>F"i
+nmap <silent> <leader>dd oshow_debug_message("--------------------------------------------------------------------------------------------------------");<ESC>2F"l
 "nohl
 map mm :nohl<ENTER>
 "processing
