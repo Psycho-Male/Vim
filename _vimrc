@@ -75,6 +75,7 @@ nmap <silent> <leader>cw f"lvf"h~
 nmap <silent> <leader>cc oshow_debug_message("");<ESC>2hi
 nmap <silent> <leader>cx oshow_debug_message(""+string());<ESC>F"i
 nmap <silent> <leader>dd oshow_debug_message("--------------------------------------------------------------------------------------------------------");<ESC>2F"l
+nmap <silent> <leader>ss :source 2<CR>
 "nohl
 map mm :nohl<ENTER>
 "processing
