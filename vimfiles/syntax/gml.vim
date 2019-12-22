@@ -228,6 +228,7 @@ syn keyword gmlTilemapFunction layer_tilemap_get_id layer_tilemap_exists layer_t
 
 syn keyword gmlVariableFunction variable_instance_exists variable_instance_get variable_instance_set variable_instance_get_names
 
+syn keyword gmlGpuFunction gpu_get_blendenable gpu_get_ztestenable gpu_get_zfunc gpu_get_zwriteenable gpu_get_fog gpu_get_cullmode gpu_get_blendmode gpu_get_blendmode_ext gpu_get_blendmode_ext_sepalpha gpu_get_blendmode_src gpu_get_blendmode_dest gpu_get_blendmode_srcalpha gpu_get_blendmode_destalpha gpu_get_colorwriteenable gpu_get_alphatestenable gpu_get_alphatestref gpu_get_texfilter gpu_get_texfilter_ext gpu_get_texrepeat gpu_get_texrepeat_ext gpu_set_blendenable gpu_set_ztestenable gpu_set_zfunc gpu_set_zwriteenable gpu_set_fog gpu_set_cullmode gpu_set_blendmode gpu_set_blendmode_ext gpu_set_blendmode_ext_sepalpha gpu_set_colorwriteenable gpu_set_alphatestenable gpu_set_alphatestref gpu_set_texfilter gpu_set_texfilter_ext gpu_set_texrepeat gpu_set_texrepeat_ext gpu_push_state gpu_pop_state gpu_get_state gpu_set_state 
 syn match gmlVariableName '\v\I\i{,63}' contained
 syn match gmlReal '\v<-?(\d+\.)?\d+>'
 
@@ -414,6 +415,7 @@ hi def link gmlCameraFunction             gmlFunction
 hi def link gmlBuiltinFunction            gmlFunction
 hi def link gmlBuiltinScriptVariable      gmlFunction
 hi def link gmlArrayFunction              gmlFunction
+hi def link gmlGpuFunction                gmlFunction
 
 hi def link gmlFunction                   Function
 
