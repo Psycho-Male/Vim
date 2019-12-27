@@ -322,6 +322,8 @@ syn keyword gmlColorConstant c_aqua c_black c_blue c_dkgray c_fuschia c_gray c_g
 
 syn keyword gmlDrawAlignConstant fa_left fa_center fa_right fa_top fa_middle fa_bottom
 
+syn keyword gmlBlendmodeConstant  bm_zero bm_one bm_src_colour bm_inv_src_colour bm_src_alpha bm_inv_src_alpha bm_dest_alpha bm_inv_dest_alpha bm_dest_colour bm_inv_dest_colour bm_src_alpha_sat
+
 syn sync fromstart
 
 " Link syntax groups to common highlighting groups
@@ -332,6 +334,7 @@ hi def link gmlRepeat                     Repeat
 hi def link gmlWith                       Statement
 hi def link gmlLabel                      Label
 hi def link gmlDefine                     Macro
+hi def link gmlBlendmodeConstant          Macro
 
 hi def link gmlBuiltinGlobal              gmlFunction
 hi def link gmlDSFunction                 gmlFunction
