@@ -13,7 +13,8 @@ syn keyword gmlStatement break return continue exit
 syn keyword gmlLabel case default
 syn keyword gmlRepeat while for repeat do while
 syn keyword gmlWith with
-syn keyword gmlDefine macro enum
+syn keyword gmlDefine enum
+syn match gmlDefine '\v#macro'
 syn match gmlDefine '\v#define.*'
 syn keyword gmlTodo contained TODO FIXME NOTE XXX
 "added globalvar
