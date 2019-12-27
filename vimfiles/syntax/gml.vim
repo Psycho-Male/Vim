@@ -322,7 +322,7 @@ syn keyword gmlColorConstant c_aqua c_black c_blue c_dkgray c_fuschia c_gray c_g
 
 syn keyword gmlDrawAlignConstant fa_left fa_center fa_right fa_top fa_middle fa_bottom
 
-syn keyword gmlBlendmodeConstant  bm_zero bm_one bm_src_colour bm_inv_src_colour bm_src_alpha bm_inv_src_alpha bm_dest_alpha bm_inv_dest_alpha bm_dest_colour bm_inv_dest_colour bm_src_alpha_sat
+syn keyword gmlBlendmodeConstant  bm_normal bm_add bm_subtract bm_max bm_zero bm_one bm_src_colour bm_inv_src_colour bm_src_alpha bm_inv_src_alpha bm_dest_alpha bm_inv_dest_alpha bm_dest_colour bm_inv_dest_colour bm_src_alpha_sat
 
 syn sync fromstart
 
