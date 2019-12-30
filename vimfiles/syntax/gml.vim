@@ -73,7 +73,7 @@ syn keyword gmlTextFileFunction get_open_filename get_open_filename_ext get_save
 
 syn keyword gmlIniFileFunction ini_open ini_close ini_write_real ini_write_string ini_read_real ini_read_string ini_key_exists ini_section_exists ini_key_delete ini_section_delete ini_open_from_string
 
-syn keyword gmlAssetFunction asset_get_index asset_get_type
+syn keyword gmlAssetFunction asset_get_index asset_get_type typeof
 
 syn match gmlBackgroundFunction '\v<background_(index|visible|alpha|blend|x|y|foreground|hspeed|vspeed|htiled|vtiled|width|height|xscale|yscale|colour color|showcolour showcolor)'
 syn match gmlBackgroundFunction '\v<background_get_(name|width|height|texture|uvs)'
@@ -159,7 +159,7 @@ syn keyword gmlPathFunction path_start path_end path_add path_add_point path_cha
 
 syn keyword gmlPathVariable path_index path_position path_positionprevious path_speed path_scale path_orientation path_endaction
 
-syn keyword gmlBuiltinInstanceFunction instance_change instance_copy instance_create_layer instance_create_depth instance_destroy instance_exists instance_find instance_furthest instance_nearest instance_number instance_place instance_position
+syn keyword gmlBuiltinInstanceFunction instance_change instance_copy instance_create_layer instance_create_depth instance_destroy instance_exists instance_find instance_furthest instance_nearest instance_number instance_place instance_position instance_id_get
 
 syn keyword gmlGlobalInstanceFunction instance_activate_all instance_activate_object instance_activate_region instance_deactivate_all instance_deactivate_object instance_deactivate_region
 
