@@ -70,7 +70,8 @@ nmap <F3> :let t:mytablabel = ''<Left>
 nnoremap <Left> :bprevious<CR>
 nnoremap <Right> :bnext<CR>
 "GAMEMAKER MACROS
-map <C-z> oshow_debug_message(": " + string());<ESC>2F"p<ESC>f(pF"kdd
+map <C-z> oshow_debug_message(": " + string());<ESC>2F"pf(pF"kdd
+nmap <silent> <leader>cz ^vf_hstimed<ESC>f(true, 0, <ESC>
 nmap <silent> <leader>cw f"lvf"h~
 nmap <silent> <leader>cc oshow_debug_message("");<ESC>2hi
 nmap <silent> <leader>cx oshow_debug_message(""+string());<ESC>F"i
@@ -95,6 +96,6 @@ endfunction
 set guitablabel=%{GuiTabLabel()}
 set go+=e
 set guifont=Consolas:h9
-unmap <C-X>
+"unmap <C-X>
 "Start gvim in fullscreen mode
 autocmd GUIEnter * simalt ~x
