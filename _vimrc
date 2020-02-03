@@ -47,7 +47,7 @@ if has("gui_running")
 	set t_Co=256
 endif
 cd/
-cd Users\Manko\Documents\GameMakerStudio2\Kingdom Lost 
+cd Users\Manko\Documents\GameMakerStudio2\Kingdom Lost
 nnoremap <Space> @
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-H> <C-W><C-H>
@@ -96,6 +96,6 @@ endfunction
 set guitablabel=%{GuiTabLabel()}
 set go+=e
 set guifont=Consolas:h9
-"unmap <C-X>
+unmap <C-X>
 "Start gvim in fullscreen mode
 autocmd GUIEnter * simalt ~x
