@@ -76,7 +76,22 @@ nmap <silent> <leader>cw f"lvf"h~
 nmap <silent> <leader>cc oshow_debug_message("");<ESC>2hi
 nmap <silent> <leader>cx oshow_debug_message(""+string());<ESC>F"i
 nmap <silent> <leader>dd oshow_debug_message("--------------------------------------------------------------------------------------------------------");<ESC>2F"l
-nmap <silent> <leader>ss :source 2<CR>
+nmap <silent> <leader>s1 :source 1<CR>
+nmap <silent> <leader>s2 :source 2<CR>
+nmap <silent> <leader>s3 :source 3<CR>
+nmap <silent> <leader>s4 :source 4<CR>
+
+nmap <leader>eo :e objects\
+nmap <leader>vo :vs objects\
+nmap <leader>so :sp objects\
+
+nmap <leader>es :e scripts\
+nmap <leader>vs :vs scripts\
+nmap <leader>ss :sp scripts\
+
+nmap <leader>er :e rooms\
+nmap <leader>vr :vs rooms\
+nmap <leader>sr :sp rooms\
 "nohl
 map mm :nohl<ENTER>
 "processing
