@@ -63,6 +63,7 @@ map <C-c> a*/<ESC>
 map <C-s> :setlocal spell!<cr>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sy :e C:\Program Files (x86)\Vim\Vimfiles\syntax\gml.vim<CR>
 nmap gx gf<CR>:vs<CR>:e #<CR>
 nmap <F5> :w<ENTER>:!1.py<ENTER>
 nmap <F2> :tabdo windo set syntax=gml<CR>
@@ -112,6 +113,6 @@ endfunction
 set guitablabel=%{GuiTabLabel()}
 set go+=e
 set guifont=Consolas:h9
-unmap <C-X>
+"unmap <C-X>
 "Start gvim in fullscreen mode
 autocmd GUIEnter * simalt ~x

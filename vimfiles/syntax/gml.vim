@@ -14,8 +14,10 @@ syn keyword gmlLabel case default
 syn keyword gmlRepeat while for repeat do while
 syn keyword gmlWith with
 syn keyword gmlDefine enum
-syn match gmlDefine '\v#macro'
-syn match gmlDefine '\v#define.*'
+syn match gmlDefine     '\v#macro'
+syn match gmlDefine     '\v#define.*'
+syn match paren        /[\[\](){}]/
+syn match parenCurly   /[{}]/
 syn keyword gmlTodo contained TODO FIXME NOTE XXX
 "added globalvar
 syn keyword gmlType var string globalvar
@@ -141,7 +143,7 @@ syn keyword gmlMouseFunction mouse_button mouse_check_button mouse_check_button_
 
 syn keyword gmlMouseConstant mb_left mb_middle mb_right mb_none mb_any
 
-syn keyword gmlCollisionFunction place_empty place_free place_meeting position_empty position_meeting position_change position_destroy collision_circle collision_ellipse collision_line collision_point collision_rectangle point_in_rectangle point_in_triangle point_in_circle rectangle_in_rectangle rectangle_in_triangle rectangle_in_circle
+syn keyword gmlCollisionFunction place_empty place_free place_meeting position_empty position_meeting position_change position_destroy collision_circle collision_circle_list collision_ellipse collision_ellipse_list collision_line collision_line_list collision_point collision_point_list collision_rectangle collision_rectangle_list point_in_rectangle point_in_triangle point_in_circle rectangle_in_rectangle rectangle_in_triangle rectangle_in_circle
 
 syn keyword gmlMotionPlanningFunction mp_linear_step mp_linear_step_object mp_linear_path mp_linear_path_object mp_potential_settings mp_potential_step mp_potential_step_object mp_potential_path mp_potential_path_object mp_grid_create mp_grid_destroy mp_grid_path mp_grid_add_cell mp_grid_add_instances mp_grid_add_rectangle mp_grid_get_cell mp_grid_clear_all mp_grid_clear_cell mp_grid_clear_rectangle mp_grid_to_ds_grid mp_grid_draw
 
@@ -334,6 +336,8 @@ hi def link gmlRepeat                     Repeat
 hi def link gmlWith                       Statement
 hi def link gmlLabel                      Label
 hi def link gmlDefine                     Macro
+hi def link paren                         gmlFunction
+hi def link parenCurly                    Conditional
 hi def link gmlBlendmodeConstant          Macro
 
 hi def link gmlBuiltinGlobal              gmlFunction
