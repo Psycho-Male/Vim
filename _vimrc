@@ -113,6 +113,6 @@ endfunction
 set guitablabel=%{GuiTabLabel()}
 set go+=e
 set guifont=Consolas:h9
-"unmap <C-X>
+unmap <C-X>
 "Start gvim in fullscreen mode
 autocmd GUIEnter * simalt ~x
