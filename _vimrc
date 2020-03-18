@@ -55,7 +55,7 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <S-H> gT
 nnoremap <S-L> gt
-nnoremap <S-W> :tabclose<CR>
+nnoremap <S-T> :tabclose<CR>
 "comment open/comment close
 map <C-o> i/*<ESC>
 map <C-c> a*/<ESC>
@@ -82,6 +82,8 @@ nmap <silent> <leader>s1 :source 1<CR>
 nmap <silent> <leader>s2 :source 2<CR>
 nmap <silent> <leader>s3 :source 3<CR>
 nmap <silent> <leader>s4 :source 4<CR>
+nmap <silent> <leader>vw :vs<CR>*
+nmap <silent> <leader>sw :sp<CR>*
 
 nmap <leader>eo :e objects\
 nmap <leader>vo :vs objects\
