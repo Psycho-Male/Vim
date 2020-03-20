@@ -82,7 +82,7 @@ nmap <silent> <leader>s1 :source 1<CR>
 nmap <silent> <leader>s2 :source 2<CR>
 nmap <silent> <leader>s3 :source 3<CR>
 nmap <silent> <leader>s4 :source 4<CR>
-nmap <silent> <leader>vw :vs<CR>*
+nmap <silent> <leader>vw :vs<CR>*<C-W>l
 nmap <silent> <leader>sw :sp<CR>*
 
 nmap <leader>eo :e objects\
@@ -115,6 +115,7 @@ endfunction
 set guitablabel=%{GuiTabLabel()}
 set go+=e
 set guifont=Consolas:h9
-unmap <C-X>
+"unmap <S-W>
+"unmap <C-X>
 "Start gvim in fullscreen mode
 autocmd GUIEnter * simalt ~x
