@@ -72,19 +72,26 @@ nnoremap <Left> :bprevious<CR>
 nnoremap <Right> :bnext<CR>
 "GAMEMAKER MACROS
 map <C-z> oshow_debug_message(": " + string());<ESC>2F"pf(pF"kdd
-nmap <silent> <leader>cz ^vf_hstimed<ESC>f(true, 0, <ESC>
+nmap <silent> <leader>co oshow_debug_message(": " + object_get_name());<ESC>2F"pf(pF"kddf"l
+nmap <silent> <leader>cs oshow_debug_message(": " + sprite_get_name());<ESC>2F"pf(pF"kddf"l
+nmap <silent> <leader>cr oshow_debug_message(": " + room_get_name());<ESC>2F"pf(pF"kddf"l
+nmap <silent> <leader>cc oshow_debug_message(": " + script_get_name());<ESC>2F"pf(pF"kddf"l
+nmap <silent> <leader>cb oshow_debug_message(": " + rb());<ESC>2F"pf(pF"kddf"l
+nmap <silent> <leader>cz ^vf_hstimed<ESC>f(atrue, 0, <ESC>
 nmap <silent> <leader>cw f"lvf"h~
-nmap <silent> <leader>cc oshow_debug_message("");<ESC>2hi
+nmap <silent> <leader>sd oshow_debug_message("");<ESC>2hi
 nmap <silent> <leader>cx oshow_debug_message(""+string());<ESC>F"i
 nmap <silent> <leader>dd oshow_debug_message("--------------------------------------------------------------------------------------------------------");<ESC>2F"l
 nmap <silent> <leader>ww o<ESC>i//---------------------------------------------------------------------------------------------------------//<ESC>^ll
-nmap <silent> <leader>cs oshow_debug_message("CALLSTACK:");<CR>var _a = debug_get_callstack<CR>for(var i = 0; i < array_length_1d(_a); i++)<CR>show_debug_message(_a[i]);<ESC>
+nmap <silent> <leader>ca oshow_debug_message("CALLSTACK:");<CR>var _a = debug_get_callstack<CR>for(var i = 0; i < array_length_1d(_a); i++)<CR>show_debug_message(_a[i]);<ESC>
 nmap <silent> <leader>s1 :source 1<CR>
 nmap <silent> <leader>s2 :source 2<CR>
 nmap <silent> <leader>s3 :source 3<CR>
 nmap <silent> <leader>s4 :source 4<CR>
 nmap <silent> <leader>vw :vs<CR>*<C-W>l
 nmap <silent> <leader>sw :sp<CR>*
+nmap <silent> <leader>aa ivar _a = debug_get_callstack();<CR>for(var i = 0; i < array_length_1d(_a); i++)<CR>show_debug_message("_a: " + string(i) + "-" + string(_a[i]));<ESC>
+
 
 nmap <leader>eo :e objects\
 nmap <leader>vo :vs objects\
