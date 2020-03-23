@@ -39,12 +39,12 @@ set shiftwidth=4
 :set guitablabel=%N/\ %t\ %M
 "windows toolbar
 if has("gui_running")
-	set guioptions-=m
-	set guioptions-=T
-	set guioptions-=r
-	set guioptions-=L
-	"256 color
-	set t_Co=256
+    set guioptions-=m
+    set guioptions-=T
+    set guioptions-=r
+    set guioptions-=L
+    "256 color
+    set t_Co=256
 endif
 cd/
 cd Users\Manko\Documents\GameMakerStudio2\Kingdom Lost
@@ -77,7 +77,7 @@ nmap <silent> <leader>cs oshow_debug_message(": " + sprite_get_name());<ESC>2F"p
 nmap <silent> <leader>cr oshow_debug_message(": " + room_get_name());<ESC>2F"pf(pF"kddf"l
 nmap <silent> <leader>cc oshow_debug_message(": " + script_get_name());<ESC>2F"pf(pF"kddf"l
 nmap <silent> <leader>cb oshow_debug_message(": " + rb());<ESC>2F"pf(pF"kddf"l
-nmap <silent> <leader>cz ^vf_hstimed<ESC>f(atrue, 0, <ESC>
+nmap <silent> <leader>cz ^vf_hstimed<ESC>f(a_sd, 0, <ESC>
 nmap <silent> <leader>cw f"lvf"h~
 nmap <silent> <leader>sd oshow_debug_message("");<ESC>2hi
 nmap <silent> <leader>cx oshow_debug_message(""+string());<ESC>F"i
@@ -106,15 +106,9 @@ nmap <leader>vr :vs rooms\
 nmap <leader>sr :sp rooms\
 "nohl
 map mm :nohl<ENTER>
-"processing
-"filetype plugin on
-"let g:use_processing_java=1
-"let processing_doc_path="processing-2.0.3"
-"search
 set incsearch
 set foldmethod=manual
 set showcmd
-"autocmd FileType text setlocal textwidth = 112
 "Set custom tab name
 "Usage: :let t:mytablabel = 'my_tab_name'
 function! GuiTabLabel()
@@ -127,3 +121,8 @@ set guifont=Consolas:h9
 unmap <C-X>
 "Start gvim in fullscreen mode
 autocmd GUIEnter * simalt ~x
+augroup remember_fold
+    autocmd!
+    autocmd BufWinLeave * silent! mkview
+    autocmd BufWinEnter * silent! loadview
+augroup end
