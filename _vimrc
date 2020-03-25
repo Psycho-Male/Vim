@@ -90,6 +90,7 @@ nmap <silent> <leader>s3 :source 3<CR>
 nmap <silent> <leader>s4 :source 4<CR>
 nmap <silent> <leader>vw :vs<CR>*<C-W>l
 nmap <silent> <leader>sw :sp<CR>*
+nmap <silent> <leader>fi ofor(var i = 0; i < ; i++)<ESC>F;i
 nmap <silent> <leader>aa ivar _a = debug_get_callstack();<CR>for(var i = 0; i < array_length_1d(_a); i++)<CR>show_debug_message("_a: " + string(i) + "-" + string(_a[i]));<ESC>
 
 
@@ -126,3 +127,5 @@ augroup remember_fold
     autocmd BufWinLeave * silent! mkview
     autocmd BufWinEnter * silent! loadview
 augroup end
+"Disable blinking
+set t_vb=
