@@ -65,7 +65,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sy :e C:\Program Files (x86)\Vim\Vimfiles\syntax\gml.vim<CR>
 nmap gx gf<CR>:vs<CR>:e #<CR>
-nmap <F5> :w<ENTER>:!1.py<ENTER>
+"nmap <F5> :w<ENTER>:!1.py<ENTER>
 nmap <F2> :tabdo windo set syntax=gml<CR>
 nmap <F3> :let t:mytablabel = ''<Left>
 nnoremap <Left> :bprevious<CR>
@@ -77,6 +77,7 @@ nmap <silent> <leader>cs oshow_debug_message(": " + sprite_get_name());<ESC>2F"p
 nmap <silent> <leader>cr oshow_debug_message(": " + room_get_name());<ESC>2F"pf(pF"kddf"l
 nmap <silent> <leader>cc oshow_debug_message(": " + script_get_name());<ESC>2F"pf(pF"kddf"l
 nmap <silent> <leader>cb oshow_debug_message(": " + rb());<ESC>2F"pf(pF"kddf"l
+nmap <silent> <leader>cd o_ty = "<ESC>pa :"<ESC>f"a + string(<ESC>pa);<CR>draw_text_transformed(_tx, _ty, _tt, .25, .25, 0);<ESC>
 nmap <silent> <leader>cz ^vf_hstimed<ESC>f(a_sd, 0, <ESC>
 nmap <silent> <leader>cw f"lvf"h~
 nmap <silent> <leader>sd oshow_debug_message("");<ESC>2hi
@@ -122,10 +123,15 @@ set guifont=Consolas:h9
 unmap <C-X>
 "Start gvim in fullscreen mode
 autocmd GUIEnter * simalt ~x
+"Disable blinking
+"Autocmd version
+set noerrorbells visualbell t_vb=
+if has('autocmd')
+    autocmd GUIEnter * set visualbell t_vb=
+endif
+"set vb t_vb=
 augroup remember_fold
     autocmd!
     autocmd BufWinLeave * silent! mkview
     autocmd BufWinEnter * silent! loadview
 augroup end
-"Disable blinking
-set t_vb=
