@@ -135,3 +135,5 @@ augroup remember_fold
     autocmd BufWinLeave * silent! mkview
     autocmd BufWinEnter * silent! loadview
 augroup end
+"Set cursor offset
+set so=5
