@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language: Game Maker Language (.gml)
-" Maintainer: Ness Morris
-" Latest Revision: 2016-08-22
+" Created By: Ness Morris
+" Edited By: Ali Selim Agacan
 
 if exists("b:current_syntax")
   finish
@@ -237,6 +237,7 @@ syn match gmlReal '\v<-?(\d+\.)?\d+>'
 
 " Strings and chars
 syn region gmlString start=/\v\z("|')/ skip=/\v\\./ end=/\v\z1/
+syn region gmlString start=/\v\z("|')/ skip=/\v\\./ end=/\v\z1/ contained
 syn match  gmlChar /'.'/
 
     " Unary operators
@@ -296,12 +297,17 @@ syn region gmlBlockComment start='\v\/\*' end='\v\*\/' contains=gmlTodo fold ext
 
 syn region gmlParenPair start='(' end=')' transparent extend
 syn region gmlCodeBlock start='\v\{' end='\v\}' transparent extend fold
+syn region gmlBracket   start='\v\[' end='\v\]' extend fold contains=gmlString
 " syn region gmlFunctionDefine start='\v#define \I\i*\_.{-}\{' end='\v\}' transparent keepend fold
 "
 " arguments
 syn keyword gmlBuiltinScriptVariable argument_count
 syn match gmlBuiltinScriptVariable '\v<argument\ze\[([0-9]|1[0-5]|(\S+\s*)+)\]'
 syn match gmlBuiltinScriptVariable '\v<argument(1[0-5]|[0-9])>'
+
+"Brackets
+"syn region gmlSyntaxBracket start='\[' end=']'
+"syn region gmlSyntaxBracket start='(' end=')'
 
 syn keyword gmlEventTypeConstant ev_create ev_destroy ev_step ev_alarm ev_keyboard ev_keypress ev_keyrelease ev_mouse ev_gesture ev_collision ev_other ev_outside ev_boundary ev_game_start ev_game_end ev_room_start ev_room_end ev_no_more_lives ev_no_more_health ev_animation_end ev_end_if_pat ev_close_button hev_draw ev_draw_being ev_draw_end ev_draw_pre ev_draw_post ev_gui ev_gui_begin ev_gui_end
 syn match gmlEventNumberConstant '\v<ev_step_(normal|begin|end)>'
@@ -475,6 +481,10 @@ hi def link gmlAccessorOperator           Operator
 hi def link gmlDocComment                 Comment
 hi def link gmlLineComment                Comment
 hi def link gmlBlockComment               Comment
+
+hi def link gmlBracket                    NonText
+hi def link gmlCodeBlock                  NonText
+hi def link gmlParenPair                  NonText
 
 
 let b:current_syntax = "gml"
