@@ -309,7 +309,7 @@ syn match gmlBuiltinScriptVariable '\v<argument(1[0-5]|[0-9])>'
 "syn region gmlSyntaxBracket start='\[' end=']'
 "syn region gmlSyntaxBracket start='(' end=')'
 
-syn keyword gmlEventTypeConstant ev_create ev_destroy ev_step ev_alarm ev_keyboard ev_keypress ev_keyrelease ev_mouse ev_gesture ev_collision ev_other ev_outside ev_boundary ev_game_start ev_game_end ev_room_start ev_room_end ev_no_more_lives ev_no_more_health ev_animation_end ev_end_if_pat ev_close_button hev_draw ev_draw_being ev_draw_end ev_draw_pre ev_draw_post ev_gui ev_gui_begin ev_gui_end
+syn keyword gmlEventTypeConstant ev_create ev_destroy ev_step ev_alarm ev_keyboard ev_keypress ev_keyrelease ev_mouse ev_gesture ev_collision ev_other ev_outside ev_boundary ev_game_start ev_game_end ev_room_start ev_room_end ev_no_more_lives ev_no_more_health ev_animation_end ev_end_if_pat ev_close_button ev_draw ev_draw_being ev_draw_end ev_draw_pre ev_draw_post ev_gui ev_gui_begin ev_gui_end
 syn match gmlEventNumberConstant '\v<ev_step_(normal|begin|end)>'
 syn match gmlEventNumberConstant '\v<ev_draw_(begin|end|pre|post)>'
 syn match gmlEventNumberConstant '\v<ev_gui_(begin|end)>'
@@ -430,6 +430,7 @@ hi def link gmlBuiltinFunction            gmlFunction
 hi def link gmlBuiltinScriptVariable      gmlFunction
 hi def link gmlArrayFunction              gmlFunction
 hi def link gmlGpuFunction                gmlFunction
+hi def link gmlBufferFunction             gmlFunction
 
 hi def link gmlFunction                   Function
 

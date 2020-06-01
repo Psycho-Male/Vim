@@ -24,10 +24,10 @@ set softtabstop=4 "disabled tabstop=4
 set cmdheight=2 "set command windows to 2 lines
 "Set syntax automatically each time gml file has opened
 autocmd BufNewFile,BufRead *.gml set syntax=gml
-autocmd BufNewFile,BufRead *.txt set syntax=story
+autocmd BufNewFile,BufRead *.fsh,*vsh set ft=glsl
 
 syntax on
-colorscheme edar
+colorscheme hyper
 set background=dark
 set ruler
 set hlsearch
@@ -63,7 +63,9 @@ map <C-c> a*/<ESC>
 map <C-s> :setlocal spell!<cr>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
-nmap <silent> <leader>sy :e C:\Program Files (x86)\Vim\Vimfiles\syntax\gml.vim<CR>
+nmap <silent> <leader>eg :e C:\Program Files (x86)\Vim\Vimfiles\syntax\gml.vim<CR>
+nmap <silent> <leader>ey :e C:\Program Files (x86)\Vim\Vimfiles\syntax\yarn.vim<CR>
+nmap <silent> <leader>oo :only<CR>
 nmap gx gf<CR>:vs<CR>:e #<CR>
 "nmap <F5> :w<ENTER>:!1.py<ENTER>
 nmap <F2> :tabdo windo set syntax=gml<CR>
@@ -93,19 +95,27 @@ nmap <silent> <leader>vw :vs<CR>*<C-W>l
 nmap <silent> <leader>sw :sp<CR>*
 nmap <silent> <leader>fi ofor(var i = 0; i < ; i++)<ESC>F;i
 nmap <silent> <leader>aa ivar _a = debug_get_callstack();<CR>for(var i = 0; i < array_length_1d(_a); i++)<CR>show_debug_message("_a: " + string(i) + "-" + string(_a[i]));<ESC>
+nmap <silent> <leader>ii ggOvar _increment = variable_instance_exists(self, "allow_increment") && allow_increment;<ESC>GGoif _increment<CR>s++;<ESC>
 
+nmap <ESC>eo :e  objects\
+nmap <ESC>vo :vs objects\
+nmap <ESC>so :sp objects\
 
-nmap <leader>eo :e objects\
-nmap <leader>vo :vs objects\
-nmap <leader>so :sp objects\
+nmap <ESC>es :e  scripts\
+nmap <ESC>vs :vs scripts\
+nmap <ESC>ss :sp scripts\
 
-nmap <leader>es :e scripts\
-nmap <leader>vs :vs scripts\
-nmap <leader>ss :sp scripts\
+nmap <ESC>er :e  rooms\
+nmap <ESC>vr :vs rooms\
+nmap <ESC>sr :sp rooms\
 
-nmap <leader>er :e rooms\
-nmap <leader>vr :vs rooms\
-nmap <leader>sr :sp rooms\
+nmap <ESC>ed :e  datafiles\
+nmap <ESC>vd :vs datafiles\
+nmap <ESC>sd :sp datafiles\
+
+nmap <ESC>ea :e shaders\
+nmap <ESC>va :vs shaders\
+nmap <ESC>sa :sp shaders\
 "nohl
 map mm :nohl<ENTER>
 set incsearch
