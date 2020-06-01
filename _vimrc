@@ -73,14 +73,15 @@ nmap <F3> :let t:mytablabel = ''<Left>
 nnoremap <Left> :bprevious<CR>
 nnoremap <Right> :bnext<CR>
 "GAMEMAKER MACROS
-map <C-z> oshow_debug_message(": " + string());<ESC>2F"pf(pF"kdd
 nmap <silent> <leader>co oshow_debug_message(": " + object_get_name());<ESC>2F"pf(pF"kddf"l
 nmap <silent> <leader>cs oshow_debug_message(": " + sprite_get_name());<ESC>2F"pf(pF"kddf"l
 nmap <silent> <leader>cr oshow_debug_message(": " + room_get_name());<ESC>2F"pf(pF"kddf"l
 nmap <silent> <leader>cc oshow_debug_message(": " + script_get_name());<ESC>2F"pf(pF"kddf"l
 nmap <silent> <leader>cb oshow_debug_message(": " + rb());<ESC>2F"pf(pF"kddf"l
 nmap <silent> <leader>cd o_ty = "<ESC>pa :"<ESC>f"a + string(<ESC>pa);<CR>draw_text_transformed(_tx, _ty, _tt, .25, .25, 0);<ESC>
-nmap <silent> <leader>cz ^vf_hstimed<ESC>f(a_sd, 0, <ESC>
+nmap <silent> <leader>cz oshow_debug_message(": " + string());<ESC>2F"pf(pF"kdd
+"nmap <C-z> oshow_debug_message(": \" + string());<ESC>2F"pf(pF"kdd
+"nmap <silent> <leader>cz ^vf_hstimed<ESC>f(a_sd, 0, <ESC>
 nmap <silent> <leader>cw f"lvf"h~
 nmap <silent> <leader>sd oshow_debug_message("");<ESC>2hi
 nmap <silent> <leader>cx oshow_debug_message(""+string());<ESC>F"i
