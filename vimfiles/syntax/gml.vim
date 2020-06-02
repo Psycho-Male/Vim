@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language: Game Maker Language (.gml)
-" Created By: Ness Morris
-" Edited By: Ali Selim Agacan
+" Originally Created By: Ness Morris
+" Maintained By: Ali Selim Agacan @Psycho-Male
 
 if exists("b:current_syntax")
   finish
