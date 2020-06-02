@@ -102,7 +102,7 @@ call s:h("TablineSel",  {"fg": s:teal      , "bg": s:blue      , "format": "none
 call s:h("Comment",     {"fg": s:dark                          , "format": "none"})
 call s:h("Statement",   {"fg": s:purple                        , "format": "none"})
 call s:h("Constant",    {"fg": s:turqoise                      , "format": "none"})
-call s:h("Type",        {"fg": s:blue                          , "format": "none"})
+call s:h("Type",        {"fg": s:red                           , "format": "none"})
 call s:h("String",      {"fg": s:amber                         , "format": "none"})
 call s:h("Special",     {"fg": s:yellow                        , "format": "none"})
 call s:h("TagListFileName",{"fg": s:black     , "bg": s:teal      , "format": "none"})
