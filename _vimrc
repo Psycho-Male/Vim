@@ -27,7 +27,7 @@ autocmd BufNewFile,BufRead *.gml set syntax=gml
 autocmd BufNewFile,BufRead *.fsh,*vsh set ft=glsl
 
 syntax on
-colorscheme hyper
+colorscheme psycho
 set background=dark
 set ruler
 set hlsearch
@@ -63,6 +63,7 @@ map <C-c> a*/<ESC>
 map <C-s> :setlocal spell!<cr>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <leader>ve :e C:\Program Files (x86)\Vim\Vimfiles\
 nmap <silent> <leader>eg :e C:\Program Files (x86)\Vim\Vimfiles\syntax\gml.vim<CR>
 nmap <silent> <leader>ey :e C:\Program Files (x86)\Vim\Vimfiles\syntax\yarn.vim<CR>
 nmap <silent> <leader>oo :only<CR>
