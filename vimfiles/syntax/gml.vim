@@ -16,8 +16,9 @@ syn keyword gmlWith with
 syn keyword gmlDefine enum
 syn match gmlDefine     '\v#macro'
 syn match gmlDefine     '\v#define.*'
-syn match paren        /[\[\](){}]/
-syn match parenCurly   /[{}]/
+syn match paren         /[\[\](){}]/
+syn match parenCurly    /[{}]/
+syn match gmlGlobal     /\v<\u(\u+_*)+/
 syn keyword gmlTodo contained TODO FIXME NOTE XXX
 "added globalvar
 syn keyword gmlType var string globalvar
@@ -201,7 +202,7 @@ syn keyword gmlPushNotificationFunction push_local_notification push_get_first_l
 
 syn keyword gmlRoomFunction room_exists room_first room_last room_next room_previous room room_speed room_height room_width room_persistent room_caption room_get_name room_goto room_goto_next room_goto_previous room_restart room_add room_duplicate room_assign room_instance_add room_instance_clear room_tile_add room_tile_add_ext room_tile_clear room_set_background room_set_background_colour room_set_background_color room_set_height room_set_width room_set_persistent room_set_viewport room_set_view_enabled
 
-syn keyword gmlShaderFunction shader_set shader_get_uniform shader_get_sampler_index shader_set_uniform_f shader_set_uniform_f_array shader_set_uniform_i shader_set_uniform_i_array shader_set_uniform_matrix shader_set_uniform_matrix_array shader_reset shader_is_compiled shaders_are_supported shader_enable_corner_id
+syn keyword gmlShaderFunction shader_set shader_get_uniform shader_get_sampler_index shader_set_uniform_f shader_set_uniform_f_array shader_set_uniform_i shader_set_uniform_i_array shader_set_uniform_matrix shader_set_uniform_matrix_array shader_reset shader_is_compiled shaders_are_supported shader_enable_corner_id shader_current
 
 syn keyword gmlShaderConstant MATRIX_VIEW MATRIX_PROJECTION MATRIX_WORLD MATRIX_WORLD_VIEW MATRIX_WORLD_VIEW_PROJECTION MATRIX_MAX MAX_VS_LIGHTS gm_Matrices gm_BaseTexture gm_LightingEnabled gm_FogStart gm_RcpFogRange gm_PS_FogEnabled gm_FogColour gm_VS_FogEnabled gm_AlphaTestEnabled gm_AlphaRefValue
 
@@ -336,156 +337,158 @@ syn sync fromstart
 
 " Link syntax groups to common highlighting groups
 
-hi def link gmlConditional                Conditional
-hi def link gmlStatement                  Statement
-hi def link gmlRepeat                     Repeat
-hi def link gmlWith                       Statement
-hi def link gmlLabel                      Label
-hi def link gmlDefine                     Macro
-hi def link paren                         gmlFunction
-hi def link parenCurly                    Conditional
-hi def link gmlBlendmodeConstant          Macro
+hi def link gmlConditional                  Conditional
+hi def link gmlStatement                    Statement
+hi def link gmlRepeat                       Repeat
+hi def link gmlWith                         Statement
+hi def link gmlLabel                        Label
+hi def link gmlDefine                       Macro
+hi def link paren                           gmlFunction
+hi def link parenCurly                      Conditional
+hi def link gmlBlendmodeConstant            Macro
 
-hi def link gmlBuiltinGlobal              gmlFunction
-hi def link gmlDSFunction                 gmlFunction
-hi def link gmlDSGridFunction             gmlFunction
-hi def link gmlDSMapFunction              gmlFunction
-hi def link gmlDSListFunction             gmlFunction
-hi def link gmlDSQueueFunction            gmlFunction
-hi def link gmlDSPriorityFunction         gmlFunction
-hi def link gmlDSStackFunction            gmlFunction
-hi def link gmlDSJSONFunction             gmlFunction
-hi def link gmlCloudFunction              gmlFunction
-hi def link gmlTimeFunction               gmlFunction
-hi def link gmlDebugFunction              gmlFunction
-hi def link gmlDrawingFunction            gmlFunction
-hi def link gml3DDrawingFunction          gmlFunction
-hi def link gmlFileFunction               gmlFunction
-hi def link gmlBinaryFileFunction         gmlFunction
-hi def link gmlFileSystemFunction         gmlFunction
-hi def link gmlTextFileFunction           gmlFunction
-hi def link gmlIniFileFunction            gmlFunction
-hi def link gmlAssetFunction              gmlFunction
-hi def link gmlBackgroundFunction         gmlFunction
-hi def link gmlBackgroundTileFunction     gmlFunction
-hi def link gmlLayerFunction              gmlFunction
-hi def link gmlTilemapFunction            gmlFunction
-hi def link gmlVariableFunction            gmlFunction
-hi def link gmlFontFunction               gmlFunction
-hi def link gmlAudioFunction              gmlFunction
-hi def link gmlAudioEmitterFunction       gmlFunction
-hi def link gmlAudioListenerFunction      gmlFunction
-hi def link gmlAudioGroupFunction         gmlFunction
-hi def link gmlAudioBufferFunction        gmlFunction
-hi def link gmlAudioSyncFunction          gmlFunction
-hi def link gmlSpriteFunction             gmlFunction
-hi def link gmlSkeletalAnimationFunction  gmlFunction
-hi def link gmlHTML5Function              gmlFunction
-hi def link gmlIAPFunction                gmlFunction
-hi def link gmlRandomFunction             gmlFunction
-hi def link gmlTrigFunction               gmlFunction
-hi def link gmlRoundFunction              gmlFunction
-hi def link gmlMathFunction               gmlFunction
-hi def link gmlVectorFunction             gmlFunction
-hi def link gmlMiscFunction               gmlFunction
-hi def link gmlMatrixFunction             gmlFunction
-hi def link gmlVirtualKeyFunction         gmlFunction
-hi def link gmlDeviceInputFunction        gmlFunction
-hi def link gmlGamepadFunction            gmlFunction
-hi def link gmlImmersionHapticFunction    gmlFunction
-hi def link gmlJoystickFunction           gmlFunction
-hi def link gmlKeyboardFunction           gmlFunction
-hi def link gmlMouseFunction              gmlFunction
-hi def link gmlCollisionFunction          gmlFunction
-hi def link gmlMotionPlanningFunction     gmlFunction
-hi def link gmlMovementFunction           gmlFunction
-hi def link gmlNetworkFunction            gmlFunction
-hi def link gmlPathFunction               gmlFunction
-hi def link gmlBuiltinInstanceFunction    gmlFunction
-hi def link gmlGlobalInstanceFunction     gmlFunction
-hi def link gmlGlobalObjectFunction       gmlFunction
-hi def link gmlEventFunction              gmlFunction
-hi def link gmlOSFunction                 gmlFunction
-hi def link gmlSimpleParticleFunction     gmlFunction
-hi def link gmlParticleEffectFunction     gmlFunction
-hi def link gmlParticleEmitterFunction    gmlFunction
-hi def link gmlPhysicsFunction            gmlFunction
-hi def link gmlPhysicsFixtureFunction     gmlFunction
-hi def link gmlPhysicsForceFunction       gmlFunction
-hi def link gmlPhysicsJointFunction       gmlFunction
-hi def link gmlPhysicsParticleFunction    gmlFunction
-hi def link gmlPhysicsWorldFunction       gmlFunction
-hi def link gmlPushNotificationFunction   gmlFunction
-hi def link gmlRoomFunction               gmlFunction
-hi def link gmlShaderFunction             gmlFunction
-hi def link gmlStringFunction             gmlFunction
-hi def link gmlSurfaceFunction            gmlFunction
-hi def link gmlApplicationSurfaceFunction gmlFunction
-hi def link gmlTimelineFunction           gmlFunction
-hi def link gmlDisplayFunction            gmlFunction
-hi def link gmlWindowFunction             gmlFunction
-hi def link gmlViewFunction               gmlFunction
-hi def link gmlCameraFunction             gmlFunction
-hi def link gmlBuiltinFunction            gmlFunction
-hi def link gmlBuiltinScriptVariable      gmlFunction
-hi def link gmlArrayFunction              gmlFunction
-hi def link gmlGpuFunction                gmlFunction
-hi def link gmlBufferFunction             gmlFunction
+hi def link gmlBuiltinGlobal                gmlFunction
+hi def link gmlDSFunction                   gmlFunction
+hi def link gmlDSGridFunction               gmlFunction
+hi def link gmlDSMapFunction                gmlFunction
+hi def link gmlDSListFunction               gmlFunction
+hi def link gmlDSQueueFunction              gmlFunction
+hi def link gmlDSPriorityFunction           gmlFunction
+hi def link gmlDSStackFunction              gmlFunction
+hi def link gmlDSJSONFunction               gmlFunction
+hi def link gmlCloudFunction                gmlFunction
+hi def link gmlTimeFunction                 gmlFunction
+hi def link gmlDebugFunction                gmlFunction
+hi def link gmlDrawingFunction              gmlFunction
+hi def link gml3DDrawingFunction            gmlFunction
+hi def link gmlFileFunction                 gmlFunction
+hi def link gmlBinaryFileFunction           gmlFunction
+hi def link gmlFileSystemFunction           gmlFunction
+hi def link gmlTextFileFunction             gmlFunction
+hi def link gmlIniFileFunction              gmlFunction
+hi def link gmlAssetFunction                gmlFunction
+hi def link gmlBackgroundFunction           gmlFunction
+hi def link gmlBackgroundTileFunction       gmlFunction
+hi def link gmlLayerFunction                gmlFunction
+hi def link gmlTilemapFunction              gmlFunction
+hi def link gmlVariableFunction             gmlFunction
+hi def link gmlFontFunction                 gmlFunction
+hi def link gmlAudioFunction                gmlFunction
+hi def link gmlAudioEmitterFunction         gmlFunction
+hi def link gmlAudioListenerFunction        gmlFunction
+hi def link gmlAudioGroupFunction           gmlFunction
+hi def link gmlAudioBufferFunction          gmlFunction
+hi def link gmlAudioSyncFunction            gmlFunction
+hi def link gmlSpriteFunction               gmlFunction
+hi def link gmlSkeletalAnimationFunction    gmlFunction
+hi def link gmlHTML5Function                gmlFunction
+hi def link gmlIAPFunction                  gmlFunction
+hi def link gmlRandomFunction               gmlFunction
+hi def link gmlTrigFunction                 gmlFunction
+hi def link gmlRoundFunction                gmlFunction
+hi def link gmlMathFunction                 gmlFunction
+hi def link gmlVectorFunction               gmlFunction
+hi def link gmlMiscFunction                 gmlFunction
+hi def link gmlMatrixFunction               gmlFunction
+hi def link gmlVirtualKeyFunction           gmlFunction
+hi def link gmlDeviceInputFunction          gmlFunction
+hi def link gmlGamepadFunction              gmlFunction
+hi def link gmlImmersionHapticFunction      gmlFunction
+hi def link gmlJoystickFunction             gmlFunction
+hi def link gmlKeyboardFunction             gmlFunction
+hi def link gmlMouseFunction                gmlFunction
+hi def link gmlCollisionFunction            gmlFunction
+hi def link gmlMotionPlanningFunction       gmlFunction
+hi def link gmlMovementFunction             gmlFunction
+hi def link gmlNetworkFunction              gmlFunction
+hi def link gmlPathFunction                 gmlFunction
+hi def link gmlBuiltinInstanceFunction      gmlFunction
+hi def link gmlGlobalInstanceFunction       gmlFunction
+hi def link gmlGlobalObjectFunction         gmlFunction
+hi def link gmlEventFunction                gmlFunction
+hi def link gmlOSFunction                   gmlFunction
+hi def link gmlSimpleParticleFunction       gmlFunction
+hi def link gmlParticleEffectFunction       gmlFunction
+hi def link gmlParticleEmitterFunction      gmlFunction
+hi def link gmlPhysicsFunction              gmlFunction
+hi def link gmlPhysicsFixtureFunction       gmlFunction
+hi def link gmlPhysicsForceFunction         gmlFunction
+hi def link gmlPhysicsJointFunction         gmlFunction
+hi def link gmlPhysicsParticleFunction      gmlFunction
+hi def link gmlPhysicsWorldFunction         gmlFunction
+hi def link gmlPushNotificationFunction     gmlFunction
+hi def link gmlRoomFunction                 gmlFunction
+hi def link gmlShaderFunction               gmlFunction
+hi def link gmlStringFunction               gmlFunction
+hi def link gmlSurfaceFunction              gmlFunction
+hi def link gmlApplicationSurfaceFunction   gmlFunction
+hi def link gmlTimelineFunction             gmlFunction
+hi def link gmlDisplayFunction              gmlFunction
+hi def link gmlWindowFunction               gmlFunction
+hi def link gmlViewFunction                 gmlFunction
+hi def link gmlCameraFunction               gmlFunction
+hi def link gmlBuiltinFunction              gmlFunction
+hi def link gmlBuiltinScriptVariable        gmlFunction
+hi def link gmlArrayFunction                gmlFunction
+hi def link gmlGpuFunction                  gmlFunction
+hi def link gmlBufferFunction               gmlFunction
 
-hi def link gmlFunction                   Function
-
-
-hi def link gmlKeyboardConstant           gmlConstant
-hi def link gmlKeyboardModifierConstant   gmlConstant
-hi def link gmlMouseConstant              gmlConstant
-hi def link gmlParticleEffectConstant     gmlConstant
-hi def link gmlPhysicsJointConstant       gmlConstant
-hi def link gmlShaderConstant             gmlConstant
-hi def link gmlEventTypeConstant          gmlConstant
-hi def link gmlEventNumberConstant        gmlConstant
-hi def link gmlColorConstant              gmlConstant
-hi def link gmlDrawAlignConstant          gmlConstant
-
-hi def link gmlConstant                   Constant
+hi def link gmlFunction                     Function
 
 
-hi def link gmlBuiltinMovementVariable    gmlBuiltinVariable
-hi def link gmlBuiltinInstanceVariable    gmlBuiltinVariable
-hi def link gmlBuiltinInstanceProperty    gmlBuiltinVariable
-hi def link gmlPathVariable               gmlBuiltinVariable
-hi def link gmlEventVariable              gmlBuiltinVariable
-hi def link gmlPhysicsVariable            gmlBuiltinVariable
+hi def link gmlKeyboardConstant             gmlConstant
+hi def link gmlKeyboardModifierConstant     gmlConstant
+hi def link gmlMouseConstant                gmlConstant
+hi def link gmlParticleEffectConstant       gmlConstant
+hi def link gmlPhysicsJointConstant         gmlConstant
+hi def link gmlShaderConstant               gmlConstant
+hi def link gmlEventTypeConstant            gmlConstant
+hi def link gmlEventNumberConstant          gmlConstant
+hi def link gmlColorConstant                gmlConstant
+hi def link gmlDrawAlignConstant            gmlConstant
 
-hi def link gmlBuiltinVariable            Identifier
+hi def link gmlConstant                     Constant
 
 
-hi def link gmlKeyword                    Keyword
+hi def link gmlBuiltinMovementVariable      gmlBuiltinVariable
+hi def link gmlBuiltinInstanceVariable      gmlBuiltinVariable
+hi def link gmlBuiltinInstanceProperty      gmlBuiltinVariable
+hi def link gmlPathVariable                 gmlBuiltinVariable
+hi def link gmlEventVariable                gmlBuiltinVariable
+hi def link gmlPhysicsVariable              gmlBuiltinVariable
 
-hi def link gmlTodo                       Todo
+hi def link gmlBuiltinVariable              Identifier
 
-hi def link gmlType                       Type
-hi def link gmlDSType                     Type
-hi def link gmlReal                       Float
-hi def link gmlBoolean                    Boolean
 
-hi def link gmlString                     String
-hi def link gmlCharacter                  Character
+hi def link gmlKeyword                      Keyword
 
-hi def link gmlUnaryOperator              Operator
-hi def link gmlArithmeticOperator         Operator
-hi def link gmlAssignmentOperator         Operator
-hi def link gmlComparisonOperator         Operator
-hi def link gmlBitwiseOperator            Operator
-hi def link gmlBooleanOperator            Operator
-hi def link gmlAccessorOperator           Operator
+hi def link gmlTodo                         Todo
 
-hi def link gmlDocComment                 Comment
-hi def link gmlLineComment                Comment
-hi def link gmlBlockComment               Comment
+hi def link gmlType                         Type
+hi def link gmlDSType                       Type
+hi def link gmlReal                         Float
+hi def link gmlBoolean                      Boolean
 
-hi def link gmlBracket                    NonText
-hi def link gmlCodeBlock                  NonText
-hi def link gmlParenPair                  NonText
+hi def link gmlString                       String
+hi def link gmlCharacter                    Character
+
+hi def link gmlUnaryOperator                Operator
+hi def link gmlArithmeticOperator           Operator
+hi def link gmlAssignmentOperator           Operator
+hi def link gmlComparisonOperator           Operator
+hi def link gmlBitwiseOperator              Operator
+hi def link gmlBooleanOperator              Operator
+hi def link gmlAccessorOperator             Operator
+
+hi def link gmlDocComment                   Comment
+hi def link gmlLineComment                  Comment
+hi def link gmlBlockComment                 Comment
+
+hi def link gmlBracket                      NonText
+hi def link gmlCodeBlock                    NonText
+hi def link gmlParenPair                    NonText
+
+hi def link gmlGlobal                       SpecialKey
 
 
 let b:current_syntax = "gml"
