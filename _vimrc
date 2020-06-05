@@ -89,6 +89,7 @@ nmap <silent> <leader>cx oshow_debug_message(""+string());<ESC>F"i
 nmap <silent> <leader>dd oshow_debug_message("--------------------------------------------------------------------------------------------------------");<ESC>2F"l
 nmap <silent> <leader>ww o<ESC>i//---------------------------------------------------------------------------------------------------------//<ESC>^ll
 nmap <silent> <leader>ca oshow_debug_message("CALLSTACK:");<CR>var _a = debug_get_callstack<CR>for(var i = 0; i < array_length_1d(_a); i++)<CR>show_debug_message(_a[i]);<ESC>
+nmap <F1>       :mksession! 1<CR>
 nmap <silent> <leader>s1 :source 1<CR>
 nmap <silent> <leader>s2 :source 2<CR>
 nmap <silent> <leader>s3 :source 3<CR>
@@ -98,7 +99,7 @@ nmap <silent> <leader>sw :sp<CR>*
 nmap <silent> <leader>fi ofor(var i = 0; i < ; i++)<ESC>F;i
 nmap <silent> <leader>aa ivar _a = debug_get_callstack();<CR>for(var i = 0; i < array_length_1d(_a); i++)<CR>show_debug_message("_a: " + string(i) + "-" + string(_a[i]));<ESC>
 nmap <silent> <leader>ii ggOvar _increment = variable_instance_exists(self, "allow_increment") && allow_increment;<ESC>GGoif _increment<CR>s++;<ESC>
-
+"GAMEMAKER FILE EDITING
 nmap <ESC>eo :e  objects\
 nmap <ESC>vo :vs objects\
 nmap <ESC>so :sp objects\
@@ -118,7 +119,7 @@ nmap <ESC>sd :sp datafiles\
 nmap <ESC>ea :e shaders\
 nmap <ESC>va :vs shaders\
 nmap <ESC>sa :sp shaders\
-"nohl
+
 map mm :nohl<ENTER>
 set incsearch
 set foldmethod=manual
@@ -149,3 +150,7 @@ augroup remember_fold
 augroup end
 "Set cursor offset
 set so=5
+"Auto bracket completion
+inoremap " ""<left>
+inoremap ( ()<left>
+inoremap { <CR>{<CR>}<ESC>O
