@@ -152,5 +152,19 @@ augroup end
 set so=5
 "Auto bracket completion
 inoremap " ""<left>
+inoremap "" "";<left><left>
+inoremap ": "":<left><left>
+
+inoremap ' ''<left>
+inoremap '' '';<left><left>
+inoremap ': '':<left><left>
+
 inoremap ( ()<left>
+inoremap (( ();<left><left>
+
+inoremap [ []<left>
+inoremap [[ [];<left><left>
+
 inoremap { <CR>{<CR>}<ESC>O
+
+inoremap <S-SPACE> <TAB>= ;<left>
