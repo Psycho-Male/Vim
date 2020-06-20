@@ -22,9 +22,7 @@ set visualbell "Visual alert instead of sound
 set expandtab
 set softtabstop=4 "disabled tabstop=4
 set cmdheight=2 "set command windows to 2 lines
-"Set syntax automatically each time gml file has opened
-autocmd BufNewFile,BufRead *.gml set syntax=gml
-autocmd BufNewFile,BufRead *.fsh,*vsh set ft=glsl
+filetype on
 
 syntax on
 colorscheme psycho
@@ -35,8 +33,12 @@ set autoindent
 set smartindent
 set number
 set shiftwidth=4
+set cursorline
 "set tabstop=4
-:set guitablabel=%N/\ %t\ %M
+"set guitablabel=%N/\ %t\ %M
+set guitablabel=%N-\%t\%M
+"Set cursor offset
+set so=5
 "windows toolbar
 if has("gui_running")
     set guioptions-=m
@@ -46,8 +48,16 @@ if has("gui_running")
     "256 color
     set t_Co=256
 endif
-cd/
-cd Users\Manko\Documents\GameMakerStudio2\Kingdom Lost
+"New windo command
+command! -nargs=+ -complete=command Windo
+    \ let s:currentWindow = winnr() |
+    \ execute "windo <args>" |
+    \ execute s:currentWindow . "wincmd w"
+command! -nargs=+ -complete=command Syndo
+    \ let s:currentWindow = winnr() |
+    \ execute "tabdo windo <args>" |
+    \ execute s:currentWindow . "wincmd w"
+cd C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost
 nnoremap <Space> @
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-H> <C-W><C-H>
@@ -59,9 +69,8 @@ nnoremap <S-T> :tabclose<CR>
 "comment open/comment close
 map <C-o> i/*<ESC>
 map <C-c> a*/<ESC>
-"Pressing ,ss will toggle and untoggle spell checking
 map <C-s> :setlocal spell!<cr>
-nmap <silent> <leader>sv :so $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR> :Syndo filetype detect
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <leader>ve :e C:\Program Files (x86)\Vim\Vimfiles\
 nmap <silent> <leader>eg :e C:\Program Files (x86)\Vim\Vimfiles\syntax\gml.vim<CR>
@@ -69,7 +78,7 @@ nmap <silent> <leader>ey :e C:\Program Files (x86)\Vim\Vimfiles\syntax\yarn.vim<
 nmap <silent> <leader>oo :only<CR>
 nmap gx gf<CR>:vs<CR>:e #<CR>
 "nmap <F5> :w<ENTER>:!1.py<ENTER>
-nmap <F2> :tabdo windo set syntax=gml<CR>
+nmap <F2> :Syndo filetype detect<CR>
 nmap <F3> :let t:mytablabel = ''<Left>
 nnoremap <Left> :bprevious<CR>
 nnoremap <Right> :bnext<CR>
@@ -148,23 +157,21 @@ augroup remember_fold
     autocmd BufWinLeave * silent! mkview
     autocmd BufWinEnter * silent! loadview
 augroup end
-"Set cursor offset
-set so=5
 "Auto bracket completion
-inoremap " ""<left>
 inoremap "" "";<left><left>
 inoremap ": "":<left><left>
 
-inoremap ' ''<left>
 inoremap '' '';<left><left>
 inoremap ': '':<left><left>
 
-inoremap ( ()<left>
 inoremap (( ();<left><left>
 
-inoremap [ []<left>
 inoremap [[ [];<left><left>
 
 inoremap { <CR>{<CR>}<ESC>O
 
 inoremap <S-SPACE> <TAB>= ;<left>
+
+"Cursor line/column highlight toggle
+nmap <TAB>cl    :Windo set cul!<CR>
+nmap <TAB>cc    :Windo set cuc!<CR>
