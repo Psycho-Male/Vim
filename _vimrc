@@ -34,6 +34,7 @@ set smartindent
 set number
 set shiftwidth=4
 set cursorline
+set cursorcolumn
 "set tabstop=4
 "set guitablabel=%N/\ %t\ %M
 set guitablabel=%N-\%t\%M
@@ -158,20 +159,24 @@ augroup remember_fold
     autocmd BufWinEnter * silent! loadview
 augroup end
 "Auto bracket completion
-inoremap "" "";<left><left>
+inoremap "" ""<left>
+inoremap "; "";<left><left>
 inoremap ": "":<left><left>
 
-inoremap '' '';<left><left>
+inoremap '' ''<left>
+inoremap '; '';<left><left>
 inoremap ': '':<left><left>
 
-inoremap (( ();<left><left>
+inoremap (( ()<left>
+inoremap (; ();<left><left>
 
-inoremap [[ [];<left><left>
+inoremap [[ []<left>
+inoremap [; [];<left><left>
 
 inoremap { <CR>{<CR>}<ESC>O
 
 inoremap <S-SPACE> <TAB>= ;<left>
 
 "Cursor line/column highlight toggle
-nmap <TAB>cl    :Windo set cul!<CR>
-nmap <TAB>cc    :Windo set cuc!<CR>
+nmap <silent> <TAB>ch    :Windo set cuc<CR>:Windo set cul<CR>
+nmap <silent> <TAB>cc    :Windo set nocuc<CR>:Windo set nocul<CR>
