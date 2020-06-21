@@ -51,6 +51,8 @@ autocmd GUIEnter * simalt ~x "Start gvim in fullscreen mode
 "set noerrorbells visualbell t_vb=
 if has('autocmd')
     autocmd GUIEnter * set visualbell t_vb=
+    autocmd BufNewFile * set cuc
+    autocmd BufNewFile * set cul
 endif
 "windows toolbar
 if has("gui_running")
