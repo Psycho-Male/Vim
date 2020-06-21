@@ -9,21 +9,17 @@ set directory=c:\tmp
 set backupdir=c:\tmp
 set undodir=c:\tmp
 set nocompatible
-set hidden
+"set hidden "Don't delete unused buffers?
 set wildmenu
-set ignorecase "use case insesitive search, except when using capital letters
+set ignorecase "Use case insesitive search, except when using capital letters
 set smartcase
 set autoindent "If there is no flietype-specific indenting, imitate above line
 set laststatus=2 "Always display status line
 set confirm "Instead failing because file is not save, ask if you want to save first
-set visualbell "Visual alert instead of sound
-"set t_vb= "To remove visual alert
-"set mouse=a "Enable mouse for all modes
-set expandtab
+"set expandtab
 set softtabstop=4 "disabled tabstop=4
-set cmdheight=2 "set command windows to 2 lines
+"set cmdheight=2 "set command windows to 2 lines
 filetype on
-
 syntax on
 colorscheme psycho
 set background=dark
@@ -38,16 +34,31 @@ set cursorcolumn
 "set tabstop=4
 "set guitablabel=%N/\ %t\ %M
 set guitablabel=%N-\%t\%M
-"Set cursor offset
-set so=5
+set so=5 "Set cursor offset
+set incsearch
+set foldmethod=manual
+set showcmd
+"Set custom tab name
+"Usage: :let t:mytablabel = 'my_tab_name'
+function! GuiTabLabel()
+  return exists('t:mytablabel') ? t:mytablabel : ''
+endfunction
+set guitablabel=%{GuiTabLabel()}
+set go+=e
+set guifont=Consolas:h9
+autocmd GUIEnter * simalt ~x "Start gvim in fullscreen mode
+"Disable blinking autocmd version
+"set noerrorbells visualbell t_vb=
+if has('autocmd')
+    autocmd GUIEnter * set visualbell t_vb=
+endif
 "windows toolbar
 if has("gui_running")
     set guioptions-=m
     set guioptions-=T
     set guioptions-=r
     set guioptions-=L
-    "256 color
-    set t_Co=256
+    set t_Co=256 "256 color
 endif
 "New windo command
 command! -nargs=+ -complete=command Windo
@@ -71,7 +82,7 @@ nnoremap <S-T> :tabclose<CR>
 map <C-o> i/*<ESC>
 map <C-c> a*/<ESC>
 map <C-s> :setlocal spell!<cr>
-nmap <silent> <leader>sv :so $MYVIMRC<CR> :Syndo filetype detect
+nmap <silent> <leader>sv :so $MYVIMRC<CR>:Syndo filetype detect<CR>
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <leader>ve :e C:\Program Files (x86)\Vim\Vimfiles\
 nmap <silent> <leader>eg :e C:\Program Files (x86)\Vim\Vimfiles\syntax\gml.vim<CR>
@@ -131,28 +142,8 @@ nmap <ESC>va :vs shaders\
 nmap <ESC>sa :sp shaders\
 
 map mm :nohl<ENTER>
-set incsearch
-set foldmethod=manual
-set showcmd
-"Set custom tab name
-"Usage: :let t:mytablabel = 'my_tab_name'
-function! GuiTabLabel()
-  return exists('t:mytablabel') ? t:mytablabel : ''
-endfunction
-set guitablabel=%{GuiTabLabel()}
-set go+=e
-set guifont=Consolas:h9
 "unmap <S-W>
 unmap <C-X>
-"Start gvim in fullscreen mode
-autocmd GUIEnter * simalt ~x
-"Disable blinking
-"Autocmd version
-set noerrorbells visualbell t_vb=
-if has('autocmd')
-    autocmd GUIEnter * set visualbell t_vb=
-endif
-"set vb t_vb=
 augroup remember_fold
     autocmd!
     autocmd BufWinLeave * silent! mkview
