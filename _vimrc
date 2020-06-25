@@ -9,7 +9,7 @@ set directory=c:\tmp
 set backupdir=c:\tmp
 set undodir=c:\tmp
 set nocompatible
-"set hidden "Don't delete unused buffers?
+set hidden "Don't delete unused buffers?
 set wildmenu
 set ignorecase "Use case insesitive search, except when using capital letters
 set smartcase
@@ -51,8 +51,8 @@ autocmd GUIEnter * simalt ~x "Start gvim in fullscreen mode
 "set noerrorbells visualbell t_vb=
 if has('autocmd')
     autocmd GUIEnter * set visualbell t_vb=
-    autocmd BufNewFile * set cuc
-    autocmd BufNewFile * set cul
+    autocmd BufNewFile,BufRead * set cuc
+    autocmd BufNewFile,BufRead * set cul
 endif
 "windows toolbar
 if has("gui_running")
@@ -97,21 +97,21 @@ nmap <F3> :let t:mytablabel = ''<Left>
 nnoremap <Left> :bprevious<CR>
 nnoremap <Right> :bnext<CR>
 "GAMEMAKER MACROS
-nmap <silent> <leader>co oshow_debug_message(": " + object_get_name());<ESC>2F"pf(pF"kddf"l
-nmap <silent> <leader>cs oshow_debug_message(": " + sprite_get_name());<ESC>2F"pf(pF"kddf"l
-nmap <silent> <leader>cr oshow_debug_message(": " + room_get_name());<ESC>2F"pf(pF"kddf"l
-nmap <silent> <leader>cc oshow_debug_message(": " + script_get_name());<ESC>2F"pf(pF"kddf"l
-nmap <silent> <leader>cb oshow_debug_message(": " + rb());<ESC>2F"pf(pF"kddf"l
+nmap <silent> <leader>co otrace(": " + object_get_name());<ESC>2F"pf(pF"kddf"l
+nmap <silent> <leader>cs otrace(": " + sprite_get_name());<ESC>2F"pf(pF"kddf"l
+nmap <silent> <leader>cr otrace(": " + room_get_name());<ESC>2F"pf(pF"kddf"l
+nmap <silent> <leader>cc otrace(": " + script_get_name());<ESC>2F"pf(pF"kddf"l
+nmap <silent> <leader>cb otrace(": " + rb());<ESC>2F"pf(pF"kddf"l
 nmap <silent> <leader>cd o_ty = "<ESC>pa :"<ESC>f"a + string(<ESC>pa);<CR>draw_text_transformed(_tx, _ty, _tt, .25, .25, 0);<ESC>
-nmap <silent> <leader>cz oshow_debug_message(": " + string());<ESC>2F"pf(pF"kdd
-"nmap <C-z> oshow_debug_message(": \" + string());<ESC>2F"pf(pF"kdd
+nmap <silent> <leader>cz otrace(": " + string());<ESC>2F"pf(p<UP>dd<DOWN>f:
+"nmap <C-z> otrace(": \" + string());<ESC>2F"pf(pF"kdd
 "nmap <silent> <leader>cz ^vf_hstimed<ESC>f(a_sd, 0, <ESC>
 nmap <silent> <leader>cw f"lvf"h~
-nmap <silent> <leader>sd oshow_debug_message("");<ESC>2hi
-nmap <silent> <leader>cx oshow_debug_message(""+string());<ESC>F"i
-nmap <silent> <leader>dd oshow_debug_message("--------------------------------------------------------------------------------------------------------");<ESC>2F"l
+nmap <silent> <leader>sd otrace("");<ESC>2hi
+nmap <silent> <leader>cx otrace(""+string());<ESC>F"i
+nmap <silent> <leader>dd otrace("--------------------------------------------------------------------------------------------------------");<ESC>2F"l
 nmap <silent> <leader>ww o<ESC>i//---------------------------------------------------------------------------------------------------------//<ESC>^ll
-nmap <silent> <leader>ca oshow_debug_message("CALLSTACK:");<CR>var _a = debug_get_callstack<CR>for(var i = 0; i < array_length_1d(_a); i++)<CR>show_debug_message(_a[i]);<ESC>
+nmap <silent> <leader>ca otrace("CALLSTACK:");<CR>var _a = debug_get_callstack<CR>for(var i = 0; i < array_length_1d(_a); i++)<CR>trace(_a[i]);<ESC>
 nmap <F1>       :mksession! 1<CR>
 nmap <silent> <leader>s1 :source 1<CR>
 nmap <silent> <leader>s2 :source 2<CR>
@@ -119,8 +119,8 @@ nmap <silent> <leader>s3 :source 3<CR>
 nmap <silent> <leader>s4 :source 4<CR>
 nmap <silent> <leader>vw :vs<CR>*<C-W>l
 nmap <silent> <leader>sw :sp<CR>*
-nmap <silent> <leader>fi ofor(var i = 0; i < ; i++)<ESC>F;i
-nmap <silent> <leader>aa ivar _a = debug_get_callstack();<CR>for(var i = 0; i < array_length_1d(_a); i++)<CR>show_debug_message("_a: " + string(i) + "-" + string(_a[i]));<ESC>
+nmap <silent> <leader>fi ofor(var i = 0; i < ; i++){<ESC>ddk2f;i
+nmap <silent> <leader>aa ivar _a = debug_get_callstack();<CR>for(var i = 0; i < array_length_1d(_a); i++)<CR>trace("_a: " + string(i) + "-" + string(_a[i]));<ESC>
 nmap <silent> <leader>ii ggOvar _increment = variable_instance_exists(self, "allow_increment") && allow_increment;<ESC>GGoif _increment<CR>s++;<ESC>
 "GAMEMAKER FILE EDITING
 nmap <ESC>eo :e  objects\
@@ -151,24 +151,10 @@ augroup remember_fold
     autocmd BufWinLeave * silent! mkview
     autocmd BufWinEnter * silent! loadview
 augroup end
-"Auto bracket completion
-inoremap "" ""<left>
-inoremap "; "";<left><left>
-inoremap ": "":<left><left>
 
-inoremap '' ''<left>
-inoremap '; '';<left><left>
-inoremap ': '':<left><left>
+inoremap {  <SPACE>{<CR>}<ESC>O
 
-inoremap (( ()<left>
-inoremap (; ();<left><left>
-
-inoremap [[ []<left>
-inoremap [; [];<left><left>
-
-inoremap { <CR>{<CR>}<ESC>O
-
-inoremap <S-SPACE> <TAB>= ;<left>
+inoremap <C-SPACE> <TAB>= ;<left>
 
 "Cursor line/column highlight toggle
 nmap <silent> <TAB>ch    :Windo set cuc<CR>:Windo set cul<CR>
