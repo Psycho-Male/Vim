@@ -1,9 +1,6 @@
 vim81/
 compiler/
 doc/
-ftdetect/
-ftplugin/
-indent/
 keymap/
 plugin/
 vimfiles/view/
