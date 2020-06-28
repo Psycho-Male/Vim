@@ -31,6 +31,7 @@ syn match gmlBuiltinFunction '\v<is_matrix\ze\_s*\('
 syn match gmlBuiltinFunction '\v<is_ptr\ze\_s*\('
 syn match gmlBuiltinFunction '\v<is_real\ze\_s*\('
 syn match gmlBuiltinFunction '\v<is_string\ze\_s*\('
+syn match gmlBuiltinFunction '\v<is_bool\ze\_s*\('
 syn match gmlBuiltinFunction '\v<is_undefined\ze\_s*\('
 
 syn match gmlDSType '\v<ds_type_(map|list|stack|grid|queue|priority)>'
