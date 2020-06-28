@@ -111,7 +111,7 @@ nmap <silent> <leader>sd otrace("");<ESC>2hi
 nmap <silent> <leader>cx otrace(""+string());<ESC>F"i
 nmap <silent> <leader>dd otrace("--------------------------------------------------------------------------------------------------------");<ESC>2F"l
 nmap <silent> <leader>ww o<ESC>i//---------------------------------------------------------------------------------------------------------//<ESC>^ll
-nmap <silent> <leader>ca otrace("CALLSTACK:");<CR>var _a = debug_get_callstack<CR>for(var i = 0; i < array_length_1d(_a); i++)<CR>trace(_a[i]);<ESC>
+nmap <silent> <leader>ca otrace("/--CALLSTACK--\\");<CR>for(var i = 0, _a = debug_get_callstack(); i < array_length_1d(_a); i++){otrace(_a[i]);<ESC>
 nmap <F1>       :mksession! 1<CR>
 nmap <silent> <leader>s1 :source 1<CR>
 nmap <silent> <leader>s2 :source 2<CR>
@@ -119,7 +119,7 @@ nmap <silent> <leader>s3 :source 3<CR>
 nmap <silent> <leader>s4 :source 4<CR>
 nmap <silent> <leader>vw :vs<CR>*<C-W>l
 nmap <silent> <leader>sw :sp<CR>*
-nmap <silent> <leader>fi ofor(var i = 0; i < ; i++){<ESC>ddk2f;i
+nmap <silent> <leader>fi ofor(var i = 0; i < ; i++) {2f;i
 nmap <silent> <leader>aa ivar _a = debug_get_callstack();<CR>for(var i = 0; i < array_length_1d(_a); i++)<CR>trace("_a: " + string(i) + "-" + string(_a[i]));<ESC>
 nmap <silent> <leader>ii ggOvar _increment = variable_instance_exists(self, "allow_increment") && allow_increment;<ESC>GGoif _increment<CR>s++;<ESC>
 "GAMEMAKER FILE EDITING
@@ -152,7 +152,7 @@ augroup remember_fold
     autocmd BufWinEnter * silent! loadview
 augroup end
 
-inoremap {  <SPACE>{<CR>}<ESC>O
+inoremap {  <SPACE>{<CR>}<ESC><UP>
 
 inoremap <C-SPACE> <TAB>= ;<left>
 
