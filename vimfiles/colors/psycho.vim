@@ -30,6 +30,8 @@ let s:brightyellow  = {"gui": "#e8fc03", "cterm": "0"}
 let s:amber         = {"gui": "#C08000", "cterm": "0"}
 let s:purple        = {"gui": "#B060FF", "cterm": "0"}
 
+let s:orange        = {"gui": "#dba009", "cterm": "0" }
+
 
 let s:changethis = s:magenta
 
@@ -82,7 +84,7 @@ call s:h("Function",    {"fg": s:blue                               , "format": 
 call s:h("Structure",   {"fg": s:green                              , "format": "none"})
 call s:h("LineNr",      {"fg": s:dark         , "bg": s:bg_l1       , "format": "none"})
 call s:h("Ignore",      {"fg": s:teal         , "bg": s:changethis  , "format": "none"})
-call s:h("Todo",        {"fg": s:black        , "bg": s:yellow      , "format": "none"})
+call s:h("Todo",        {"fg": s:orange                             , "format": "none"})
 call s:h("Directory",   {"fg": s:teal                               , "format": "none"})
 call s:h("ErrorMsg",    {"fg": s:black        , "bg": s:red         , "format": "none"})
 call s:h("VisualNOS",   {"fg": s:teal         , "bg": s:changethis  , "format": "none"})
