@@ -21,6 +21,7 @@ set softtabstop=4 "disabled tabstop=4
 "set tabstop=4
 "set cmdheight=2 "set command windows to 2 lines
 filetype on
+filetype plugin on
 syntax on
 colorscheme psycho
 set background=dark
@@ -72,9 +73,12 @@ command! -nargs=+ -complete=command Syndo
     \ execute "tabdo windo <args>" |
     \ execute s:currentWindow . "wincmd w"
 "VIMGREP
+"\ execute 'filetype plugin off' | " Doesn't really change search speed
 command! -nargs=+ Vrep
     \ execute "silent noautocmd vimgrep /<args>/ **/*.gml" | vert copen |
 nnoremap <leader>vv :execute "Vrep" expand("<cword>")<CR>
+nnoremap <leader>gf :e scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
+"scripts\/expand("<cword>")\/expand("<cword>").gml
 cd C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost
 nnoremap <Space> @
 nnoremap <C-J> <C-W><C-J>
