@@ -37,7 +37,7 @@ set cursorcolumn
 set guitablabel=%N-\%t\%M
 set so=10 "Set cursor offset
 set incsearch
-set foldmethod=manual
+set foldmethod=indent
 set showcmd
 "Set custom tab name
 "Usage: :let t:mytablabel = 'my_tab_name'
@@ -130,6 +130,7 @@ nmap <silent> <leader>sw :sp<CR>*
 nmap <silent> <leader>fi ofor(var i = 0; i < ; i++){2f;i
 nmap <silent> <leader>aa ivar _a = debug_get_callstack();<CR>for(var i = 0; i < array_length_1d(_a); i++)<CR>trace("_a: " + string(i) + "-" + string(_a[i]));<ESC>
 nmap <silent> <leader>ii ggOvar _increment = variable_instance_exists(self, "allow_increment") && allow_increment;<ESC>GGoif _increment<CR>s++;<ESC>
+"ESC MAPS
 "GAMEMAKER FILE EDITING
 nmap <ESC>eo :e  objects\
 nmap <ESC>vo :vs objects\
@@ -168,6 +169,9 @@ augroup end
 inoremap {  <SPACE>{<CR>}<ESC><UP>
 inoremap <C-SPACE> <TAB>= 
 "inoremap <C-> <SPACE>{<CR>}i else {<CR>}<ESC> {
+"TAB MAPS
 "Cursor line/column highlight toggle
 nmap <silent> <TAB>ch    :Windo set cuc<CR>:Windo set cul<CR>
 nmap <silent> <TAB>cc    :Windo set nocuc<CR>:Windo set nocul<CR>
+nmap <TAB>j jj
+nmap <TAB>k kk
