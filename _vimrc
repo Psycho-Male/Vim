@@ -35,9 +35,10 @@ set cursorline
 set cursorcolumn
 "set guitablabel=%N/\ %t\ %M
 set guitablabel=%N-\%t\%M
+set notitle
 set so=10 "Set cursor offset
 set incsearch
-set foldmethod=indent
+set foldmethod=manual
 set showcmd
 "Set custom tab name
 "Usage: :let t:mytablabel = 'my_tab_name'
@@ -75,9 +76,11 @@ command! -nargs=+ -complete=command Syndo
 "VIMGREP
 "\ execute 'filetype plugin off' | " Doesn't really change search speed
 command! -nargs=+ Vrep
-    \ execute "silent noautocmd vimgrep /<args>/ **/*.gml" | vert copen |
+    \ execute "silent vimgrep /<args>/ **/*.gml" | vert copen |
 nnoremap <leader>vv :execute "Vrep" expand("<cword>")<CR>
-nnoremap <leader>gf :e scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
+nnoremap <leader>gff :e scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
+nnoremap <leader>gfv :vs scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
+nnoremap <leader>gfs :sp scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
 "scripts\/expand("<cword>")\/expand("<cword>").gml
 cd C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost
 nnoremap <Space> @
@@ -105,13 +108,19 @@ nmap <F3> :let t:mytablabel = ''<Left>
 nnoremap <Left> :bprevious<CR>
 nnoremap <Right> :bnext<CR>
 "GAMEMAKER MACROS
-nmap <silent> <leader>co otrace(": " + object_get_name());<ESC>2F"pf(pF"kddf"l
-nmap <silent> <leader>cs otrace(": " + sprite_get_name());<ESC>2F"pf(pF"kddf"l
-nmap <silent> <leader>cr otrace(": " + room_get_name());<ESC>2F"pf(pF"kddf"l
-nmap <silent> <leader>cc otrace(": " + script_get_name());<ESC>2F"pf(pF"kddf"l
-nmap <silent> <leader>cb otrace(": " + rb());<ESC>2F"pf(pF"kddf"l
+"nmap <silent> <leader>co otrace(": " + object_get_name());<ESC>2F"pf(pF"kddf"l
+nmap <silent> <leader>co otrace_object("<ESC>pa");<ESC>kdd
+"nmap <silent> <leader>cs otrace(": " + sprite_get_name());<ESC>2F"pf(pF"kddf"l
+nmap <silent> <leader>cs otrace_sprite("<ESC>pa")<ESC>;kdd
+"nmap <silent> <leader>cr otrace(": " + room_get_name());<ESC>2F"pf(pF"kddf"l
+nmap <silent> <leader>cr otrace_room("<ESC>pa")<ESC>;kdd
+"nmap <silent> <leader>cc otrace(": " + script_get_name());<ESC>2F"pf(pF"kddf"l
+nmap <silent> <leader>cc otrace_script("<ESC>pa")<ESC>;kdd
+"nmap <silent> <leader>cb otrace(": " + rb());<ESC>2F"pf(pF"kddf"l
+nmap <silent> <leader>cb otrace_bool("<ESC>pa");kdd
 nmap <silent> <leader>cd o_text = "<ESC>pa: " + string(<ESC>pa);<CR>draw_text_transformed(_tx, _ty, _tt, .25, .25, 0);<ESC>
-nmap <silent> <leader>cz otrace(": " + string());<ESC>2F"pf(p<UP>dd<DOWN>f:
+nmap <silent> <leader>cz otrace_string("<ESC>pa");<ESC>kdd
+"nmap <silent> <leader>cz otrace(": " + string());<ESC>2F"pf(p<UP>dd<DOWN>f:
 "nmap <C-z> otrace(": \" + string());<ESC>2F"pf(pF"kdd
 "nmap <silent> <leader>cz ^vf_hstimed<ESC>f(a_sd, 0, <ESC>
 nmap <silent> <leader>cw f"lvf"h~
