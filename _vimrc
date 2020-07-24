@@ -117,10 +117,10 @@ nmap <silent> <leader>cr otrace_room("<ESC>pa")<ESC>;kdd
 "nmap <silent> <leader>cc otrace(": " + script_get_name());<ESC>2F"pf(pF"kddf"l
 nmap <silent> <leader>cc otrace_script("<ESC>pa")<ESC>;kdd
 "nmap <silent> <leader>cb otrace(": " + rb());<ESC>2F"pf(pF"kddf"l
-nmap <silent> <leader>cb otrace_bool("<ESC>pa");kdd
+nmap <silent> <leader>cb otrace_bool("<ESC>pa");<ESC>kdd
 nmap <silent> <leader>cd o_text = "<ESC>pa: " + string(<ESC>pa);<CR>draw_text_transformed(_tx, _ty, _tt, .25, .25, 0);<ESC>
-nmap <silent> <leader>cz otrace_string("<ESC>pa");<ESC>kdd
-"nmap <silent> <leader>cz otrace(": " + string());<ESC>2F"pf(p<UP>dd<DOWN>f:
+nmap <silent> <leader>cv otrace_string("<ESC>pa");<ESC>kdd
+nmap <silent> <leader>cz otrace(": " + string());<ESC>2F"pf(p<UP>dd<DOWN>f:
 "nmap <C-z> otrace(": \" + string());<ESC>2F"pf(pF"kdd
 "nmap <silent> <leader>cz ^vf_hstimed<ESC>f(a_sd, 0, <ESC>
 nmap <silent> <leader>cw f"lvf"h~
