@@ -90,7 +90,8 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <S-H> gT
 nnoremap <S-L> gt
-nnoremap <S-T> :tabclose<CR>
+nnoremap <silent> <C-T> :tabe<CR>
+nnoremap <silent> <S-T> :tabclose<CR>
 "comment open/comment close
 map <C-o> i/*<ESC>
 map <C-c> a*/<ESC>
@@ -108,37 +109,43 @@ nmap <F3> :let t:mytablabel = ''<Left>
 nnoremap <Left> :bprevious<CR>
 nnoremap <Right> :bnext<CR>
 "GAMEMAKER MACROS
-"nmap <silent> <leader>co otrace(": " + object_get_name());<ESC>2F"pf(pF"kddf"l
-nmap <silent> <leader>co otrace_object("<ESC>pa");<ESC>kdd
-"nmap <silent> <leader>cs otrace(": " + sprite_get_name());<ESC>2F"pf(pF"kddf"l
-nmap <silent> <leader>cs otrace_sprite("<ESC>pa")<ESC>;kdd
-"nmap <silent> <leader>cr otrace(": " + room_get_name());<ESC>2F"pf(pF"kddf"l
-nmap <silent> <leader>cr otrace_room("<ESC>pa")<ESC>;kdd
-"nmap <silent> <leader>cc otrace(": " + script_get_name());<ESC>2F"pf(pF"kddf"l
-nmap <silent> <leader>cc otrace_script("<ESC>pa")<ESC>;kdd
-"nmap <silent> <leader>cb otrace(": " + rb());<ESC>2F"pf(pF"kddf"l
-nmap <silent> <leader>cb otrace_bool("<ESC>pa");<ESC>kdd
+nmap <silent> <leader>tt Bitrace_string(<ESC>A);<ESC>
+nmap <silent> <leader>to Bitrace_object(<ESC>A);<ESC>
+nmap <silent> <leader>ts Bitrace_sprite(<ESC>A);<ESC>
+nmap <silent> <leader>tc Bitrace_script(<ESC>A);<ESC>
+nmap <silent> <leader>ta Bitrace_audio(<ESC>A);<ESC>
+nmap <silent> <leader>tb Bitrace_bool(<ESC>A);<ESC>
+nmap <silent> <leader>t<S-t> yiwitrace("<ESC>A :"+string());<ESC>hhP
+nmap <silent> <leader>t<S-o> yiwitrace("<ESC>A :"+object_get_name());<ESC>hhP
+nmap <silent> <leader>t<S-s> yiwitrace("<ESC>A :"+sprite_get_name());<ESC>hhP
+nmap <silent> <leader>t<S-c> yiwitrace("<ESC>A :"+script_get_name());<ESC>hhP
+nmap <silent> <leader>t<S-a> yiwitrace("<ESC>A :"+audio_get_name());<ESC>hhP
+nmap <silent> <leader>t<S-b> yiwitrace("<ESC>A :"+rb());<ESC>hhP
 nmap <silent> <leader>cd o_text = "<ESC>pa: " + string(<ESC>pa);<CR>draw_text_transformed(_tx, _ty, _tt, .25, .25, 0);<ESC>
 nmap <silent> <leader>cv otrace_string("<ESC>pa");<ESC>kdd
 nmap <silent> <leader>cz otrace(": " + string());<ESC>2F"pf(p<UP>dd<DOWN>f:
-"nmap <C-z> otrace(": \" + string());<ESC>2F"pf(pF"kdd
-"nmap <silent> <leader>cz ^vf_hstimed<ESC>f(a_sd, 0, <ESC>
-nmap <silent> <leader>cw f"lvf"h~
 nmap <silent> <leader>sd otrace("");<ESC>2hi
 nmap <silent> <leader>cx otrace(""+string());<ESC>F"i
 nmap <silent> <leader>dd otrace("--------------------------------------------------------------------------------------------------------");<ESC>2F"l
+nmap <silent> <leader>cs otrace("/--CALLSTACK--\\");<CR>for(var i = 0, _a = debug_get_callstack(); i < array_length_1d(_a); i++){otrace(_a[i]);<ESC>
+
+nmap <silent> <leader>aa ivar _a = debug_get_callstack();<CR>for(var i = 0; i < array_length_1d(_a); i++)<CR>trace("_a: " + string(i) + "-" + string(_a[i]));<ESC>
+nmap <silent> <leader>fi ofor(var i = 0; i < ; i++){2f;i
+nmap <silent> <leader>fj ofor(var j = 0; j < ; j++){2f;i
+nmap <silent> <leader>fk ofor(var k = 0; k < ; k++){2f;i
+nmap <silent> <leader>fl ofor(var l = 0; l < ; l++){2f;i
+"What's this?
+nmap <C-z> otrace(": \" + string());<ESC>2F"pf(pF"kdd 
+
+nmap <silent> <leader>cw f"lvf"h~
 nmap <silent> <leader>ww o<ESC>i//---------------------------------------------------------------------------------------------------------//<ESC>^ll
-nmap <silent> <leader>ca otrace("/--CALLSTACK--\\");<CR>for(var i = 0, _a = debug_get_callstack(); i < array_length_1d(_a); i++){otrace(_a[i]);<ESC>
-nmap <F1>       :mksession! 1<CR>
+nmap <F1>     :mksession! 1<CR>
 nmap <silent> <leader>s1 :source 1<CR>
 nmap <silent> <leader>s2 :source 2<CR>
 nmap <silent> <leader>s3 :source 3<CR>
 nmap <silent> <leader>s4 :source 4<CR>
 nmap <silent> <leader>vw :vs<CR>*<C-W>l
 nmap <silent> <leader>sw :sp<CR>*
-nmap <silent> <leader>fi ofor(var i = 0; i < ; i++){2f;i
-nmap <silent> <leader>aa ivar _a = debug_get_callstack();<CR>for(var i = 0; i < array_length_1d(_a); i++)<CR>trace("_a: " + string(i) + "-" + string(_a[i]));<ESC>
-nmap <silent> <leader>ii ggOvar _increment = variable_instance_exists(self, "allow_increment") && allow_increment;<ESC>GGoif _increment<CR>s++;<ESC>
 "ESC MAPS
 "GAMEMAKER FILE EDITING
 nmap <ESC>eo :e  objects\
@@ -177,6 +184,7 @@ augroup end
 
 inoremap {  <SPACE>{<CR>}<ESC><UP>
 inoremap <C-SPACE> <TAB>= 
+inoremap <S-SPACE> _
 "inoremap <C-> <SPACE>{<CR>}i else {<CR>}<ESC> {
 "TAB MAPS
 "Cursor line/column highlight toggle
