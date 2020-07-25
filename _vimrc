@@ -172,6 +172,13 @@ nmap <ESC>en :e notes\
 nmap <ESC>vn :vs notes\
 nmap <ESC>sn :sp notes\
 
+nmap <ESC>to :tabe objects\
+nmap <ESC>ts :tabe scripts\
+nmap <ESC>tr :tabe rooms\
+nmap <ESC>td :tabe datafiles\
+nmap <ESC>ta :tabe shaders\
+nmap <ESC>tn :tabe notes\
+
 map mm :nohl<ENTER>
 "unmap <S-W>
 unmap <C-X>
