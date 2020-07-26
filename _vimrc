@@ -179,6 +179,8 @@ nmap <ESC>td :tabe datafiles\
 nmap <ESC>ta :tabe shaders\
 nmap <ESC>tn :tabe notes\
 
+nmap <C-_>- <C-W>-
+
 map mm :nohl<ENTER>
 "unmap <S-W>
 unmap <C-X>
