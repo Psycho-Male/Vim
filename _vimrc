@@ -77,6 +77,10 @@ command! -nargs=+ -complete=command Syndo
 "\ execute 'filetype plugin off' | " Doesn't really change search speed
 command! -nargs=+ Vrep
     \ execute "silent vimgrep /<args>/ **/*.gml" | vert copen |
+command! -nargs=+ Vrepjson
+    \ execute "silent vimgrep /<args>/ **/*.json" | vert copen |
+command! -nargs=+ Vrepyy
+    \ execute "silent vimgrep /<args>/ **/*.yy" | vert copen |
 nnoremap <leader>vv :execute "Vrep" expand("<cword>")<CR>
 nnoremap <leader>gff :e scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
 nnoremap <leader>gfv :vs scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
@@ -115,18 +119,18 @@ nmap <silent> <leader>ts Bitrace_sprite(<ESC>A);<ESC>
 nmap <silent> <leader>tc Bitrace_script(<ESC>A);<ESC>
 nmap <silent> <leader>ta Bitrace_audio(<ESC>A);<ESC>
 nmap <silent> <leader>tb Bitrace_bool(<ESC>A);<ESC>
-nmap <silent> <leader>t<S-t> yiwitrace("<ESC>A :"+string());<ESC>hhP
-vmap <silent> <leader>tt     yitrace("<ESC>A :"+string());<ESC>hhP
-nmap <silent> <leader>t<S-o> yiwitrace("<ESC>A :"+object_get_name());<ESC>hhP
-vmap <silent> <leader>to     yitrace("<ESC>A :"+object_get_name());<ESC>hhP
-nmap <silent> <leader>t<S-s> yiwitrace("<ESC>A :"+sprite_get_name());<ESC>hhP
-vmap <silent> <leader>ts     yitrace("<ESC>A :"+sprite_get_name());<ESC>hhP
-nmap <silent> <leader>t<S-c> yiwitrace("<ESC>A :"+script_get_name());<ESC>hhP
-vmap <silent> <leader>tc     yitrace("<ESC>A :"+script_get_name());<ESC>hhP
-nmap <silent> <leader>t<S-a> yiwitrace("<ESC>A :"+audio_get_name());<ESC>hhP
-vmap <silent> <leader>ta     yitrace("<ESC>A :"+audio_get_name());<ESC>hhP
-nmap <silent> <leader>t<S-b> yiwitrace("<ESC>A :"+rb());<ESC>hhP
-vmap <silent> <leader>tb     yitrace("<ESC>A :"+rb());<ESC>hhP
+nmap <silent> <leader>t<S-t> yiwitrace("<ESC>A: "+string());<ESC>hhP
+vmap <silent> <leader>tt     yitrace("<ESC>A: "+string());<ESC>hhP
+nmap <silent> <leader>t<S-o> yiwitrace("<ESC>A: "+object_get_name());<ESC>hhP
+vmap <silent> <leader>to     yitrace("<ESC>A: "+object_get_name());<ESC>hhP
+nmap <silent> <leader>t<S-s> yiwitrace("<ESC>A: "+sprite_get_name());<ESC>hhP
+vmap <silent> <leader>ts     yitrace("<ESC>A: "+sprite_get_name());<ESC>hhP
+nmap <silent> <leader>t<S-c> yiwitrace("<ESC>A: "+script_get_name());<ESC>hhP
+vmap <silent> <leader>tc     yitrace("<ESC>A: "+script_get_name());<ESC>hhP
+nmap <silent> <leader>t<S-a> yiwitrace("<ESC>A: "+audio_get_name());<ESC>hhP
+vmap <silent> <leader>ta     yitrace("<ESC>A: "+audio_get_name());<ESC>hhP
+nmap <silent> <leader>t<S-b> yiwitrace("<ESC>A: "+rb());<ESC>hhP
+vmap <silent> <leader>tb     yitrace("<ESC>A: "+rb());<ESC>hhP
 nmap <silent> <leader>cd o_text = "<ESC>pa: " + string(<ESC>pa);<CR>draw_text_transformed(_tx, _ty, _tt, .25, .25, 0);<ESC>
 nmap <silent> <leader>cv otrace_string("<ESC>pa");<ESC>kdd
 nmap <silent> <leader>cz otrace(": " + string());<ESC>2F"pf(p<UP>dd<DOWN>f:
