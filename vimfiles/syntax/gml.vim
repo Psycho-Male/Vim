@@ -35,6 +35,8 @@ syn match gmlBuiltinFunction '\v<is_string\ze\_s*\('
 syn match gmlBuiltinFunction '\v<is_bool\ze\_s*\('
 syn match gmlBuiltinFunction '\v<is_undefined\ze\_s*\('
 
+syn match gmlBuiltinFunction '\<\w\+\ze('
+
 syn match gmlDSType '\v<ds_type_(map|list|stack|grid|queue|priority)>'
 syn match gmlDSFunction '\v<ds_(exists|set_precision|exists_destroy)>'
 syn match gmlDSFunction '\v<ds_(grid|list|map|queue|stack|priority)_(create|destroy|clear)>'
@@ -136,6 +138,9 @@ syn keyword gmlKeyboardConstant vk_nokey vk_anykey vk_left vk_right vk_up vk_dow
 syn match gmlKeyboardConstant 'vk_f[0-9]'
 syn match gmlKeyboardConstant 'vk_f1[0-2]'
 syn match gmlKeyboardConstant 'vk_numpad[0-9]'
+syn match gmlKeyboardConstant 'kp_\w\+\>'
+syn match gmlKeyboardConstant 'kc_\w\+\>'
+syn match gmlKeyboardConstant 'vk_\w\+\>'
 
 syn keyword gmlKeyboardModifierConstant vk_lshift vk_lcontrol vk_lalt vk_rshift vk_rcontrol vk_ralt
 
