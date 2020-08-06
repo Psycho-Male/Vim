@@ -113,12 +113,12 @@ nmap <F3> :let t:mytablabel = ''<Left>
 nnoremap <Left> :bprevious<CR>
 nnoremap <Right> :bnext<CR>
 "GAMEMAKER MACROS
-nmap <silent> <leader>tt Bitrace_string(<ESC>A);<ESC>
-nmap <silent> <leader>to Bitrace_object(<ESC>A);<ESC>
-nmap <silent> <leader>ts Bitrace_sprite(<ESC>A);<ESC>
-nmap <silent> <leader>tc Bitrace_script(<ESC>A);<ESC>
-nmap <silent> <leader>ta Bitrace_audio(<ESC>A);<ESC>
-nmap <silent> <leader>tb Bitrace_bool(<ESC>A);<ESC>
+nmap <silent> <leader>tt Bitrace_string("<ESC>A");<ESC>
+nmap <silent> <leader>to Bitrace_object("<ESC>A");<ESC>
+nmap <silent> <leader>ts Bitrace_sprite("<ESC>A");<ESC>
+nmap <silent> <leader>tc Bitrace_script("<ESC>A");<ESC>
+nmap <silent> <leader>ta Bitrace_audio("<ESC>A");<ESC>
+nmap <silent> <leader>tb Bitrace_bool("<ESC>A");<ESC>
 nmap <silent> <leader>t<S-t> yiwitrace("<ESC>A: "+string());<ESC>hhP
 vmap <silent> <leader>tt     yitrace("<ESC>A: "+string());<ESC>hhP
 nmap <silent> <leader>t<S-o> yiwitrace("<ESC>A: "+object_get_name());<ESC>hhP
@@ -144,6 +144,8 @@ nmap <silent> <leader>fi ofor(var i = 0; i < ; i++){2f;i
 nmap <silent> <leader>fj ofor(var j = 0; j < ; j++){2f;i
 nmap <silent> <leader>fk ofor(var k = 0; k < ; k++){2f;i
 nmap <silent> <leader>fl ofor(var l = 0; l < ; l++){2f;i
+
+nmap <silent> <leader>br otrace_pop("Breakpoint");<ESC>
 "What's this?
 nmap <C-z> otrace(": \" + string());<ESC>2F"pf(pF"kdd 
 
@@ -178,6 +180,10 @@ nmap <ESC>ea :e shaders\
 nmap <ESC>va :vs shaders\
 nmap <ESC>sa :sp shaders\
 
+nmap <ESC>eu :e sounds\
+nmap <ESC>vu :vs sounds\
+nmap <ESC>su :sp sounds\
+
 nmap <ESC>en :e notes\
 nmap <ESC>vn :vs notes\
 nmap <ESC>sn :sp notes\
@@ -209,5 +215,3 @@ inoremap <S-SPACE> _
 "Cursor line/column highlight toggle
 nmap <silent> <TAB>ch    :Windo set cuc<CR>:Windo set cul<CR>
 nmap <silent> <TAB>cc    :Windo set nocuc<CR>:Windo set nocul<CR>
-nmap <TAB>j jj
-nmap <TAB>k kk
