@@ -104,7 +104,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>:Syndo filetype detect<CR>
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <leader>ve :e C:\Program Files (x86)\Vim\Vimfiles\
 nmap <silent> <leader>eg :e C:\Program Files (x86)\Vim\Vimfiles\syntax\gml.vim<CR>
-nmap <silent> <leader>ey :e C:\Program Files (x86)\Vim\Vimfiles\syntax\yarn.vim<CR>
+nmap <silent> <leader>ek :cd C:\Users\Manko\Appdata\Roaming\Kingdom_Lost<CR>:e 
 nmap <silent> <leader>oo :only<CR>
 nmap gx gf<CR>:vs<CR>:e #<CR>
 "nmap <F5> :w<ENTER>:!1.py<ENTER>
