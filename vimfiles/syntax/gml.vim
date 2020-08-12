@@ -17,7 +17,7 @@ syn match gmlDefine     '\v#macro'
 syn match gmlDefine     '\v#define.*'
 syn match paren         /[\[\](){}]/
 syn match parenCurly    /[{}]/
-syn match gmlGlobal     /\v<\u(\u+_*)+/
+syn match gmlGlobal     /\v<\u(\w+_*)+/
 syn match gmlLocal      /\(\<_\w\+\>\)/
 syn keyword gmlTodo contained TODO FIXME NOTE XXX SEE
 "added globalvar
