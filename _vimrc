@@ -211,7 +211,13 @@ inoremap {  <SPACE>{<CR>}<ESC><UP>
 inoremap <C-SPACE> <TAB>= 
 inoremap <S-SPACE> _
 "inoremap <C-> <SPACE>{<CR>}i else {<CR>}<ESC> {
-"TAB MAPS
+"TAB mappings
 "Cursor line/column highlight toggle
 nmap <silent> <TAB>ch    :Windo set cuc<CR>:Windo set cul<CR>
 nmap <silent> <TAB>cc    :Windo set nocuc<CR>:Windo set nocul<CR>
+nmap <silent> <TAB>cc    :Windo set nocuc<CR>:Windo set nocul<CR>
+"Quick Indent/Unindent
+nmap <TAB>ik kvj%j>
+nmap <TAB>ij jvk%k>
+nmap <TAB>uk kvj%j<
+nmap <TAB>uj jvk%k<
