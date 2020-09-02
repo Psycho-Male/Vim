@@ -53,8 +53,8 @@ autocmd GUIEnter * simalt ~x "Start gvim in fullscreen mode
 "set noerrorbells visualbell t_vb=
 if has('autocmd')
     autocmd GUIEnter * set visualbell t_vb=
-    autocmd BufNewFile,BufRead,BufWinEnter * set cuc
-    autocmd BufNewFile,BufRead,BufWinEnter * set cul
+    autocmd BufNew,BufNewFile,BufRead,BufWinEnter * set cuc
+    autocmd BufNew,BufNewFile,BufRead,BufWinEnter * set cul
 endif
 "windows toolbar
 if has("gui_running")
@@ -104,7 +104,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>:Syndo filetype detect<CR>
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <leader>ve :e C:\Program Files (x86)\Vim\Vimfiles\
 nmap <silent> <leader>eg :e C:\Program Files (x86)\Vim\Vimfiles\syntax\gml.vim<CR>
-nmap <silent> <leader>ek :cd C:\Users\Manko\Appdata\Roaming\Kingdom_Lost<CR>:e 
+nmap <leader>ek :cd C:\Users\Manko\Appdata\Roaming\Kingdom_Lost<CR>:e 
 nmap <silent> <leader>oo :only<CR>
 nmap gx gf<CR>:vs<CR>:e #<CR>
 "nmap <F5> :w<ENTER>:!1.py<ENTER>
