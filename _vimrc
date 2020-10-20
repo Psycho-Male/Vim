@@ -38,7 +38,12 @@ set guitablabel=%N-\%t\%M
 set notitle
 set so=10 "Set cursor offset
 set incsearch
-set foldmethod=manual
+set foldminlines=0
+set foldmethod=indent
+set foldexpr=getline(v:lnum)=~'^\\s*$'&&getline(v:lnum+1)=~'\\S'?'<1':1
+set foldclose=all
+set foldopen=all
+set foldnestmax=1
 set showcmd
 "Set custom tab name
 "Usage: :let t:mytablabel = 'my_tab_name'
@@ -48,6 +53,7 @@ endfunction
 set guitablabel=%{GuiTabLabel()}
 set go+=e
 set guifont=Consolas:h9
+set winaltkeys=no
 autocmd GUIEnter * simalt ~x "Start gvim in fullscreen mode
 "Disable blinking autocmd version
 "set noerrorbells visualbell t_vb=
@@ -203,7 +209,7 @@ unmap <C-X>
 map <S-k> <Nop>
 augroup remember_fold
     autocmd!
-    autocmd BufWinLeave * silent! mkview
+"    autocmd BufWinLeave * silent! mkview
     autocmd BufWinEnter * silent! loadview
 augroup end
 
@@ -221,3 +227,9 @@ nmap <TAB>ik kvj%j>
 nmap <TAB>ij jvk%k>
 nmap <TAB>uk kvj%j<
 nmap <TAB>uj jvk%k<
+nmap <TAB>kz V$%zf
+nmap <TAB>jz V$%zf
+map <M-j> zj
+map <M-k> zk
+map <M-h> [z
+map <M-l> ]z
