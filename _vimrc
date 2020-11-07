@@ -119,41 +119,44 @@ nmap <F3> :let t:mytablabel = ''<Left>
 nnoremap <Left> :bprevious<CR>
 nnoremap <Right> :bnext<CR>
 "GAMEMAKER MACROS
-nmap <silent> <leader>tt Bitrace_string("<ESC>A");<ESC>
-nmap <silent> <leader>to Bitrace_object("<ESC>A");<ESC>
-nmap <silent> <leader>ts Bitrace_sprite("<ESC>A");<ESC>
-nmap <silent> <leader>tc Bitrace_script("<ESC>A");<ESC>
-nmap <silent> <leader>ta Bitrace_audio("<ESC>A");<ESC>
-nmap <silent> <leader>tb Bitrace_bool("<ESC>A");<ESC>
-nmap <silent> <leader>t<S-t> yiwitrace("<ESC>A: "+string());<ESC>hhP
-vmap <silent> <leader>tt     yitrace("<ESC>A: "+string());<ESC>hhP
-nmap <silent> <leader>t<S-o> yiwitrace("<ESC>A: "+object_get_name());<ESC>hhP
-vmap <silent> <leader>to     yitrace("<ESC>A: "+object_get_name());<ESC>hhP
-nmap <silent> <leader>t<S-s> yiwitrace("<ESC>A: "+sprite_get_name());<ESC>hhP
-vmap <silent> <leader>ts     yitrace("<ESC>A: "+sprite_get_name());<ESC>hhP
-nmap <silent> <leader>t<S-c> yiwitrace("<ESC>A: "+script_get_name());<ESC>hhP
-vmap <silent> <leader>tc     yitrace("<ESC>A: "+script_get_name());<ESC>hhP
-nmap <silent> <leader>t<S-a> yiwitrace("<ESC>A: "+audio_get_name());<ESC>hhP
-vmap <silent> <leader>ta     yitrace("<ESC>A: "+audio_get_name());<ESC>hhP
-nmap <silent> <leader>t<S-b> yiwitrace("<ESC>A: "+rb());<ESC>hhP
-vmap <silent> <leader>tb     yitrace("<ESC>A: "+rb());<ESC>hhP
+nmap <silent> <leader>tt BiTraceString("<ESC>A");<ESC>
+nmap <silent> <leader>to BiTraceObject("<ESC>A");<ESC>
+nmap <silent> <leader>ts BiTraceSprite("<ESC>A");<ESC>
+nmap <silent> <leader>tc BiTraceScript("<ESC>A");<ESC>
+nmap <silent> <leader>ta BiTraceAudio("<ESC>A");<ESC>
+nmap <silent> <leader>tb BiTraceBool("<ESC>A");<ESC>
+nmap <silent> <leader>tr BiTraceRoom("<ESC>A");<ESC>
+nmap <silent> <leader>t<S-t> yiwiTrace("<ESC>A: "+string());<ESC>hhP
+vmap <silent> <leader>tt     yiTrace("<ESC>A: "+string());<ESC>hhP
+nmap <silent> <leader>t<S-o> yiwiTrace("<ESC>A: "+object_get_name());<ESC>hhP
+vmap <silent> <leader>to     yiTrace("<ESC>A: "+object_get_name());<ESC>hhP
+nmap <silent> <leader>t<S-s> yiwiTrace("<ESC>A: "+sprite_get_name());<ESC>hhP
+vmap <silent> <leader>ts     yiTrace("<ESC>A: "+sprite_get_name());<ESC>hhP
+nmap <silent> <leader>t<S-c> yiwiTrace("<ESC>A: "+script_get_name());<ESC>hhP
+vmap <silent> <leader>tc     yiTrace("<ESC>A: "+script_get_name());<ESC>hhP
+nmap <silent> <leader>t<S-a> yiwiTrace("<ESC>A: "+audio_get_name());<ESC>hhP
+vmap <silent> <leader>ta     yiTrace("<ESC>A: "+audio_get_name());<ESC>hhP
+nmap <silent> <leader>t<S-r> yiwiTrace("<ESC>A: "+room_get_name());<ESC>hhP
+vmap <silent> <leader>tr     yiTrace("<ESC>A: "+room_get_name());<ESC>hhP
+nmap <silent> <leader>t<S-b> yiwiTrace("<ESC>A: "+rb());<ESC>hhP
+vmap <silent> <leader>tb     yiTrace("<ESC>A: "+rb());<ESC>hhP
 nmap <silent> <leader>cd o_text = "<ESC>pa: " + string(<ESC>pa);<CR>draw_text_transformed(_tx, _ty, _tt, .25, .25, 0);<ESC>
-nmap <silent> <leader>cv otrace_string("<ESC>pa");<ESC>kdd
-nmap <silent> <leader>cz otrace(": " + string());<ESC>2F"pf(p<UP>dd<DOWN>f:
-nmap <silent> <leader>sd otrace("");<ESC>2hi
-nmap <silent> <leader>cx otrace(""+string());<ESC>F"i
-nmap <silent> <leader>dd otrace("--------------------------------------------------------------------------------------------------------");<ESC>2F"l
-nmap <silent> <leader>cs otrace("/--CALLSTACK--\\");<CR>for(var i = 0, _a = debug_get_callstack(); i < array_length_1d(_a); i++){otrace(_a[i]);<ESC>
+nmap <silent> <leader>cv oTrace_string("<ESC>pa");<ESC>kdd
+nmap <silent> <leader>cz oTrace(": " + string());<ESC>2F"pf(p<UP>dd<DOWN>f:
+nmap <silent> <leader>sd oTrace("");<ESC>2hi
+nmap <silent> <leader>cx oTrace(""+string());<ESC>F"i
+nmap <silent> <leader>dd oTrace("--------------------------------------------------------------------------------------------------------");<ESC>2F"l
+nmap <silent> <leader>cs oTrace("/--CALLSTACK--\\");<CR>for(var i = 0, _a = debug_get_callstack(); i < array_length(_a); i++){oTrace(_a[i]);<ESC>
 
-nmap <silent> <leader>aa ivar _a = debug_get_callstack();<CR>for(var i = 0; i < array_length_1d(_a); i++)<CR>trace("_a: " + string(i) + "-" + string(_a[i]));<ESC>
-nmap <silent> <leader>fi ofor(var i = 0; i < ; i++){2f;i
-nmap <silent> <leader>fj ofor(var j = 0; j < ; j++){2f;i
-nmap <silent> <leader>fk ofor(var k = 0; k < ; k++){2f;i
-nmap <silent> <leader>fl ofor(var l = 0; l < ; l++){2f;i
+nmap <silent> <leader>aa ivar _a = debug_get_callstack();<CR>for(var i = 0; i < array_length(_a); i++)<CR>Trace("_a: " + string(i) + "-" + string(_a[i]));<ESC>
+nmap <silent> <leader>fi ofor(var i=0;i<;i++){2f;i
+nmap <silent> <leader>fj ofor(var j=0;j<;j++){2f;i
+nmap <silent> <leader>fk ofor(var k=0;k<;k++){2f;i
+nmap <silent> <leader>fl ofor(var l=0;l<;l++){2f;i
 
-nmap <silent> <leader>br otrace_pop("Breakpoint");<ESC>
+nmap <silent> <leader>br oTrace_pop("Breakpoint");<ESC>
 "What's this?
-nmap <C-z> otrace(": \" + string());<ESC>2F"pf(pF"kdd 
+nmap <C-z> oTrace(": \" + string());<ESC>2F"pf(pF"kdd 
 
 nmap <silent> <leader>cw f"lvf"h~
 nmap <silent> <leader>ww o<ESC>i//---------------------------------------------------------------------------------------------------------//<ESC>^ll
