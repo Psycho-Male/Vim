@@ -8,7 +8,7 @@ endif
 
 " Control structures
 syn keyword gmlConditional if else switch
-syn keyword gmlStatement break return continue exit function
+syn keyword gmlStatement break return continue exit 
 syn keyword gmlLabel case default
 syn keyword gmlRepeat while for repeat do while
 syn keyword gmlWith with
@@ -21,10 +21,11 @@ syn match gmlGlobal     /\v<\u(\w+_*)+/
 syn match gmlLocal      /\(\<_\w\+\>\)/
 syn keyword gmlTodo contained TODO FIXME NOTE XXX SEE
 "added globalvar
-syn keyword gmlType var globalvar static
+syn keyword gmlType var globalvar static method constructor new toString
 syn keyword gmlBoolean true false
 syn keyword gmlKeyword self other all noone undefined global
 syn keyword gmlBuiltinGlobal score health lives async_load
+syn keyword gmlExceptionHandling try catch finally
 
 syn match gmlBuiltinFunction '\v<is_array\ze\_s*\('
 syn match gmlBuiltinFunction '\v<is_int(32|64)\ze\_s*\('
@@ -308,7 +309,7 @@ syn region gmlBracket   start='\v\[' end='\v\]' extend fold contains=gmlString
 " syn region gmlFunctionDefine start='\v#define \I\i*\_.{-}\{' end='\v\}' transparent keepend fold
 "
 " arguments
-syn keyword gmlBuiltinScriptVariable argument_count method constructor
+syn keyword gmlBuiltinScriptVariable argument_count function
 syn match gmlBuiltinScriptVariable '\v<argument\ze\[([0-9]|1[0-5]|(\S+\s*)+)\]'
 syn match gmlBuiltinScriptVariable '\v<argument(1[0-5]|[0-9])>'
 
@@ -496,6 +497,8 @@ hi def link gmlParenPair                    NonText
 
 hi def link gmlGlobal                       SpecialKey
 hi def link gmlLocal                        LocalVar
+
+hi def link gmlExceptionHandling            Handler
 
 
 let b:current_syntax = "gml"
