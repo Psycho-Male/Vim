@@ -17,7 +17,7 @@ let s:dark          = {"gui": "#585878", "cterm": "0"}
 let s:black         = {"gui": "#000000", "cterm": "1"}
 let s:red           = {"gui": "#F00000", "cterm": "0"}
 let s:green         = {"gui": "#00A000", "cterm": "0"}
-let s:blue          = {"gui": "#0080D0", "cterm": "0"}
+let s:blue          = {"gui": "#4478c7", "cterm": "0"}
 let s:blueish       = {"gui": "#ff00ea", "cterm": "0"}
 let s:yellow        = {"gui": "#B0B060", "cterm": "0"}
 let s:teal          = {"gui": "#00D0E0", "cterm": "0"}
@@ -26,7 +26,8 @@ let s:magenta       = {"gui": "#FF00FF", "cterm": "0"}
 let s:brightyellow  = {"gui": "#e8fc03", "cterm": "0"}
 let s:amber         = {"gui": "#C08000", "cterm": "0"}
 let s:purple        = {"gui": "#B060FF", "cterm": "0"}
-let s:orange        = {"gui": "#dba009", "cterm": "0" }
+let s:orange        = {"gui": "#dba009", "cterm": "0"}
+let s:darkpurple    = {"gui": "#80548a", "cterm": "0"}
 
 
 let s:changethis = s:magenta
@@ -53,7 +54,7 @@ endfunction
 call s:h("Normal",      {"fg": s:fg             , "bg": s:bg          , "format": "none"})
 call s:h("Cursor",      {"fg": s:bg             , "bg": s:fg          , "format": "none"})
 call s:h("VertSplit",   {"fg": s:dark           , "bg": s:bg_l1       , "format": "none"})
-call s:h("Folded",      {"fg": s:teal           , "bg": s:black       , "format": "none"})
+call s:h("Folded",      {"fg": s:darkpurple     , "bg": s:bg          , "format": "italic"})
 call s:h("FoldColumn",  {"fg": s:teal           , "bg": s:black       , "format": "none"})
 call s:h("ModeMsg",     {"fg": s:green          , "bg": s:black       , "format": "none"})
 call s:h("MoreMsg",     {"fg": s:black          , "bg": s:green       , "format": "none"})
@@ -68,8 +69,8 @@ call s:h("Search",      {"fg": s:teal           , "bg": s:blue        , "format"
 call s:h("SpecialKey",  {"fg": s:purple                               , "format": "bold"})
 call s:h("StatusLine",  {"fg": s:teal           , "bg": s:bg_l1       , "format": "none"})
 call s:h("StatusLineNC",{"fg": s:blue           , "bg": s:bg_l1       , "format": "none"})
-call s:h("Title",       {"fg": s:yellow                               , "format": "none"})
-call s:h("Visual",      {"fg": s:black          , "bg": s:teal        , "format": "none"})
+call s:h("Handler",     {"fg": s:green                                , "format": "none"})
+call s:h("Visual",      {"fg": s:purple         , "bg": s:black       , "format": "none"})
 call s:h("WarningMsg",  {"fg": s:black          , "bg": s:yellow      , "format": "none"})
 call s:h("Identifier",  {"fg": s:green                                , "format": "none"})
 call s:h("Include",     {"fg": s:green                                , "format": "none"})
@@ -99,7 +100,7 @@ call s:h("CursorColumn",{                         "bg": s:bg_l1       , "format"
 call s:h("Tabline",     {"fg": s:blue           , "bg": s:bg          , "format": "none"})
 call s:h("TablineFill", {"fg": s:blue           , "bg": s:bg          , "format": "none"})
 call s:h("TablineSel",  {"fg": s:teal           , "bg": s:blue        , "format": "none"})
-call s:h("Comment",     {"fg": s:brightyellow                         , "format": "none"})
+call s:h("Comment",     {"fg": s:darkpurple                           , "format": "italic"})
 call s:h("Statement",   {"fg": s:purple                               , "format": "none"})
 call s:h("Constant",    {"fg": s:turqoise                             , "format": "none"})
 call s:h("Type",        {"fg": s:red                                  , "format": "none"})
