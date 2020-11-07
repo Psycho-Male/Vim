@@ -154,7 +154,7 @@ nmap <silent> <leader>fj ofor(var j=0;j<;j++){2f;i
 nmap <silent> <leader>fk ofor(var k=0;k<;k++){2f;i
 nmap <silent> <leader>fl ofor(var l=0;l<;l++){2f;i
 
-nmap <silent> <leader>br oTrace_pop("Breakpoint");<ESC>
+nmap <silent> <leader>br oTracePop("Breakpoint");<ESC>
 "What's this?
 nmap <C-z> oTrace(": \" + string());<ESC>2F"pf(pF"kdd 
 
