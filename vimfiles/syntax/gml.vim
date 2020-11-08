@@ -296,6 +296,9 @@ syn match gmlAccessorOperator '\v\[\zs\s*\?'|  " ds_map[? ]
 syn match gmlAccessorOperator '\v\[\zs\s*\#'|  " ds_grid[# ]
 syn match gmlAccessorOperator '\v\[\zs\s*\@'|  " array[@ ]
 
+syn match gmlTernaryOperator '\v\zs\s*\?'|
+syn match gmlTernaryOperator '\v\zs\s*\:'
+
 " Comments
 syn region gmlLineComment start='\v((\/)@<!\/{2}(\/)@!|\/{4,})' end='\v$' keepend contains=gmlTodo
 syn region gmlDocComment start='\v(\/)@<!\/{3}(\/)@!' end='\v$' keepend contains=gmlTodo
@@ -486,6 +489,7 @@ hi def link gmlComparisonOperator           Operator
 hi def link gmlBitwiseOperator              Operator
 hi def link gmlBooleanOperator              Operator
 hi def link gmlAccessorOperator             Operator
+hi def link gmlTernaryOperator              Operator
 
 hi def link gmlDocComment                   Comment
 hi def link gmlLineComment                  Comment
