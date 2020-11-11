@@ -110,7 +110,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>:Syndo filetype detect<CR>
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <leader>ve :e C:\Program Files (x86)\Vim\Vimfiles\
 nmap <silent> <leader>eg :e C:\Program Files (x86)\Vim\Vimfiles\syntax\gml.vim<CR>
-nmap <leader>ek :cd C:\Users\Manko\Appdata\Roaming\Kingdom_Lost<CR>:e 
+nmap <leader>ek :e C:\Users\Manko\Appdata\Roaming\Kingdom_Lost\
 nmap <silent> <leader>oo :only<CR>
 nmap gx gf<CR>:vs<CR>:e #<CR>
 "nmap <F5> :w<ENTER>:!1.py<ENTER>
@@ -126,8 +126,8 @@ nmap <silent> <leader>tc BiTraceScript("<ESC>A");<ESC>
 nmap <silent> <leader>ta BiTraceAudio("<ESC>A");<ESC>
 nmap <silent> <leader>tb BiTraceBool("<ESC>A");<ESC>
 nmap <silent> <leader>tr BiTraceRoom("<ESC>A");<ESC>
-nmap <silent> <leader>t<S-t> yiwiTrace("<ESC>A: "+string());<ESC>hhP
-vmap <silent> <leader>tt     yiTrace("<ESC>A: "+string());<ESC>hhP
+nmap <silent> <leader>t<S-t> yiwiTrace("<ESC>A: "+str());<ESC>hhP
+vmap <silent> <leader>tt     yiTrace("<ESC>A: "+str());<ESC>hhP
 nmap <silent> <leader>t<S-o> yiwiTrace("<ESC>A: "+object_get_name());<ESC>hhP
 vmap <silent> <leader>to     yiTrace("<ESC>A: "+object_get_name());<ESC>hhP
 nmap <silent> <leader>t<S-s> yiwiTrace("<ESC>A: "+sprite_get_name());<ESC>hhP
@@ -140,15 +140,15 @@ nmap <silent> <leader>t<S-r> yiwiTrace("<ESC>A: "+room_get_name());<ESC>hhP
 vmap <silent> <leader>tr     yiTrace("<ESC>A: "+room_get_name());<ESC>hhP
 nmap <silent> <leader>t<S-b> yiwiTrace("<ESC>A: "+rb());<ESC>hhP
 vmap <silent> <leader>tb     yiTrace("<ESC>A: "+rb());<ESC>hhP
-nmap <silent> <leader>cd o_text = "<ESC>pa: " + string(<ESC>pa);<CR>draw_text_transformed(_tx, _ty, _tt, .25, .25, 0);<ESC>
-nmap <silent> <leader>cv oTrace_string("<ESC>pa");<ESC>kdd
-nmap <silent> <leader>cz oTrace(": " + string());<ESC>2F"pf(p<UP>dd<DOWN>f:
+nmap <silent> <leader>cd o_text = "<ESC>pa: " + str(<ESC>pa);<CR>draw_text_transformed(_tx, _ty, _tt, .25, .25, 0);<ESC>
+nmap <silent> <leader>cv oTrace_str("<ESC>pa");<ESC>kdd
+nmap <silent> <leader>cz oTrace(": " + str());<ESC>2F"pf(p<UP>dd<DOWN>f:
 nmap <silent> <leader>sd oTrace("");<ESC>2hi
-nmap <silent> <leader>cx oTrace(""+string());<ESC>F"i
+nmap <silent> <leader>cx oTrace(""+str());<ESC>F"i
 nmap <silent> <leader>dd oTrace("--------------------------------------------------------------------------------------------------------");<ESC>2F"l
-nmap <silent> <leader>cs oTrace("/--CALLSTACK--\\");<CR>for(var i = 0, _a = debug_get_callstack(); i < array_length(_a); i++){oTrace(_a[i]);<ESC>
+nmap <silent> <leader>cs oTrace("--CALLSTACK--");for(var i=0,cs=debug_get_callstack();i<array_length(cs);i++) Trace(cs[i]);<ESC>
 
-nmap <silent> <leader>aa ivar _a = debug_get_callstack();<CR>for(var i = 0; i < array_length(_a); i++)<CR>Trace("_a: " + string(i) + "-" + string(_a[i]));<ESC>
+nmap <silent> <leader>aa ivar _a = debug_get_callstack();<CR>for(var i = 0; i < array_length(_a); i++)<CR>Trace("_a: " + str(i) + "-" + str(_a[i]));<ESC>
 nmap <silent> <leader>fi ofor(var i=0;i<;i++){2f;i
 nmap <silent> <leader>fj ofor(var j=0;j<;j++){2f;i
 nmap <silent> <leader>fk ofor(var k=0;k<;k++){2f;i
@@ -156,11 +156,11 @@ nmap <silent> <leader>fl ofor(var l=0;l<;l++){2f;i
 
 nmap <silent> <leader>br oTracePop("Breakpoint");<ESC>
 "What's this?
-nmap <C-z> oTrace(": \" + string());<ESC>2F"pf(pF"kdd 
+nmap <C-z> oTrace(": \" + str());<ESC>2F"pf(pF"kdd 
 
 nmap <silent> <leader>cw f"lvf"h~
 nmap <silent> <leader>ww o<ESC>i//---------------------------------------------------------------------------------------------------------//<ESC>^ll
-nmap <F1>     :mksession! 1<CR>
+"nmap <F1>     :mksession! 1<CR>
 nmap <silent> <leader>s1 :source 1<CR>
 nmap <silent> <leader>s2 :source 2<CR>
 nmap <silent> <leader>s3 :source 3<CR>
@@ -232,6 +232,7 @@ nmap <TAB>uk kvj%j<
 nmap <TAB>uj jvk%k<
 nmap <TAB>kz V$%zf
 nmap <TAB>jz V$%zf
+nmap <TAB><CR> s{ja<CR><ESC>ddkP>>
 map <M-j> zj
 map <M-k> zk
 map <M-h> [z
