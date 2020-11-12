@@ -145,10 +145,9 @@ nmap <silent> <leader>cv oTrace_str("<ESC>pa");<ESC>kdd
 nmap <silent> <leader>cz oTrace(": " + str());<ESC>2F"pf(p<UP>dd<DOWN>f:
 nmap <silent> <leader>sd oTrace("");<ESC>2hi
 nmap <silent> <leader>cx oTrace(""+str());<ESC>F"i
-nmap <silent> <leader>dd oTrace("--------------------------------------------------------------------------------------------------------");<ESC>2F"l
 nmap <silent> <leader>cs oTrace("--CALLSTACK--");for(var i=0,cs=debug_get_callstack();i<array_length(cs);i++) Trace(cs[i]);<ESC>
+nmap <silent> <leader>tp ^eaPop<ESC>
 
-nmap <silent> <leader>aa ivar _a = debug_get_callstack();<CR>for(var i = 0; i < array_length(_a); i++)<CR>Trace("_a: " + str(i) + "-" + str(_a[i]));<ESC>
 nmap <silent> <leader>fi ofor(var i=0;i<;i++){2f;i
 nmap <silent> <leader>fj ofor(var j=0;j<;j++){2f;i
 nmap <silent> <leader>fk ofor(var k=0;k<;k++){2f;i
@@ -159,7 +158,6 @@ nmap <silent> <leader>br oTracePop("Breakpoint");<ESC>
 nmap <C-z> oTrace(": \" + str());<ESC>2F"pf(pF"kdd 
 
 nmap <silent> <leader>cw f"lvf"h~
-nmap <silent> <leader>ww o<ESC>i//---------------------------------------------------------------------------------------------------------//<ESC>^ll
 "nmap <F1>     :mksession! 1<CR>
 nmap <silent> <leader>s1 :source 1<CR>
 nmap <silent> <leader>s2 :source 2<CR>
