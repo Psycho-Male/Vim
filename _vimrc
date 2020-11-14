@@ -158,8 +158,8 @@ nmap <silent> <leader>br oTracePop("Breakpoint");<ESC>
 nmap <C-z> oTrace(": \" + str());<ESC>2F"pf(pF"kdd 
 
 nmap <silent> <leader>cw f"lvf"h~
-"nmap <F1>     :mksession! 1<CR>
-nmap <silent> <leader>s1 :source 1<CR>
+nmap <F1>     :mks! C:\sess\1.vim<CR>
+nmap <silent> <leader>s1 :source C:\sess\1.vim<CR>
 nmap <silent> <leader>s2 :source 2<CR>
 nmap <silent> <leader>s3 :source 3<CR>
 nmap <silent> <leader>s4 :source 4<CR>
