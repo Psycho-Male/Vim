@@ -66,6 +66,7 @@ if has('autocmd')
     autocmd GUIEnter * set visualbell t_vb=
     autocmd BufNew,BufNewFile,BufRead,BufWinEnter * set cuc
     autocmd BufNew,BufNewFile,BufRead,BufWinEnter * set cul
+    autocmd BufNew,BufNewFile,BufRead,BufWinEnter * set buftype=""
 endif
 "windows toolbar
 if has("gui_running")
@@ -209,9 +210,9 @@ nmap <ESC>td :tabe ..\..\datafiles\
 nmap <ESC>ta :tabe ..\..\shaders\
 nmap <ESC>tn :tabe ..\..\notes\
 
-nmap <ESC>ee :E<CR>:set bf=""<CR>
-nmap <ESC>v<S-e> :vs<CR>:E<CR>:set bf=""<CR>
-nmap <ESC>v<S-s> :sp<CR>:E<CR>:set bf=""<CR>
+nmap <ESC><S-e> :E<CR>:set buftype=""<CR>:set bf=""<CR>
+nmap <ESC>v<S-v> :vs<CR>:E<CR>:set buftype=""<CR>:set bf=""<CR>
+nmap <ESC>v<S-s> :sp<CR>:E<CR>:set buftype=""<CR>:set bf=""<CR>
 
 nmap <C-_>- <C-W>-
 
