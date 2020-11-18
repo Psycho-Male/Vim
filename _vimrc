@@ -18,6 +18,7 @@ set laststatus=2 "Always display status line
 set confirm "Instead failing because file is not save, ask if you want to save first
 set expandtab
 set softtabstop=4 "disabled tabstop=4
+set autochdir
 "set tabstop=4
 "set cmdheight=2 "set command windows to 2 lines
 filetype on
@@ -34,7 +35,7 @@ set shiftwidth=4
 set cursorline
 set cursorcolumn
 "set guitablabel=%N/\ %t\ %M
-set guitablabel=%N-\%t\%M
+set guitablabel=%N-\%M
 set notitle
 set so=10 "Set cursor offset
 set incsearch
@@ -45,6 +46,10 @@ set foldclose=all
 set foldopen=all
 set foldnestmax=1
 set showcmd
+"p=percentage l=line number f=filepath n=buffer number m=modified r=readonly
+"set statusline=%F[%n]%m%r
+"set statusline=
+set statusline=%{expand('%:p:h:t')}/%t[%n][%l,%c]%m%r
 "Set custom tab name
 "Usage: :let t:mytablabel = 'my_tab_name'
 function! GuiTabLabel()
@@ -82,15 +87,15 @@ command! -nargs=+ -complete=command Syndo
 "VIMGREP
 "\ execute 'filetype plugin off' | " Doesn't really change search speed
 command! -nargs=+ Vrep
-    \ execute "silent vimgrep /<args>/ **/*.gml" | vert copen |
+    \ execute "silent vimgrep /<args>/ ../../**/*.gml" | vert copen |
 command! -nargs=+ Vrepjson
-    \ execute "silent vimgrep /<args>/ **/*.json" | vert copen |
+    \ execute "silent vimgrep /<args>/ ../../**/*.json" | vert copen |
 command! -nargs=+ Vrepyy
-    \ execute "silent vimgrep /<args>/ **/*.yy" | vert copen |
+    \ execute "silent vimgrep /<args>/ ../../**/*.yy" | vert copen |
 nnoremap <leader>vv :execute "Vrep" expand("<cword>")<CR>
-nnoremap <leader>gff :e scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
-nnoremap <leader>gfv :vs scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
-nnoremap <leader>gfs :sp scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
+nnoremap <leader>gff :e ..\..\scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
+nnoremap <leader>gfv :vs ..\..\scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
+nnoremap <leader>gfs :sp ..\..\scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
 "scripts\/expand("<cword>")\/expand("<cword>").gml
 cd C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost
 nnoremap <Space> @
@@ -158,6 +163,8 @@ nmap <silent> <leader>br oTracePop("Breakpoint");<ESC>
 nmap <C-z> oTrace(": \" + str());<ESC>2F"pf(pF"kdd 
 
 nmap <silent> <leader>cw f"lvf"h~
+nmap <leader> <mks> :mks! C:\sess\
+nmap <leader> <src> :source! C:\sess\
 nmap <F1>     :mks! C:\sess\1.vim<CR>
 nmap <silent> <leader>s1 :source C:\sess\1.vim<CR>
 nmap <silent> <leader>s2 :source 2<CR>
@@ -167,46 +174,50 @@ nmap <silent> <leader>vw :vs<CR>*<C-W>l
 nmap <silent> <leader>sw :sp<CR>*
 "ESC MAPS
 "GAMEMAKER FILE EDITING
-nmap <ESC>eo :e  objects\
-nmap <ESC>vo :vs objects\
-nmap <ESC>so :sp objects\
+nmap <ESC>eo :e  ..\..\objects\
+nmap <ESC>vo :vs ..\..\objects\
+nmap <ESC>so :sp ..\..\objects\
 
-nmap <ESC>es :e  scripts\
-nmap <ESC>vs :vs scripts\
-nmap <ESC>ss :sp scripts\
+nmap <ESC>es :e  ..\..\scripts\
+nmap <ESC>vs :vs ..\..\scripts\
+nmap <ESC>ss :sp ..\..\scripts\
 
-nmap <ESC>er :e  rooms\
-nmap <ESC>vr :vs rooms\
-nmap <ESC>sr :sp rooms\
+nmap <ESC>er :e  ..\..\rooms\
+nmap <ESC>vr :vs ..\..\rooms\
+nmap <ESC>sr :sp ..\..\rooms\
 
-nmap <ESC>ed :e  datafiles\
-nmap <ESC>vd :vs datafiles\
-nmap <ESC>sd :sp datafiles\
+nmap <ESC>ed :e  ..\..\datafiles\
+nmap <ESC>vd :vs ..\..\datafiles\
+nmap <ESC>sd :sp ..\..\datafiles\
 
-nmap <ESC>ea :e shaders\
-nmap <ESC>va :vs shaders\
-nmap <ESC>sa :sp shaders\
+nmap <ESC>ea :e  ..\..\shaders\
+nmap <ESC>va :vs ..\..\shaders\
+nmap <ESC>sa :sp ..\..\shaders\
 
-nmap <ESC>eu :e sounds\
-nmap <ESC>vu :vs sounds\
-nmap <ESC>su :sp sounds\
+nmap <ESC>eu :e  ..\..\sounds\
+nmap <ESC>vu :vs ..\..\sounds\
+nmap <ESC>su :sp ..\..\sounds\
 
-nmap <ESC>en :e notes\
-nmap <ESC>vn :vs notes\
-nmap <ESC>sn :sp notes\
+nmap <ESC>en :e  ..\..\notes\
+nmap <ESC>vn :vs ..\..\notes\
+nmap <ESC>sn :sp ..\..\notes\
 
-nmap <ESC>to :tabe objects\
-nmap <ESC>ts :tabe scripts\
-nmap <ESC>tr :tabe rooms\
-nmap <ESC>td :tabe datafiles\
-nmap <ESC>ta :tabe shaders\
-nmap <ESC>tn :tabe notes\
+nmap <ESC>to :tabe ..\..\objects\
+nmap <ESC>ts :tabe ..\..\scripts\
+nmap <ESC>tr :tabe ..\..\rooms\
+nmap <ESC>td :tabe ..\..\datafiles\
+nmap <ESC>ta :tabe ..\..\shaders\
+nmap <ESC>tn :tabe ..\..\notes\
+
+nmap <ESC>ee :E<CR>
+nmap <ESC>v<S-e> :vs<CR>:E<CR>
+nmap <ESC>v<S-s> :sp<CR>:E<CR>
 
 nmap <C-_>- <C-W>-
 
 map mm :nohl<ENTER>
 "unmap <S-W>
-unmap <C-X>
+silent! unmap <C-X>
 map <S-k> <Nop>
 augroup remember_fold
     autocmd!
@@ -233,5 +244,5 @@ nmap <TAB>jz V$%zf
 nmap <TAB><CR> s{ja<CR><ESC>ddkP>>
 map <M-j> zj
 map <M-k> zk
-map <M-h> [z
-map <M-l> ]z
+map <M-u> [z
+map <M-d> ]z
