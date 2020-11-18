@@ -209,9 +209,9 @@ nmap <ESC>td :tabe ..\..\datafiles\
 nmap <ESC>ta :tabe ..\..\shaders\
 nmap <ESC>tn :tabe ..\..\notes\
 
-nmap <ESC>ee :E<CR>
-nmap <ESC>v<S-e> :vs<CR>:E<CR>
-nmap <ESC>v<S-s> :sp<CR>:E<CR>
+nmap <ESC>ee :E<CR>:set bf=<CR>
+nmap <ESC>v<S-e> :vs<CR>:E<CR>:set bf=<CR>
+nmap <ESC>v<S-s> :sp<CR>:E<CR>:set bf=<CR>
 
 nmap <C-_>- <C-W>-
 
