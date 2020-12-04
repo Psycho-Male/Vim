@@ -98,7 +98,8 @@ nnoremap <leader>gff :e ..\..\scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
 nnoremap <leader>gfv :vs ..\..\scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
 nnoremap <leader>gfs :sp ..\..\scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
 "scripts\/expand("<cword>")\/expand("<cword>").gml
-cd C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost
+"cd C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost\objects\GameController
+silent e C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost\notes\Todo\Todo.txt
 nnoremap <Space> @
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-H> <C-W><C-H>
@@ -173,6 +174,13 @@ nmap <silent> <leader>s3 :source 3<CR>
 nmap <silent> <leader>s4 :source 4<CR>
 nmap <silent> <leader>vw :vs<CR>*<C-W>l
 nmap <silent> <leader>sw :sp<CR>*
+
+nmap <silent> <leader>fl vBxafor(var i=0;i<ds_list_size(<ESC>pa);i++){o
+nmap <silent> <leader>fa vBxafor(var i=0;i<array_length(<ESC>pa);i++){o
+nmap <silent> <leader>fw vBxafor(var i=0;i<ds_grid_width(<ESC>pa);i++){o
+nmap <silent> <leader>fh vBxafor(var i=0;i<ds_grid_height(<ESC>pa);i++){o
+
+nmap <silent> <leader>tc a catch(e){oTrace(e.message);<CR>Trace(e.longMessage);<CR>Trace(e.script);<CR>Trace(e.stacktrace);<ESC>
 "ESC MAPS
 "GAMEMAKER FILE EDITING
 nmap <ESC>eo :e  ..\..\objects\
@@ -227,6 +235,8 @@ augroup remember_fold
 augroup end
 
 inoremap {  <SPACE>{<CR>}<ESC><UP>
+inoremap <C-CR>  <SPACE>{<CR>} else {<CR>}<ESC><UP>O
+inoremap <S-CR>  <SPACE>{<CR>}<ESC>O
 inoremap <C-SPACE> <TAB>= 
 inoremap <S-SPACE> _
 "inoremap <C-> <SPACE>{<CR>}i else {<CR>}<ESC> {
