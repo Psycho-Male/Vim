@@ -28,6 +28,7 @@ let s:amber         = {"gui": "#C08000", "cterm": "0"}
 let s:purple        = {"gui": "#B060FF", "cterm": "0"}
 let s:orange        = {"gui": "#dba009", "cterm": "0"}
 let s:darkpurple    = {"gui": "#80548a", "cterm": "0"}
+let s:darkish       = {"gui": "#805b7c", "cterm": "0"}
 
 
 let s:changethis = s:magenta
@@ -104,7 +105,7 @@ call s:h("Comment",     {"fg": s:darkpurple                           , "format"
 call s:h("Statement",   {"fg": s:purple                               , "format": "none"})
 call s:h("Constant",    {"fg": s:turqoise                             , "format": "none"})
 call s:h("Type",        {"fg": s:red                                  , "format": "none"})
-call s:h("String",      {"fg": s:amber                                , "format": "none"})
+call s:h("String",      {"fg": s:darkish                              , "format": "none"})
 call s:h("Special",     {"fg": s:yellow                               , "format": "none"})
 call s:h("TagListFileName",{"fg": s:black       , "bg": s:teal        , "format": "none"})
 call s:h("LocalVar",    {"fg": s:blueish                              , "format": "none"})
