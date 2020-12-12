@@ -23,7 +23,7 @@ syn keyword gmlTodo contained TODO FIXME NOTE XXX SEE
 "added globalvar
 syn keyword gmlType var globalvar static method constructor new toString
 syn keyword gmlBoolean true false
-syn keyword gmlKeyword self other all noone undefined global
+syn keyword gmlKeyword self other all noone undefined global defined
 syn keyword gmlBuiltinGlobal score health lives async_load
 syn keyword gmlExceptionHandling try catch finally
 
