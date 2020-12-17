@@ -18,7 +18,7 @@ set laststatus=2 "Always display status line
 set confirm "Instead failing because file is not save, ask if you want to save first
 set expandtab
 set softtabstop=4 "disabled tabstop=4
-set autochdir
+"set autochdir
 "set tabstop=4
 "set cmdheight=2 "set command windows to 2 lines
 filetype on
@@ -88,16 +88,17 @@ command! -nargs=+ -complete=command Syndo
 "VIMGREP
 "\ execute 'filetype plugin off' | " Doesn't really change search speed
 command! -nargs=+ Vrep
-    \ execute "silent vimgrep /<args>/ ../../**/*.gml" | vert copen |
+    \ execute "silent vimgrep /<args>/ **/*.gml" | vert copen |
 command! -nargs=+ Vrepjson
     \ execute "silent vimgrep /<args>/ ../../**/*.json" | vert copen |
 command! -nargs=+ Vrepyy
     \ execute "silent vimgrep /<args>/ ../../**/*.yy" | vert copen |
 nnoremap <leader>vv :execute "Vrep" expand("<cword>")<CR>
-nnoremap <leader>gff :e ..\..\scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
-nnoremap <leader>gfv :vs ..\..\scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
-nnoremap <leader>gfs :sp ..\..\scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
+nnoremap <leader>gff :e scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
+nnoremap <leader>gfv :vs scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
+nnoremap <leader>gfs :sp scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
 "scripts\/expand("<cword>")\/expand("<cword>").gml
+cd C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost
 "cd C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost\objects\GameController
 silent e C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost\notes\Todo\Todo.txt
 nnoremap <Space> @
@@ -119,7 +120,7 @@ nmap <leader>ve :e C:\Program Files (x86)\Vim\Vimfiles\
 nmap <silent> <leader>eg :e C:\Program Files (x86)\Vim\Vimfiles\syntax\gml.vim<CR>
 nmap <leader>ek :e C:\Users\Manko\Appdata\Roaming\Kingdom_Lost\
 nmap <silent> <leader>oo :only<CR>
-nmap gx gf<CR>:vs<CR>:e #<CR>
+"nmap gx gf<CR>:vs<CR>:e #<CR>
 "nmap <F5> :w<ENTER>:!1.py<ENTER>
 nmap <F2> :Syndo filetype detect<CR>
 nmap <F3> :let t:mytablabel = ''<Left>
@@ -161,17 +162,15 @@ nmap <silent> <leader>fk ofor(var k=0;k<;k++){2f;i
 nmap <silent> <leader>fl ofor(var l=0;l<;l++){2f;i
 
 nmap <silent> <leader>br oTracePop("Breakpoint");<ESC>
-"What's this?
-nmap <C-z> oTrace(": \" + str());<ESC>2F"pf(pF"kdd 
 
 nmap <silent> <leader>cw f"lvf"h~
 nmap <leader> <mks> :mks! C:\sess\
 nmap <leader> <src> :source! C:\sess\
 nmap <F1>     :mks! C:\sess\1.vim<CR>
 nmap <silent> <leader>s1 :source C:\sess\1.vim<CR>
-nmap <silent> <leader>s2 :source 2<CR>
-nmap <silent> <leader>s3 :source 3<CR>
-nmap <silent> <leader>s4 :source 4<CR>
+"nmap <silent> <leader>s2 :source 2<CR>
+"nmap <silent> <leader>s3 :source 3<CR>
+"nmap <silent> <leader>s4 :source 4<CR>
 nmap <silent> <leader>vw :vs<CR>*<C-W>l
 nmap <silent> <leader>sw :sp<CR>*
 
@@ -183,40 +182,40 @@ nmap <silent> <leader>fh vBxafor(var i=0;i<ds_grid_height(<ESC>pa);i++){o
 nmap <silent> <leader>tc a catch(e){oTrace(e.message);<CR>Trace(e.longMessage);<CR>Trace(e.script);<CR>Trace(e.stacktrace);<ESC>
 "ESC MAPS
 "GAMEMAKER FILE EDITING
-nmap <ESC>eo :e  ..\..\objects\
-nmap <ESC>vo :vs ..\..\objects\
-nmap <ESC>so :sp ..\..\objects\
+nmap <ESC>eo :e  objects\
+nmap <ESC>vo :vs objects\
+nmap <ESC>so :sp objects\
 
-nmap <ESC>es :e  ..\..\scripts\
-nmap <ESC>vs :vs ..\..\scripts\
-nmap <ESC>ss :sp ..\..\scripts\
+nmap <ESC>es :e  scripts\
+nmap <ESC>vs :vs scripts\
+nmap <ESC>ss :sp scripts\
 
-nmap <ESC>er :e  ..\..\rooms\
-nmap <ESC>vr :vs ..\..\rooms\
-nmap <ESC>sr :sp ..\..\rooms\
+nmap <ESC>er :e  rooms\
+nmap <ESC>vr :vs rooms\
+nmap <ESC>sr :sp rooms\
 
-nmap <ESC>ed :e  ..\..\datafiles\
-nmap <ESC>vd :vs ..\..\datafiles\
-nmap <ESC>sd :sp ..\..\datafiles\
+nmap <ESC>ed :e  datafiles\
+nmap <ESC>vd :vs datafiles\
+nmap <ESC>sd :sp datafiles\
 
-nmap <ESC>ea :e  ..\..\shaders\
-nmap <ESC>va :vs ..\..\shaders\
-nmap <ESC>sa :sp ..\..\shaders\
+nmap <ESC>ea :e  shaders\
+nmap <ESC>va :vs shaders\
+nmap <ESC>sa :sp shaders\
 
-nmap <ESC>eu :e  ..\..\sounds\
-nmap <ESC>vu :vs ..\..\sounds\
-nmap <ESC>su :sp ..\..\sounds\
+nmap <ESC>eu :e  sounds\
+nmap <ESC>vu :vs sounds\
+nmap <ESC>su :sp sounds\
 
-nmap <ESC>en :e  ..\..\notes\
-nmap <ESC>vn :vs ..\..\notes\
-nmap <ESC>sn :sp ..\..\notes\
+nmap <ESC>en :e  notes\
+nmap <ESC>vn :vs notes\
+nmap <ESC>sn :sp notes\
 
-nmap <ESC>to :tabe ..\..\objects\
-nmap <ESC>ts :tabe ..\..\scripts\
-nmap <ESC>tr :tabe ..\..\rooms\
-nmap <ESC>td :tabe ..\..\datafiles\
-nmap <ESC>ta :tabe ..\..\shaders\
-nmap <ESC>tn :tabe ..\..\notes\
+nmap <ESC>to :tabe objects\
+nmap <ESC>ts :tabe scripts\
+nmap <ESC>tr :tabe rooms\
+nmap <ESC>td :tabe datafiles\
+nmap <ESC>ta :tabe shaders\
+nmap <ESC>tn :tabe notes\
 
 nmap <ESC><S-e> :E<CR>:set buftype=""<CR>:set bf=""<CR>
 nmap <ESC>v<S-v> :vs<CR>:E<CR>:set buftype=""<CR>:set bf=""<CR>
@@ -242,9 +241,8 @@ inoremap <S-SPACE> _
 "inoremap <C-> <SPACE>{<CR>}i else {<CR>}<ESC> {
 "TAB mappings
 "Cursor line/column highlight toggle
-nmap <silent> <TAB>ch    :Windo set cuc<CR>:Windo set cul<CR>
-nmap <silent> <TAB>cc    :Windo set nocuc<CR>:Windo set nocul<CR>
-nmap <silent> <TAB>cc    :Windo set nocuc<CR>:Windo set nocul<CR>
+nmap <silent> <TAB>cc    :Windo set cuc<CR>:Windo set cul<CR>
+nmap <silent> <TAB>ch    :Windo set nocuc<CR>:Windo set nocul<CR>
 "Quick Indent/Unindent
 nmap <TAB>ik kvj%j>
 nmap <TAB>ij jvk%k>
