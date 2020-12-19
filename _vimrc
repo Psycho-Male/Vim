@@ -244,10 +244,10 @@ inoremap <S-SPACE> _
 nmap <silent> <TAB>cc    :Windo set cuc<CR>:Windo set cul<CR>
 nmap <silent> <TAB>ch    :Windo set nocuc<CR>:Windo set nocul<CR>
 "Quick Indent/Unindent
-nmap <TAB>ik kvj%j>
-nmap <TAB>ij jvk%k>
-nmap <TAB>uk kvj%j<
-nmap <TAB>uj jvk%k<
+nmap <TAB>ik kvj^f{%j>
+nmap <TAB>ij jvk^f{%k>
+nmap <TAB>uk kvj^f{%j<
+nmap <TAB>uj jvk^f{%k<
 nmap <TAB>kz V$%zf
 nmap <TAB>jz V$%zf
 nmap <TAB><CR> s{ja<CR><ESC>ddkP>>
