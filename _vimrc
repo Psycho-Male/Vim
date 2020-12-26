@@ -171,8 +171,8 @@ nmap <silent> <leader>s1 :source C:\sess\1.vim<CR>
 "nmap <silent> <leader>s2 :source 2<CR>
 "nmap <silent> <leader>s3 :source 3<CR>
 "nmap <silent> <leader>s4 :source 4<CR>
-nmap <silent> <leader>vw :vs<CR>*<C-W>l
-nmap <silent> <leader>sw :sp<CR>*
+nmap <silent> <leader>vw :vs<CR>
+nmap <silent> <leader>sw :sp<CR>
 
 nmap <silent> <leader>fl vBxafor(var i=0;i<ds_list_size(<ESC>pa);i++){o
 nmap <silent> <leader>fa vBxafor(var i=0;i<array_length(<ESC>pa);i++){o
@@ -255,3 +255,4 @@ map <M-j> zj
 map <M-k> zk
 map <M-u> [z
 map <M-d> ]z
+nmap <F9> :!start "C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost\Kingdom Lost.yyp"<CR>
