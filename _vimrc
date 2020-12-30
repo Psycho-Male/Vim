@@ -35,7 +35,7 @@ set shiftwidth=4
 set cursorline
 set cursorcolumn
 "set guitablabel=%N/\ %t\ %M
-set guitablabel=%N-\%M
+"set guitablabel=%N-\%M
 set notitle
 set so=10 "Set cursor offset
 set incsearch
@@ -62,12 +62,12 @@ set winaltkeys=no
 autocmd GUIEnter * simalt ~x "Start gvim in fullscreen mode
 "Disable blinking autocmd version
 "set noerrorbells visualbell t_vb=
-if has('autocmd')
-    autocmd GUIEnter * set visualbell t_vb=
-    autocmd BufNew,BufNewFile,BufRead,BufWinEnter * set cuc
-    autocmd BufNew,BufNewFile,BufRead,BufWinEnter * set cul
-    autocmd BufNew,BufNewFile,BufRead,BufWinEnter * set buftype=""
-endif
+"if has('autocmd')
+"    autocmd GUIEnter * set visualbell t_vb=
+"    autocmd BufNew,BufNewFile,BufRead,BufWinEnter * set cuc
+"    autocmd BufNew,BufNewFile,BufRead,BufWinEnter * set cul
+"    autocmd BufNew,BufNewFile,BufRead,BufWinEnter * set buftype=""
+"endif
 "windows toolbar
 if has("gui_running")
     set guioptions-=m
@@ -127,26 +127,19 @@ nmap <F3> :let t:mytablabel = ''<Left>
 nnoremap <Left> :bprevious<CR>
 nnoremap <Right> :bnext<CR>
 "GAMEMAKER MACROS
-nmap <silent> <leader>tt BiTraceString("<ESC>A");<ESC>
-nmap <silent> <leader>to BiTraceObject("<ESC>A");<ESC>
-nmap <silent> <leader>ts BiTraceSprite("<ESC>A");<ESC>
-nmap <silent> <leader>tc BiTraceScript("<ESC>A");<ESC>
-nmap <silent> <leader>ta BiTraceAudio("<ESC>A");<ESC>
-nmap <silent> <leader>tb BiTraceBool("<ESC>A");<ESC>
-nmap <silent> <leader>tr BiTraceRoom("<ESC>A");<ESC>
-nmap <silent> <leader>t<S-t> yiwiTrace("<ESC>A: "+str());<ESC>hhP
+nmap <silent> <leader>tt yiwiTrace("<ESC>A: "+str());<ESC>hhP
 vmap <silent> <leader>tt     yiTrace("<ESC>A: "+str());<ESC>hhP
-nmap <silent> <leader>t<S-o> yiwiTrace("<ESC>A: "+object_get_name());<ESC>hhP
+nmap <silent> <leader>to yiwiTrace("<ESC>A: "+object_get_name());<ESC>hhP
 vmap <silent> <leader>to     yiTrace("<ESC>A: "+object_get_name());<ESC>hhP
-nmap <silent> <leader>t<S-s> yiwiTrace("<ESC>A: "+sprite_get_name());<ESC>hhP
+nmap <silent> <leader>ts yiwiTrace("<ESC>A: "+sprite_get_name());<ESC>hhP
 vmap <silent> <leader>ts     yiTrace("<ESC>A: "+sprite_get_name());<ESC>hhP
-nmap <silent> <leader>t<S-c> yiwiTrace("<ESC>A: "+script_get_name());<ESC>hhP
+nmap <silent> <leader>tc yiwiTrace("<ESC>A: "+script_get_name());<ESC>hhP
 vmap <silent> <leader>tc     yiTrace("<ESC>A: "+script_get_name());<ESC>hhP
-nmap <silent> <leader>t<S-a> yiwiTrace("<ESC>A: "+audio_get_name());<ESC>hhP
+nmap <silent> <leader>ta yiwiTrace("<ESC>A: "+audio_get_name());<ESC>hhP
 vmap <silent> <leader>ta     yiTrace("<ESC>A: "+audio_get_name());<ESC>hhP
-nmap <silent> <leader>t<S-r> yiwiTrace("<ESC>A: "+room_get_name());<ESC>hhP
+nmap <silent> <leader>tr yiwiTrace("<ESC>A: "+room_get_name());<ESC>hhP
 vmap <silent> <leader>tr     yiTrace("<ESC>A: "+room_get_name());<ESC>hhP
-nmap <silent> <leader>t<S-b> yiwiTrace("<ESC>A: "+rb());<ESC>hhP
+nmap <silent> <leader>tb yiwiTrace("<ESC>A: "+rb());<ESC>hhP
 vmap <silent> <leader>tb     yiTrace("<ESC>A: "+rb());<ESC>hhP
 nmap <silent> <leader>cd o_text = "<ESC>pa: " + str(<ESC>pa);<CR>draw_text_transformed(_tx, _ty, _tt, .25, .25, 0);<ESC>
 nmap <silent> <leader>cv oTrace_str("<ESC>pa");<ESC>kdd
@@ -227,11 +220,11 @@ map mm :nohl<ENTER>
 "unmap <S-W>
 silent! unmap <C-X>
 map <S-k> <Nop>
-augroup remember_fold
-    autocmd!
+"augroup remember_fold
+"    autocmd!
 "    autocmd BufWinLeave * silent! mkview
-    autocmd BufWinEnter * silent! loadview
-augroup end
+"    autocmd BufWinEnter * silent! loadview
+"augroup end
 
 inoremap {  <SPACE>{<CR>}<ESC><UP>
 inoremap <C-CR>  <SPACE>{<CR>} else {<CR>}<ESC><UP>O
@@ -256,3 +249,4 @@ map <M-k> zk
 map <M-u> [z
 map <M-d> ]z
 nmap <F9> :!start "C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost\Kingdom Lost.yyp"<CR>
+map <leader>ti i["+str(i)+"]<ESC>
