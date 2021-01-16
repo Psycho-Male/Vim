@@ -100,7 +100,7 @@ nnoremap <leader>gfs :sp scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
 "scripts\/expand("<cword>")\/expand("<cword>").gml
 cd C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost
 "cd C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost\objects\GameController
-silent e C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost\notes\Todo\Todo.txt
+silent e C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost\scripts\InitGame\InitGame.gml
 nnoremap <Space> @
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-H> <C-W><C-H>
@@ -154,7 +154,7 @@ nmap <silent> <leader>fj ofor(var j=0;j<;j++){2f;i
 nmap <silent> <leader>fk ofor(var k=0;k<;k++){2f;i
 nmap <silent> <leader>fl ofor(var l=0;l<;l++){2f;i
 
-nmap <silent> <leader>br oTracePop("Breakpoint");<ESC>
+nmap <silent> <leader>br oTrace("Breakpoint");<ESC>
 
 nmap <silent> <leader>cw f"lvf"h~
 nmap <leader> <mks> :mks! C:\sess\
