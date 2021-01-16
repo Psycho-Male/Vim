@@ -23,7 +23,7 @@ syn keyword gmlTodo contained TODO FIXME NOTE XXX SEE
 "added globalvar
 syn keyword gmlType var globalvar static method constructor new toString
 syn keyword gmlBoolean true false
-syn keyword gmlKeyword self other all noone undefined global defined
+syn keyword gmlKeyword self other all noone undefined global fail success
 syn keyword gmlBuiltinGlobal score health lives async_load
 syn keyword gmlExceptionHandling try catch finally
 
@@ -134,7 +134,7 @@ syn keyword gmlImmersionHapticFunction immersion_play_effect immersion_stop
 
 syn keyword gmlJoystickFunction joystick_exists joystick_name joystick_axes joystick_buttons joystick_has_pov joystick_direction joystick_check_button joystick_xpos joystick_ypos joystick_zpos joystick_rpos joystick_upos joystick_vpos joystick_pov
 
-syn keyword gmlKeyboardConstant vk_nokey vk_anykey vk_left vk_right vk_up vk_down vk_enter vk_escape vk_space vk_shift vk_control vk_alt vk_backspace vk_tab vk_home vk_end vk_delete vk_insert vk_pageup vk_pagedown vk_pause vk_printscreen vk_multiply vk_divide vk_add vk_subtract vk_decimal
+syn keyword gmlKeyboardConstant vk_nokey vk_anykey vk_left vk_right vk_up vk_down vk_enter vk_escape vk_space vk_shift vk_control vk_alt vk_backspace vk_tab vk_home vk_end vk_delete vk_insert vk_pageup vk_pagedown vk_pause vk_printscreen vk_multiply vk_divide vk_add vk_subtract vk_decimal keyboard_key
 
 syn match gmlKeyboardConstant 'vk_f[0-9]'
 syn match gmlKeyboardConstant 'vk_f1[0-2]'
@@ -145,7 +145,7 @@ syn match gmlKeyboardConstant 'vk_\w\+\>'
 
 syn keyword gmlKeyboardModifierConstant vk_lshift vk_lcontrol vk_lalt vk_rshift vk_rcontrol vk_ralt
 
-syn keyword gmlKeyboardFunction io_clear keyboard_check keyboard_check_pressed keyboard_check_released keyboard_check_direct keyboard_clear keyboard_key_press keyboard_key_release keyboard_key keyboard_lastkey keyboard_lastchar keyboard_string keyboard_set_map keyboard_get_map keyboard_unset_map keyboard_get_numlock keyboard_set_numlock
+syn keyword gmlKeyboardFunction io_clear keyboard_check keyboard_check_pressed keyboard_check_released keyboard_check_direct keyboard_clear keyboard_key_press keyboard_key_release keyboard_lastkey keyboard_lastchar keyboard_string keyboard_set_map keyboard_get_map keyboard_unset_map keyboard_get_numlock keyboard_set_numlock
 
 syn keyword gmlMouseFunction mouse_button mouse_check_button mouse_check_button_pressed mouse_check_button_released mouse_clear mouse_last_button mouse_wheel_up mouse_wheel_down mouse_x mouse_y
 
