@@ -90,9 +90,9 @@ command! -nargs=+ -complete=command Syndo
 command! -nargs=+ Vrep
     \ execute "silent vimgrep /<args>/ **/*.gml" | vert copen |
 command! -nargs=+ Vrepjson
-    \ execute "silent vimgrep /<args>/ ../../**/*.json" | vert copen |
+    \ execute "silent vimgrep /<args>/ **/*.json" | vert copen |
 command! -nargs=+ Vrepyy
-    \ execute "silent vimgrep /<args>/ ../../**/*.yy" | vert copen |
+    \ execute "silent vimgrep /<args>/ **/*.yy" | vert copen |
 nnoremap <leader>vv :execute "Vrep" expand("<cword>")<CR>
 nnoremap <leader>gff :e scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
 nnoremap <leader>gfv :vs scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
@@ -250,3 +250,5 @@ map <M-u> [z
 map <M-d> ]z
 nmap <F9> :!start "C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost\Kingdom Lost.yyp"<CR>
 map <leader>ti i["+str(i)+"]<ESC>
+vmap <S-x> :s/y/x/g<CR>
+vmap <S-y> :s/x/y/g<CR>
