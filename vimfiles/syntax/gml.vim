@@ -14,13 +14,14 @@ syn keyword gmlRepeat while for repeat do while
 syn keyword gmlWith with
 syn keyword gmlDefine enum
 syn match gmlDefine     '\v#macro'
+syn match gmlDefine     '\<\v[a-z]+[A-Z]\w+'
 syn match gmlDefine     '\v#define.*'
 syn match paren         /[\[\](){}]/
 syn match parenCurly    /[{}]/
 syn match gmlGlobal     /\v<\u(\w+_*)+/
 syn match gmlLocal      /\(\<_\w\+\>\)/
+syn match gmlLocal      /\<[i-k-j]\C\>/
 syn keyword gmlTodo contained TODO FIXME NOTE XXX SEE
-"added globalvar
 syn keyword gmlType var globalvar static method constructor new toString
 syn keyword gmlBoolean true false
 syn keyword gmlKeyword self other all noone undefined global fail success
@@ -215,7 +216,7 @@ syn keyword gmlShaderConstant MATRIX_VIEW MATRIX_PROJECTION MATRIX_WORLD MATRIX_
 
 " TODO: add steam integration functions
 
-syn keyword gmlStringFunction ansi_char chr ord real is_string string string_byte_at string_byte_length string_set_byte_at string_char_at string_ord_at string_copy string_count string_delete string_digits string_format string_insert string_length string_letters string_lettersdigits string_lower string_pos string_repeat string_replace string_replace_all string_upper string_height string_height_ext string_width string_width_ext clipboard_has_text clipboard_get_text clipboard_set_text str
+syn keyword gmlStringFunction ansi_char chr ord real is_string string string_byte_at string_byte_length string_set_byte_at string_char_at string_ord_at string_copy string_count string_delete string_digits string_format string_insert string_length string_letters string_lettersdigits string_lower string_pos string_repeat string_replace string_replace_all string_upper string_height string_height_ext string_width string_width_ext clipboard_has_text clipboard_get_text clipboard_set_text str int
 
 syn keyword gmlSurfaceFunction surface_exists surface_create surface_create_ext surface_resize surface_set_target surface_set_target_ext surface_reset_target surface_copy surface_copy_part surface_get_height surface_get_width surface_get_texture surface_getpixel surface_getpixel_ext surface_free surface_save surface_save_part
 
