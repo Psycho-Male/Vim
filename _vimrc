@@ -250,5 +250,5 @@ map <M-u> [z
 map <M-d> ]z
 nmap <F9> :!start "C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost\Kingdom Lost.yyp"<CR>
 map <leader>ti i["+str(i)+"]<ESC>
-vmap <S-x> :s/y/x/g<CR>
-vmap <S-y> :s/x/y/g<CR>
+vmap <S-x> :s/y/x/g<CR>:nohl<CR>
+vmap <S-y> :s/x/y/g<CR>:nohl<CR>
