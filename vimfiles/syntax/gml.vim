@@ -18,7 +18,7 @@ syn match gmlDefine     '\<\v[a-z]+[A-Z]\w+'
 syn match gmlDefine     '\v#define.*'
 syn match paren         /[\[\](){}]/
 syn match parenCurly    /[{}]/
-syn match gmlGlobal     /\v<\u(\w+_*)+/
+syn match gmlGlobal     /\v<\u(\w\u+_*)+/
 syn match gmlLocal      /\(\<_\w\+\>\)/
 syn match gmlLocal      /\<[i-k-j]\C\>/
 syn keyword gmlTodo contained TODO FIXME NOTE XXX SEE
