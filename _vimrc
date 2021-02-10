@@ -8,7 +8,7 @@
 set directory=c:\tmp
 set backupdir=c:\tmp
 set undodir=c:\tmp
-set nocompatible
+"set nocompatible
 set hidden "Don't delete unused buffers?
 set wildmenu
 set ignorecase "Use case insesitive search, except when using capital letters
@@ -46,6 +46,11 @@ set foldclose=all
 set foldopen=all
 set foldnestmax=1
 set showcmd
+"Removing Unix from fileformats to prevent vim read .gml files as Unix instead
+set ff=dos
+set ffs=dos
+"set wrap
+"set textwidth=128
 "p=percentage l=line number f=filepath n=buffer number m=modified r=readonly
 "set statusline=%F[%n]%m%r
 "set statusline=
@@ -148,6 +153,8 @@ nmap <silent> <leader>sd oTrace("");<ESC>2hi
 nmap <silent> <leader>cx oTrace(""+str());<ESC>F"i
 nmap <silent> <leader>cs oTrace("--CALLSTACK--");for(var i=0,cs=debug_get_callstack();i<array_length(cs);i++) Trace(cs[i]);<ESC>
 nmap <silent> <leader>tp ^eaPop<ESC>
+nmap <silent> <leader>ww o//<ESC>50a-<ESC>a\\<CR>//\|\|<CR>//<ESC>50a-<ESC>A//<ESC>k^lli
+nmap <silent> <leader>wd v$3hx
 
 nmap <silent> <leader>fi ofor(var i=0;i<;i++){2f;i
 nmap <silent> <leader>fj ofor(var j=0;j<;j++){2f;i
@@ -210,9 +217,14 @@ nmap <ESC>td :tabe datafiles\
 nmap <ESC>ta :tabe shaders\
 nmap <ESC>tn :tabe notes\
 
-nmap <ESC><S-e> :E<CR>:set buftype=""<CR>:set bf=""<CR>
-nmap <ESC>v<S-v> :vs<CR>:E<CR>:set buftype=""<CR>:set bf=""<CR>
-nmap <ESC>v<S-s> :sp<CR>:E<CR>:set buftype=""<CR>:set bf=""<CR>
+nmap <ESC><C-e> :E<CR>:set buftype=""<CR>:set bf=""<CR>
+nmap <ESC>s<C-v> :vs<CR>:E<CR>:set buftype=""<CR>:set bf=""<CR>
+nmap <ESC>s<C-s> :sp<CR>:E<CR>:set buftype=""<CR>:set bf=""<CR>
+
+nmap <ESC><S-e> :e <C-R>=expand("%:p:h") . "/" <CR>
+nmap <ESC>s<S-s> :split <C-R>=expand("%:p:h") . "/" <CR>
+nmap <ESC>s<S-v> :vs <C-R>=expand("%:p:h") . "/" <CR>
+nmap <ESC><S-t> :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 nmap <C-_>- <C-W>-
 
