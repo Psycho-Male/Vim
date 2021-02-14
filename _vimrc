@@ -217,9 +217,9 @@ nmap <ESC>td :tabe datafiles\
 nmap <ESC>ta :tabe shaders\
 nmap <ESC>tn :tabe notes\
 
-nmap <ESC><C-e> :E<CR>:set buftype=""<CR>:set bf=""<CR>
-nmap <ESC>s<C-v> :vs<CR>:E<CR>:set buftype=""<CR>:set bf=""<CR>
-nmap <ESC>s<C-s> :sp<CR>:E<CR>:set buftype=""<CR>:set bf=""<CR>
+"nmap <ESC><C-e> :E<CR>:set buftype=""<CR>:set bf=""<CR>
+"nmap <ESC>s<C-v> :vs<CR>:E<CR>:set buftype=""<CR>:set bf=""<CR>
+"nmap <ESC>s<C-s> :sp<CR>:E<CR>:set buftype=""<CR>:set bf=""<CR>
 
 nmap <ESC><S-e> :e <C-R>=expand("%:p:h") . "/" <CR>
 nmap <ESC>s<S-s> :split <C-R>=expand("%:p:h") . "/" <CR>
