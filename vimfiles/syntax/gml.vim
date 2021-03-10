@@ -20,7 +20,7 @@ syn match paren         /[\[\](){}]/
 syn match parenCurly    /[{}]/
 syn match gmlGlobal     /\v<\u(\w\u+_*)+/
 syn match gmlLocal      /\(\<_\w\+\>\)/
-syn match gmlLocal      /\<[i-k-j]\C\>/
+syn match gmlLocal      /\<[i-k-j-l]\C\>/
 syn keyword gmlTodo contained TODO FIXME NOTE XXX SEE
 syn keyword gmlType var globalvar static method constructor new toString
 syn keyword gmlBoolean true false
