@@ -160,8 +160,9 @@ nmap <silent> <leader>fi ofor(var i=0;i<;i++){2f;i
 nmap <silent> <leader>fj ofor(var j=0;j<;j++){2f;i
 nmap <silent> <leader>fk ofor(var k=0;k<;k++){2f;i
 nmap <silent> <leader>fl ofor(var l=0;l<;l++){2f;i
+nmap <silent> <leader>fm ofor(var i=0,j=ds_map_find_first(_map);i<ds_map_size(_map);i++){oj=ds_map_find_next(_map,j);
 
-nmap <silent> <leader>br oTrace("Breakpoint");<ESC>
+nmap <silent> <leader>br oBreakpoint();<ESC>
 
 nmap <silent> <leader>cw f"lvf"h~
 nmap <leader> <mks> :mks! C:\sess\
@@ -179,7 +180,7 @@ nmap <silent> <leader>fa vBxafor(var i=0;i<array_length(<ESC>pa);i++){o
 nmap <silent> <leader>fw vBxafor(var i=0;i<ds_grid_width(<ESC>pa);i++){o
 nmap <silent> <leader>fh vBxafor(var i=0;i<ds_grid_height(<ESC>pa);i++){o
 
-nmap <silent> <leader>tc a catch(e){oTraceException(e);<ESC>
+nmap <silent> <leader>tc acatch(e){oTraceException(e);<ESC>
 "ESC MAPS
 "GAMEMAKER FILE EDITING
 nmap <ESC>eo :e  objects\
@@ -224,7 +225,7 @@ nmap <ESC>tn :tabe notes\
 nmap <ESC><S-e> :e <C-R>=expand("%:p:h") . "/" <CR>
 nmap <ESC>s<S-s> :split <C-R>=expand("%:p:h") . "/" <CR>
 nmap <ESC>s<S-v> :vs <C-R>=expand("%:p:h") . "/" <CR>
-nmap <ESC><S-t> :tabe <C-R>=expand("%:p:h") . "/" <CR>
+nmap <ESC>e<S-t> :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 nmap <C-_>- <C-W>-
 
@@ -238,8 +239,8 @@ map <S-k> <Nop>
 "    autocmd BufWinEnter * silent! loadview
 "augroup end
 
-inoremap {  <SPACE>{<CR>}<ESC><UP>
-inoremap <C-CR>  <SPACE>{<CR>} else {<CR>}<ESC><UP>O
+inoremap {  {<CR>}<ESC><UP>
+inoremap <C-CR>  <SPACE>{<CR>}else{<CR>}<ESC><UP>O
 inoremap <S-CR>  <SPACE>{<CR>}<ESC>O
 inoremap <C-SPACE> <TAB>= 
 inoremap <S-SPACE> _
