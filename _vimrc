@@ -160,7 +160,7 @@ nmap <silent> <leader>fi ofor(var i=0;i<;i++){2f;i
 nmap <silent> <leader>fj ofor(var j=0;j<;j++){2f;i
 nmap <silent> <leader>fk ofor(var k=0;k<;k++){2f;i
 nmap <silent> <leader>fl ofor(var l=0;l<;l++){2f;i
-nmap <silent> <leader>fm ofor(var i=0,j=ds_map_find_first(_map);i<ds_map_size(_map);i++){oj=ds_map_find_next(_map,j);
+nmap <silent> <leader>fm ofor(var i=ds_map_find_first(_map);IsDefined(i);j=ds_map_find_next(_map,i)){o
 
 nmap <silent> <leader>br oBreakpoint();<ESC>
 
