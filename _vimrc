@@ -126,7 +126,7 @@ nmap <silent> <leader>eg :e C:\Program Files (x86)\Vim\Vimfiles\syntax\gml.vim<C
 nmap <leader>ek :e C:\Users\Manko\Appdata\Roaming\Kingdom_Lost\
 nmap <silent> <leader>oo :only<CR>
 "nmap gx gf<CR>:vs<CR>:e #<CR>
-"nmap <F5> :w<ENTER>:!1.py<ENTER>
+nmap <F5> :w<ENTER>:!%<ENTER>
 nmap <F2> :Syndo filetype detect<CR>
 nmap <F3> :let t:mytablabel = ''<Left>
 nnoremap <Left> :bprevious<CR>
@@ -240,8 +240,8 @@ map <S-k> <Nop>
 "augroup end
 
 inoremap {  {<CR>}<ESC><UP>
-inoremap <C-CR>  <SPACE>{<CR>}else{<CR>}<ESC><UP>O
-inoremap <S-CR>  <SPACE>{<CR>}<ESC>O
+inoremap <C-CR>  {<CR>}else{<CR>}<ESC><UP>O
+inoremap <S-CR>  {<CR>}<ESC>O
 inoremap <C-SPACE> <TAB>= 
 inoremap <S-SPACE> _
 "inoremap <C-> <SPACE>{<CR>}i else {<CR>}<ESC> {
