@@ -240,6 +240,7 @@ map <S-k> <Nop>
 "augroup end
 
 inoremap {  {<CR>}<ESC><UP>
+inoremap <C-S-CR> {}<LEFT>
 inoremap <C-CR>  {<CR>}else{<CR>}<ESC><UP>O
 inoremap <S-CR>  {<CR>}<ESC>O
 inoremap <C-SPACE> <TAB>= 
@@ -261,6 +262,8 @@ map <M-j> zj
 map <M-k> zk
 map <M-u> [z
 map <M-d> ]z
+nmap <F7> :cd C:\Users\Manko\Documents\GameMakerStudio2\aerayth<CR>
+nmap <F8> :!start "C:\Users\Manko\Documents\GameMakerStudio2\aerayth\aerayth.yyp"<CR>
 nmap <F9> :!start "C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost\Kingdom Lost.yyp"<CR>
 map <leader>ti i["+str(i)+"]<ESC>
 vmap <S-x> :s/y/x/g<CR>:nohl<CR>
