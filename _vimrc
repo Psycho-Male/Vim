@@ -160,7 +160,7 @@ nmap <silent> <leader>fi ofor(var i=0;i<;i++){2f;i
 nmap <silent> <leader>fj ofor(var j=0;j<;j++){2f;i
 nmap <silent> <leader>fk ofor(var k=0;k<;k++){2f;i
 nmap <silent> <leader>fl ofor(var l=0;l<;l++){2f;i
-nmap <silent> <leader>fm ofor(var i=ds_map_find_first(_map);IsDefined(i);j=ds_map_find_next(_map,i)){o
+nmap <silent> <leader>fm ofor(var i=ds_map_find_first(_map);IsDefined(i);i=ds_map_find_next(_map,i)){o
 
 nmap <silent> <leader>br oBreakpoint();<ESC>
 
@@ -258,13 +258,38 @@ nmap <TAB>uj jvk^f{%k<
 nmap <TAB>kz V$%zf
 nmap <TAB>jz V$%zf
 nmap <TAB><CR> s{ja<CR><ESC>ddkP>>
-map <M-j> zj
-map <M-k> zk
+"map <M-j> zj
+"map <M-k> zk
+map <M-j> <DOWN>zj<UP>
+map <M-k> zk<UP>
 map <M-u> [z
 map <M-d> ]z
-nmap <F7> :cd C:\Users\Manko\Documents\GameMakerStudio2\aerayth<CR>
-nmap <F8> :!start "C:\Users\Manko\Documents\GameMakerStudio2\aerayth\aerayth.yyp"<CR>
+nmap <F6> :cd C:\Users\Manko\Documents\GameMakerStudio2\Merchant<CR>:e C:\Users\Manko\Documents\GameMakerStudio2\Merchant\scripts\GameInit\GameInit.gml<CR>
+nmap <F7> :!start C:\Users\Manko\Documents\GameMakerStudio2\Merchant\Merchant.yyp<CR>
+nmap <F8> :!start "C:\Users\Manko\Documents\GameMakerStudio2\BlossomJam\BlossomJam.yyp"<CR>
 nmap <F9> :!start "C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost\Kingdom Lost.yyp"<CR>
 map <leader>ti i["+str(i)+"]<ESC>
 vmap <S-x> :s/y/x/g<CR>:nohl<CR>
 vmap <S-y> :s/x/y/g<CR>:nohl<CR>
+nmap <leader>str a={ofunc:function(){ja,<ESC>2kI
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+function! NextClosedFold(dir)
+    let cmd = 'norm!z' . a:dir
+    let view = winsaveview()
+    let [l0, l, open] = [0, view.lnum, 1]
+    while l != l0 && open
+        exe cmd
+        let [l0, l] = [l, line('.')]
+        let open = foldclosed(l) < 0
+    endwhile
+    if open
+        call winrestview(view)
+    endif
+endfunction
+function! RepeatCmd(cmd) range abort
+    let n = v:count < 1 ? 1 : v:count
+    while n > 0
+        exe a:cmd
+        let n -= 1
+    endwhile
+endfunction
