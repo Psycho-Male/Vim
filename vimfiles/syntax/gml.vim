@@ -21,6 +21,7 @@ syn match parenCurly    /[{}]/
 syn match gmlGlobal     /\v<\u(\w\u+_*)+/
 syn match gmlLocal      /\(\<_\w\+\>\)/
 syn match gmlLocal      /\<[i-k-j-l]\C\>/
+syn keyword gmlEndMacro   trueEnd falseEnd end
 syn keyword gmlTodo contained TODO FIXME NOTE XXX SEE
 syn keyword gmlType var globalvar static method constructor new toString
 syn keyword gmlBoolean true false
@@ -358,6 +359,7 @@ hi def link gmlRepeat                       Repeat
 hi def link gmlWith                         Statement
 hi def link gmlLabel                        Label
 hi def link gmlDefine                       Macro
+hi def link gmlEndMacro                     EndMacro
 hi def link paren                           gmlFunction
 hi def link parenCurly                      Conditional
 hi def link gmlBlendmodeConstant            Macro
