@@ -46,6 +46,7 @@ set foldclose=all
 set foldopen=all
 set foldnestmax=1
 set showcmd
+set relativenumber
 "Removing Unix from fileformats to prevent vim read .gml files as Unix instead
 set ff=dos
 set ffs=dos
@@ -293,3 +294,7 @@ function! RepeatCmd(cmd) range abort
         let n -= 1
     endwhile
 endfunction
+nmap <leader>te itrueEnd<ESC>
+nmap <leader>fe ifalseEnd<ESC>
+nmap <leader>ee iend<ESC>
+inoremap <S-ESC> <ESC>:w<CR>
