@@ -267,7 +267,7 @@ map <M-u> [z
 map <M-d> ]z
 nmap <F6> :cd C:\Users\Manko\Documents\GameMakerStudio2\Merchant<CR>:e C:\Users\Manko\Documents\GameMakerStudio2\Merchant\scripts\GameInit\GameInit.gml<CR>
 nmap <F7> :!start C:\Users\Manko\Documents\GameMakerStudio2\Merchant\Merchant.yyp<CR>
-nmap <F8> :!start "C:\Users\Manko\Documents\GameMakerStudio2\BlossomJam\BlossomJam.yyp"<CR>
+nmap <F8> :cd M:\Unity\|\|E M:\Unity<CR>
 nmap <F9> :!start "C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost\Kingdom Lost.yyp"<CR>
 map <leader>ti i["+str(i)+"]<ESC>
 vmap <S-x> :s/y/x/g<CR>:nohl<CR>
@@ -298,3 +298,5 @@ nmap <leader>te itrueEnd<ESC>
 nmap <leader>fe ifalseEnd<ESC>
 nmap <leader>ee iend<ESC>
 inoremap <S-ESC> <ESC>:w<CR>
+nmap <leader>spa :cd %:p:h<CR>:cd<CR>
+nmap <leader>spw :lcd %:p:h<CR>:cd<CR>
