@@ -298,5 +298,5 @@ nmap <leader>te itrueEnd<ESC>
 nmap <leader>fe ifalseEnd<ESC>
 nmap <leader>ee iend<ESC>
 inoremap <S-ESC> <ESC>:w<CR>
-nmap <leader>spa :cd %:p:h<CR>:cd<CR>
-nmap <leader>spw :lcd %:p:h<CR>:cd<CR>
+nmap <leader>sda :cd %:p:h<CR>:cd<CR>
+nmap <leader>sdw :lcd %:p:h<CR>:cd<CR>
