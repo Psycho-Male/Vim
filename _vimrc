@@ -300,3 +300,4 @@ nmap <leader>ee iend<ESC>
 inoremap <S-ESC> <ESC>:w<CR>
 nmap <leader>sda :cd %:p:h<CR>:cd<CR>
 nmap <leader>sdw :lcd %:p:h<CR>:cd<CR>
+nmap <leader>/   /\<\><LEFT><LEFT>
