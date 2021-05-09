@@ -47,6 +47,7 @@ set foldopen=all
 set foldnestmax=1
 set showcmd
 set relativenumber
+set conceallevel=2
 "Removing Unix from fileformats to prevent vim read .gml files as Unix instead
 set ff=dos
 set ffs=dos
@@ -331,15 +332,23 @@ nmap <leader>/   /\<\><LEFT><LEFT>
 let g:ackprg = 'ag --vimgrep'
 "Which has the same effect but will report every match on the line.
 "
+fun! s:checktime(timer_id)
+    checktime
+endfun
 func SetLog()
     view C:\Users\Manko\Appdata\Roaming\Kingdom_Lost\output.log
     setlocal autoread
+    set syntax=logger
     au CursorHold * checktime
-    "let timer=timer_start(500,'UpdateFile',{'repeat':-1})
+    set concealcursor=n
+    set nocuc
+    set nocul
+    let timer=timer_start(500,'UpdateFile',{'repeat':-1})
+    call timer_start(500,function('s:checktime'),{'repeat':-1})
 endfunc
 func UpdateFile(timer)
-    call feedkeys('G')
+    $
 endfunc
-nmap <leader>ltb :let timer=timer_start(500,'UpdateFile',{'repeat':-1})<CR>
-nmap <leader>lte :let timer_stop(timer)<CR>
+nmap <leader>ltb b:let timer=timer_start(500,'UpdateFile',{'repeat':-1})<CR>
+nmap <leader>lte :call timer_stop(timer)<CR>
 nmap <leader>eko :call SetLog()<CR>
