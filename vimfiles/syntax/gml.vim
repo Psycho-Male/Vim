@@ -20,7 +20,8 @@ syn match paren         /[\[\](){}]/
 syn match parenCurly    /[{}]/
 syn match gmlGlobal     /\v<\u(\w\u+_*)+/
 syn match gmlLocal      /\(\<_\w\+\>\)/
-syn match gmlLocal      /\<[i-k-j-l]\C\>/
+"syn match gmlLocal      /\<[i-k-j-l]\C\>/
+syn match gmlLocal      /\<.\>/
 syn keyword gmlEndMacro   trueEnd falseEnd end
 syn keyword gmlTodo contained TODO FIXME NOTE XXX SEE
 syn keyword gmlType var globalvar static method constructor new toString
@@ -314,7 +315,8 @@ syn region gmlBlockComment start='\v\/\*' end='\v\*\/' contains=gmlTodo fold ext
 
 syn region gmlParenPair start='(' end=')' transparent extend
 syn region gmlCodeBlock start='\v\{' end='\v\}' transparent extend fold
-syn region gmlBracket   start='\v\[' end='\v\]' extend fold contains=gmlString
+syn region gmlBracket   start='\v\[' end='\v\]' transparent extend
+"syn region gmlBracket   start='\v\[' end='\v\]' extend fold contains=gmlString
 " syn region gmlFunctionDefine start='\v#define \I\i*\_.{-}\{' end='\v\}' transparent keepend fold
 "
 " arguments
