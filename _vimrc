@@ -94,11 +94,34 @@ command! -nargs=+ -complete=command Syndo
 "VIMGREP
 "\ execute 'filetype plugin off' | " Doesn't really change search speed
 command! -nargs=+ Vrep
-    \ execute "silent vimgrep /<args>/ **/*.gml" | vert copen |
+    \ execute "Ack /<args>/ **/*.gml" | vert copen |
 command! -nargs=+ Vrepjson
-    \ execute "silent vimgrep /<args>/ **/*.json" | vert copen |
+    \ execute "Ack /<args>/ **/*.json" | vert copen |
 command! -nargs=+ Vrepyy
-    \ execute "silent vimgrep /<args>/ **/*.yy" | vert copen |
+    \ execute "Ack /<args>/ **/*.yy" | vert copen |
+function! CloseHiddenBuffers()
+    " Tableau pour memoriser la visibilite des buffers                                                                                      
+    let visible = {}
+    " Pour chaque onglet...
+    for t in range(1, tabpagenr('$'))
+        " Et pour chacune de ses fenetres...
+        for b in tabpagebuflist(t)
+            " On indique que le buffer est visible.
+            let visible[b] = 1
+        endfor
+    endfor
+    " Pour chaque numero de buffer possible...
+    for b in range(1, bufnr('$'))
+        " Si b est un numero de buffer valide et qu'il n'est pas visible, on le
+        " supprime.
+        if bufexists(b) && !has_key(visible, b)
+            " On ferme donc tous les buffers qui ne valent pas 1 dans le tableau et qui
+            " sont pourtant charges en memoire.
+            execute 'bwipeout' b
+        endif
+    endfor
+endfun
+command! Bdi :call CloseHiddenBuffers()
 nnoremap <leader>vv :execute "Vrep" expand("<cword>")<CR>
 nnoremap <leader>gff :e scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
 nnoremap <leader>gfv :vs scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
@@ -274,6 +297,7 @@ vmap <S-x> :s/y/x/g<CR>:nohl<CR>
 vmap <S-y> :s/x/y/g<CR>:nohl<CR>
 nmap <leader>str a={ofunc:function(){ja,<ESC>2kI
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+
 function! NextClosedFold(dir)
     let cmd = 'norm!z' . a:dir
     let view = winsaveview()
@@ -294,6 +318,7 @@ function! RepeatCmd(cmd) range abort
         let n -= 1
     endwhile
 endfunction
+
 nmap <leader>te itrueEnd<ESC>
 nmap <leader>fe ifalseEnd<ESC>
 nmap <leader>ee iend<ESC>
@@ -301,3 +326,20 @@ inoremap <S-ESC> <ESC>:w<CR>
 nmap <leader>sda :cd %:p:h<CR>:cd<CR>
 nmap <leader>sdw :lcd %:p:h<CR>:cd<CR>
 nmap <leader>/   /\<\><LEFT><LEFT>
+
+"let g:ackprg = 'ag --nogroup --nocolor --column'
+let g:ackprg = 'ag --vimgrep'
+"Which has the same effect but will report every match on the line.
+"
+func SetLog()
+    view C:\Users\Manko\Appdata\Roaming\Kingdom_Lost\output.log
+    setlocal autoread
+    au CursorHold * checktime
+    "let timer=timer_start(500,'UpdateFile',{'repeat':-1})
+endfunc
+func UpdateFile(timer)
+    call feedkeys('G')
+endfunc
+nmap <leader>ltb :let timer=timer_start(500,'UpdateFile',{'repeat':-1})<CR>
+nmap <leader>lte :let timer_stop(timer)<CR>
+nmap <leader>eko :call SetLog()<CR>
