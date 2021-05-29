@@ -5,11 +5,11 @@ endif
 syn match paren        /[\[\](){}]/
 syn match parenCurly   /[{}]/
 
-syn region yarnLineComment start='\v((\/)@<!\/{2}(\/)@!|\/{4,})' end='\v$' keepend contains=gmlTodo
+syn region yarnLineComment start='\v((\/)@<!\/{2}(\/)@!|\/{4,})' end='\v$' keepend
 
 syn region yarnParenPair   start='(' end=')' transparent extend
 syn region yarnCodeBlock   start='\v\{' end='\v\}' transparent extend fold
-syn region yarnBracket     start='\v\[' end='\v\]' extend fold contains=gmlString
+syn region yarnBracket     start='\v\[' end='\v\]' extend fold
 
 hi def link yarnLineComment               String
 
