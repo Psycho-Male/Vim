@@ -96,6 +96,7 @@ command! -nargs=+ -complete=command Syndo
 "\ execute 'filetype plugin off' | " Doesn't really change search speed
 command! -nargs=+ Vrep
     \ execute "Ack /<args>/ **/*.gml" | vert copen |
+    "\ execute "Ack /<args>/ **/*.gml" | vert copen |
 command! -nargs=+ Vrepjson
     \ execute "Ack /<args>/ **/*.json" | vert copen |
 command! -nargs=+ Vrepyy
@@ -123,14 +124,14 @@ function! CloseHiddenBuffers()
     endfor
 endfun
 command! Bdi :call CloseHiddenBuffers()
-nnoremap <leader>vv :execute "Vrep" expand("<cword>")<CR>
+nnoremap <leader>vv :execute "Ack" expand("<cword>")<CR>
 nnoremap <leader>gff :e scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
 nnoremap <leader>gfv :vs scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
 nnoremap <leader>gfs :sp scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
 "scripts\/expand("<cword>")\/expand("<cword>").gml
 cd C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost
 "cd C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost\objects\GameController
-silent e C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost\scripts\InitGame\InitGame.gml
+"silent e C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost\scripts\InitGame\InitGame.gml
 nnoremap <Space> @
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-H> <C-W><C-H>
@@ -154,11 +155,11 @@ nmap <silent> <leader>oo :only<CR>
 nmap <F5> :w<ENTER>:!%<ENTER>
 nmap <F2> :Syndo filetype detect<CR>
 nmap <F3> :let t:mytablabel = ''<Left>
-nnoremap <Left> :bprevious<CR>
-nnoremap <Right> :bnext<CR>
 "GAMEMAKER MACROS
 nmap <silent> <leader>tt yiwiTrace("<ESC>A: "+str());<ESC>hhP
+nmap <silent> <leader>td yiwiDebugAddGuiMessage("<ESC>A: "+str());<ESC>hhP
 vmap <silent> <leader>tt     yiTrace("<ESC>A: "+str());<ESC>hhP
+vmap <silent> <leader>td     yiDebugAddGuiMessage("<ESC>A: "+str());<ESC>hhP
 nmap <silent> <leader>to yiwiTrace("<ESC>A: "+object_get_name());<ESC>hhP
 vmap <silent> <leader>to     yiTrace("<ESC>A: "+object_get_name());<ESC>hhP
 nmap <silent> <leader>ts yiwiTrace("<ESC>A: "+sprite_get_name());<ESC>hhP
@@ -179,7 +180,7 @@ nmap <silent> <leader>cx oTrace(""+str());<ESC>F"i
 nmap <silent> <leader>cs oTrace("--CALLSTACK--");for(var i=0,cs=debug_get_callstack();i<array_length(cs);i++) Trace(cs[i]);<ESC>
 nmap <silent> <leader>tp ^eaPop<ESC>
 nmap <silent> <leader>ww o//<ESC>50a-<ESC>a\\<CR>//\|\|<CR>//<ESC>50a-<ESC>A//<ESC>k^lli
-nmap <silent> <leader>wd v$3hx
+nmap <silent> <leader>wd v$3hxjjv$3hx
 
 nmap <silent> <leader>fi ofor(var i=0;i<;i++){2f;i
 nmap <silent> <leader>fj ofor(var j=0;j<;j++){2f;i
@@ -205,7 +206,7 @@ nmap <silent> <leader>fa vBxafor(var i=0;i<array_length(<ESC>pa);i++){o
 nmap <silent> <leader>fw vBxafor(var i=0;i<ds_grid_width(<ESC>pa);i++){o
 nmap <silent> <leader>fh vBxafor(var i=0;i<ds_grid_height(<ESC>pa);i++){o
 
-nmap <silent> <leader>tc acatch(e){oTraceException(e);<ESC>
+nmap <silent> <leader>tc try{jacatch(e){oTraceException(e);<ESC>
 "ESC MAPS
 "GAMEMAKER FILE EDITING
 nmap <ESC>eo :e  objects\
@@ -251,6 +252,8 @@ nmap <ESC><S-e> :e <C-R>=expand("%:p:h") . "/" <CR>
 nmap <ESC>s<S-s> :split <C-R>=expand("%:p:h") . "/" <CR>
 nmap <ESC>s<S-v> :vs <C-R>=expand("%:p:h") . "/" <CR>
 nmap <ESC>e<S-t> :tabe <C-R>=expand("%:p:h") . "/" <CR>
+"nnoremap <Left>  :expand("%:p:h")<TAB><CR>
+"nnoremap <Right> :expand("%:p:h")<S-TAB><CR>
 
 nmap <C-_>- <C-W>-
 
@@ -292,33 +295,21 @@ map <M-d> ]z
 nmap <F6> :cd C:\Users\Manko\Documents\GameMakerStudio2\Merchant<CR>:e C:\Users\Manko\Documents\GameMakerStudio2\Merchant\scripts\GameInit\GameInit.gml<CR>
 nmap <F7> :!start C:\Users\Manko\Documents\GameMakerStudio2\Merchant\Merchant.yyp<CR>
 nmap <F8> :cd M:\Unity\|\|E M:\Unity<CR>
-nmap <F9> :!start "C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost\Kingdom Lost.yyp"<CR>
+nmap <F9> :!start "C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost\Datafiles\GMLive\gmlive-server.exe"<CR>
 map <leader>ti i["+str(i)+"]<ESC>
 vmap <S-x> :s/y/x/g<CR>:nohl<CR>
 vmap <S-y> :s/x/y/g<CR>:nohl<CR>
 nmap <leader>str a={ofunc:function(){ja,<ESC>2kI
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
-function! NextClosedFold(dir)
-    let cmd = 'norm!z' . a:dir
-    let view = winsaveview()
-    let [l0, l, open] = [0, view.lnum, 1]
-    while l != l0 && open
-        exe cmd
-        let [l0, l] = [l, line('.')]
-        let open = foldclosed(l) < 0
-    endwhile
-    if open
-        call winrestview(view)
-    endif
+function DeleteHiddenBuffers()
+    let tpbl=[]
+    call map(range(1, tabpagenr('$')), 'extend(tpbl, tabpagebuflist(v:val))')
+    for buf in filter(range(1, bufnr('$')), 'bufexists(v:val) && index(tpbl, v:val)==-1')
+        silent execute 'bwipeout' buf
+    endfor
 endfunction
-function! RepeatCmd(cmd) range abort
-    let n = v:count < 1 ? 1 : v:count
-    while n > 0
-        exe a:cmd
-        let n -= 1
-    endwhile
-endfunction
+nmap <leader>bd :call DeleteHiddenBuffers()<CR>
 
 nmap <leader>te itrueEnd<ESC>
 nmap <leader>fe ifalseEnd<ESC>
@@ -350,5 +341,6 @@ func UpdateFile(timer)
     $
 endfunc
 nmap <leader>ltb b:let timer=timer_start(500,'UpdateFile',{'repeat':-1})<CR>
-nmap <leader>lte :call timer_stop(timer)<CR>
+nmap <leader>lte :call timer_stopall()<CR>
 nmap <leader>eko :call SetLog()<CR>
+nmap <leader>gml :term ++curwin datafiles\Gmlive\gmlive-server.exe<CR>
