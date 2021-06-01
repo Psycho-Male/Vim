@@ -344,3 +344,9 @@ nmap <leader>ltb b:let timer=timer_start(500,'UpdateFile',{'repeat':-1})<CR>
 nmap <leader>lte :call timer_stopall()<CR>
 nmap <leader>eko :call SetLog()<CR>
 nmap <leader>gml :term ++curwin datafiles\Gmlive\gmlive-server.exe<CR>
+"Buffer command taken from: https://vim.fandom.com/wiki/Easier_buffer_switching
+"Provides easier buffer switching method, but it's not like Nerdtree or
+"something....
+command -nargs=? -bang Buffer if <q-args> != '' | exe 'buffer '.<q-args> | else | ls<bang> | let buffer_nn=input('Which one: ') | if buffer_nn != '' | exe buffer_nn != 0 ? 'buffer '.buffer_nn : 'enew' | endif | endif
+nmap + <C-w>+
+nmap - <C-w>-
