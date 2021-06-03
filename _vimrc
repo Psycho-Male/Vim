@@ -248,10 +248,10 @@ nmap <ESC>tn :tabe notes\
 "nmap <ESC>s<C-v> :vs<CR>:E<CR>:set buftype=""<CR>:set bf=""<CR>
 "nmap <ESC>s<C-s> :sp<CR>:E<CR>:set buftype=""<CR>:set bf=""<CR>
 
-nmap <ESC><S-e> :e <C-R>=expand("%:p:h") . "/" <CR>
-nmap <ESC>s<S-s> :split <C-R>=expand("%:p:h") . "/" <CR>
-nmap <ESC>s<S-v> :vs <C-R>=expand("%:p:h") . "/" <CR>
-nmap <ESC>e<S-t> :tabe <C-R>=expand("%:p:h") . "/" <CR>
+nmap <leader>,ee :e <C-R>=expand("%:p:h") . "/" <CR>
+nmap <leader>,ss :split <C-R>=expand("%:p:h") . "/" <CR>
+nmap <leader>,vs :vs <C-R>=expand("%:p:h") . "/" <CR>
+nmap <leader>,te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 "nnoremap <Left>  :expand("%:p:h")<TAB><CR>
 "nnoremap <Right> :expand("%:p:h")<S-TAB><CR>
 
