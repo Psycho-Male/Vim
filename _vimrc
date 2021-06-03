@@ -248,10 +248,10 @@ nmap <ESC>tn :tabe notes\
 "nmap <ESC>s<C-v> :vs<CR>:E<CR>:set buftype=""<CR>:set bf=""<CR>
 "nmap <ESC>s<C-s> :sp<CR>:E<CR>:set buftype=""<CR>:set bf=""<CR>
 
-nmap <leader>,ee :e <C-R>=expand("%:p:h") . "/" <CR>
-nmap <leader>,ss :split <C-R>=expand("%:p:h") . "/" <CR>
-nmap <leader>,vs :vs <C-R>=expand("%:p:h") . "/" <CR>
-nmap <leader>,te :tabe <C-R>=expand("%:p:h") . "/" <CR>
+nmap <leader>,e :e <C-R>=expand("%:p:h") . "/" <CR>
+nmap <leader>,s :split <C-R>=expand("%:p:h") . "/" <CR>
+nmap <leader>,v :vs <C-R>=expand("%:p:h") . "/" <CR>
+nmap <leader>,t :tabe <C-R>=expand("%:p:h") . "/" <CR>
 "nnoremap <Left>  :expand("%:p:h")<TAB><CR>
 "nnoremap <Right> :expand("%:p:h")<S-TAB><CR>
 
@@ -350,3 +350,5 @@ nmap <leader>gml :term ++curwin datafiles\Gmlive\gmlive-server.exe<CR>
 command -nargs=? -bang Buffer if <q-args> != '' | exe 'buffer '.<q-args> | else | ls<bang> | let buffer_nn=input('Which one: ') | if buffer_nn != '' | exe buffer_nn != 0 ? 'buffer '.buffer_nn : 'enew' | endif | endif
 nmap + <C-w>+
 nmap - <C-w>-
+
+nmap <leader>sf :w<CR>
