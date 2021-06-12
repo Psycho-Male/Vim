@@ -24,7 +24,9 @@ set softtabstop=4 "disabled tabstop=4
 filetype on
 filetype plugin on
 syntax on
-colorscheme psycho
+"if !has("gui_running")
+    colorscheme psycho
+"endif
 set background=dark
 set ruler
 set hlsearch
@@ -206,7 +208,7 @@ nmap <silent> <leader>fa vBxafor(var i=0;i<array_length(<ESC>pa);i++){o
 nmap <silent> <leader>fw vBxafor(var i=0;i<ds_grid_width(<ESC>pa);i++){o
 nmap <silent> <leader>fh vBxafor(var i=0;i<ds_grid_height(<ESC>pa);i++){o
 
-nmap <silent> <leader>tc try{jacatch(e){oTraceException(e);<ESC>
+nmap <silent> <leader>te otry{jacatch(e){oTraceException(e);<ESC>
 "ESC MAPS
 "GAMEMAKER FILE EDITING
 nmap <ESC>eo :e  objects\
@@ -311,9 +313,6 @@ function DeleteHiddenBuffers()
 endfunction
 nmap <leader>bd :call DeleteHiddenBuffers()<CR>
 
-nmap <leader>te itrueEnd<ESC>
-nmap <leader>fe ifalseEnd<ESC>
-nmap <leader>ee iend<ESC>
 inoremap <S-ESC> <ESC>:w<CR>
 nmap <leader>sda :cd %:p:h<CR>:cd<CR>
 nmap <leader>sdw :lcd %:p:h<CR>:cd<CR>
@@ -352,3 +351,7 @@ nmap + <C-w>+
 nmap - <C-w>-
 
 nmap <leader>sf :w<CR>
+nmap z- :set foldnestmax=1<CR>
+nmap z+ :set foldnestmax=2<CR>
+:command! BW :bn|:bd#
+nmap <leader>bw :BW<CR>
