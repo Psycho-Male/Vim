@@ -11,6 +11,7 @@ syn match loggerError       "^.*ERROR.*$"
 syn match loggerWarn        "^.*WARN.*$"
 syn match loggerFatal       "^.*FATAL.*$"
 syn match loggerTrace       "^.*TRACE.*$"
+syn match loggerExcep       "^.*EXCEP.*$"
 
 "syn match number /\d/ containedin=loggerTimeStamp
 
@@ -26,6 +27,7 @@ hi def link loggerDebug             LogLevelDebug
 hi def link loggerError             LogLevelError     
 hi def link loggerWarn              LogLevelWarn      
 hi def link loggerFatal             LogLevelFatal     
+hi def link loggerExcep             LogLevelFatal     
 hi def link loggerTrace             LogLevelTrace     
 
 let b:current_syntax = 'logger'
