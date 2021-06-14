@@ -150,6 +150,7 @@ syn match gmlKeyboardConstant 'mp_\w\+\>'
 syn match gmlKeyboardConstant 'mc_\w\+\>'
 syn match gmlKeyboardConstant 'mr_\w\+\>'
 syn match gmlKeyboardConstant 'gp_\w\+\>'
+syn match gmlKeyboardConstant 'mw_\w\+\>'
 
 syn keyword gmlKeyboardModifierConstant vk_lshift vk_lcontrol vk_lalt vk_rshift vk_rcontrol vk_ralt
 
