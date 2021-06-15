@@ -271,7 +271,7 @@ map <S-k> <Nop>
 
 inoremap {  {<CR>}<ESC><UP>
 inoremap <C-S-CR> {}<LEFT>
-inoremap <C-CR>  {<CR>}else{<CR>}<ESC><UP>O
+inoremap <C-CR>  {<CR>}else{<CR>}<ESC><UP><UP>
 inoremap <S-CR>  {<CR>}<ESC>O
 inoremap <C-SPACE> <TAB>= 
 inoremap <S-SPACE> _
