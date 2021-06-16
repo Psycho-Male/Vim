@@ -8,7 +8,7 @@ endif
 
 " Control structures
 syn keyword gmlConditional if else switch
-syn keyword gmlStatement break return continue exit 
+"syn keyword gmlStatement break return continue exit 
 syn keyword gmlLabel case default
 syn keyword gmlRepeat while for repeat do while
 syn keyword gmlWith with
@@ -28,7 +28,7 @@ syn keyword gmlLocal    fixargn
 syn keyword gmlTodo contained TODO FIXME NOTE XXX SEE
 syn keyword gmlType var globalvar static method constructor new toString delete
 syn keyword gmlBoolean true false
-syn keyword gmlEndMacro   trueEnd falseEnd exit
+syn keyword gmlEndMacro   exit break return continue 
 syn keyword gmlKeyword self other all noone undefined global fail success undef
 syn keyword gmlBuiltinGlobal score health lives async_load
 syn keyword gmlExceptionHandling try catch finally
