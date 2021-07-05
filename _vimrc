@@ -97,12 +97,11 @@ command! -nargs=+ -complete=command Syndo
 "VIMGREP
 "\ execute 'filetype plugin off' | " Doesn't really change search speed
 command! -nargs=+ Vrep
-    \ execute "Ack /<args>/ **/*.gml" | vert copen |
-    "\ execute "Ack /<args>/ **/*.gml" | vert copen |
+    \ execute "Ack -G .gml /<args>/" | vert copen |
 command! -nargs=+ Vrepjson
-    \ execute "Ack /<args>/ **/*.json" | vert copen |
+    \ execute "Ack -G .json /<args>/" | vert copen |
 command! -nargs=+ Vrepyy
-    \ execute "Ack /<args>/ **/*.yy" | vert copen |
+    \ execute "Ack -G .yy /<args>/" | vert copen |
 function! CloseHiddenBuffers()
     " Tableau pour memoriser la visibilite des buffers                                                                                      
     let visible = {}
@@ -126,7 +125,8 @@ function! CloseHiddenBuffers()
     endfor
 endfun
 command! Bdi :call CloseHiddenBuffers()
-nnoremap <leader>vv :execute "Ack" expand("<cword>")<CR>
+nnoremap <leader>vv :execute "Ack " expand("<cword>")<CR>
+vnoremap <leader>vv y:execute "Ack <C-R>""<CR>
 nnoremap <leader>gff :e scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
 nnoremap <leader>gfv :vs scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
 nnoremap <leader>gfs :sp scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
@@ -160,20 +160,20 @@ nmap <F3> :let t:mytablabel = ''<Left>
 "GAMEMAKER MACROS
 nmap <silent> <leader>tt yiwiTrace("<ESC>A: "+str());<ESC>hhP
 nmap <silent> <leader>td yiwiDebugAddGuiMessage("<ESC>A: "+str());<ESC>hhP
-vmap <silent> <leader>tt     yiTrace("<ESC>A: "+str());<ESC>hhP
-vmap <silent> <leader>td     yiDebugAddGuiMessage("<ESC>A: "+str());<ESC>hhP
+vmap <silent> <leader>tt   yiTrace("<ESC>A: "+str());<ESC>hhP
+vmap <silent> <leader>td yiDebugAddGuiMessage("<ESC>A: "+str());<ESC>hhP
 nmap <silent> <leader>to yiwiTrace("<ESC>A: "+object_get_name());<ESC>hhP
-vmap <silent> <leader>to     yiTrace("<ESC>A: "+object_get_name());<ESC>hhP
+vmap <silent> <leader>to   yiTrace("<ESC>A: "+object_get_name());<ESC>hhP
 nmap <silent> <leader>ts yiwiTrace("<ESC>A: "+sprite_get_name());<ESC>hhP
-vmap <silent> <leader>ts     yiTrace("<ESC>A: "+sprite_get_name());<ESC>hhP
+vmap <silent> <leader>ts   yiTrace("<ESC>A: "+sprite_get_name());<ESC>hhP
 nmap <silent> <leader>tc yiwiTrace("<ESC>A: "+script_get_name());<ESC>hhP
-vmap <silent> <leader>tc     yiTrace("<ESC>A: "+script_get_name());<ESC>hhP
+vmap <silent> <leader>tc   yiTrace("<ESC>A: "+script_get_name());<ESC>hhP
 nmap <silent> <leader>ta yiwiTrace("<ESC>A: "+audio_get_name());<ESC>hhP
-vmap <silent> <leader>ta     yiTrace("<ESC>A: "+audio_get_name());<ESC>hhP
+vmap <silent> <leader>ta   yiTrace("<ESC>A: "+audio_get_name());<ESC>hhP
 nmap <silent> <leader>tr yiwiTrace("<ESC>A: "+room_get_name());<ESC>hhP
-vmap <silent> <leader>tr     yiTrace("<ESC>A: "+room_get_name());<ESC>hhP
+vmap <silent> <leader>tr   yiTrace("<ESC>A: "+room_get_name());<ESC>hhP
 nmap <silent> <leader>tb yiwiTrace("<ESC>A: "+rb());<ESC>hhP
-vmap <silent> <leader>tb     yiTrace("<ESC>A: "+rb());<ESC>hhP
+vmap <silent> <leader>tb   yiTrace("<ESC>A: "+rb());<ESC>hhP
 nmap <silent> <leader>cd o_text = "<ESC>pa: " + str(<ESC>pa);<CR>draw_text_transformed(_tx, _ty, _tt, .25, .25, 0);<ESC>
 nmap <silent> <leader>cv oTrace_str("<ESC>pa");<ESC>kdd
 nmap <silent> <leader>cz oTrace(": " + str());<ESC>2F"pf(p<UP>dd<DOWN>f:
@@ -355,3 +355,4 @@ nmap z- :set foldnestmax=1<CR>
 nmap z+ :set foldnestmax=2<CR>
 :command! BW :bn|:bd#
 nmap <leader>bw :BW<CR>
+vnoremap <leader>p "_dP
