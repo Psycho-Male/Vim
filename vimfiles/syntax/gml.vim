@@ -86,7 +86,7 @@ syn keyword gmlTextFileFunction get_open_filename get_open_filename_ext get_save
 
 syn keyword gmlIniFileFunction ini_open ini_close ini_write_real ini_write_string ini_read_real ini_read_string ini_key_exists ini_section_exists ini_key_delete ini_section_delete ini_open_from_string file_text_open_read file_text_open_write file_text_open_append file_text_open_from_string file_text_read_real file_text_read_string file_text_readln file_text_write_real file_text_write_string file_text_writeln file_text_eoln file_text_eof file_text_close
 
-syn keyword gmlAssetFunction asset_get_index asset_get_type typeof asset_unknown asset_object asset_script asset_sprite asset_room asset_sound asset_tiles asset_path asset_font asset_timeline asset_shader
+syn keyword gmlAssetFunction asset_get_index asset_get_type typeof asset_unknown asset_object asset_script asset_sprite asset_room asset_sound asset_tiles asset_path asset_font asset_timeline asset_shader tag_get_assets tag_get_assset_id asset_get_tags asset_add_tags asset_remove_tags asset_has_tags asset_has_any_tag asset_clear_tags
 
 syn match gmlBackgroundFunction '\v<background_(index|visible|alpha|blend|x|y|foreground|hspeed|vspeed|htiled|vtiled|width|height|xscale|yscale|colour color|showcolour showcolor)'
 syn match gmlBackgroundFunction '\v<background_get_(name|width|height|texture|uvs)'
