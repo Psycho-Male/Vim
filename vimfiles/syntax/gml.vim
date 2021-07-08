@@ -145,14 +145,14 @@ syn keyword gmlKeyboardConstant vk_nokey vk_anykey vk_left vk_right vk_up vk_dow
 syn match gmlKeyboardConstant 'vk_f[0-9]'
 syn match gmlKeyboardConstant 'vk_f1[0-2]'
 syn match gmlKeyboardConstant 'vk_numpad[0-9]'
-syn match gmlKeyboardConstant 'kp_\w\+\>'
-syn match gmlKeyboardConstant 'kc_\w\+\>'
-syn match gmlKeyboardConstant 'vk_\w\+\>'
-syn match gmlKeyboardConstant 'mp_\w\+\>'
-syn match gmlKeyboardConstant 'mc_\w\+\>'
-syn match gmlKeyboardConstant 'mr_\w\+\>'
-syn match gmlKeyboardConstant 'gp_\w\+\>'
-syn match gmlKeyboardConstant 'mw_\w\+\>'
+syn match gmlKeyboardConstant '\<kp_\w\+\>'
+syn match gmlKeyboardConstant '\<kc_\w\+\>'
+syn match gmlKeyboardConstant '\<vk_\w\+\>'
+syn match gmlKeyboardConstant '\<mp_\w\+\>'
+syn match gmlKeyboardConstant '\<mc_\w\+\>'
+syn match gmlKeyboardConstant '\<mr_\w\+\>'
+syn match gmlKeyboardConstant '\<gp_\w\+\>'
+syn match gmlKeyboardConstant '\<mw_\w\+\>'
 
 syn keyword gmlKeyboardModifierConstant vk_lshift vk_lcontrol vk_lalt vk_rshift vk_rcontrol vk_ralt
 
