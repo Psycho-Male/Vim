@@ -46,7 +46,7 @@ set foldmethod=indent
 set foldexpr=getline(v:lnum)=~'^\\s*$'&&getline(v:lnum+1)=~'\\S'?'<1':1
 set foldclose=all
 set foldopen=all
-set foldnestmax=1
+set foldnestmax=2
 set showcmd
 set relativenumber
 set conceallevel=2
@@ -125,8 +125,8 @@ function! CloseHiddenBuffers()
     endfor
 endfun
 command! Bdi :call CloseHiddenBuffers()
-nnoremap <leader>vv :execute "Ack " expand("<cword>")<CR>
-vnoremap <leader>vv y:execute "Ack <C-R>""<CR>
+nnoremap <leader>vv :execute "Ack -G .gml" expand("<cword>")<CR>
+vnoremap <leader>vv y:execute "Ack -G .gml <C-R>""<CR>
 nnoremap <leader>gff :e scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
 nnoremap <leader>gfv :vs scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
 nnoremap <leader>gfs :sp scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
@@ -271,9 +271,11 @@ map <S-k> <Nop>
 
 inoremap {  {<CR>}<ESC><UP>
 inoremap <C-S-CR> {}<LEFT>
+inoremap <M-[> []<LEFT>
+inoremap <M-'> ""<LEFT>
 inoremap <C-CR>  {<CR>}else{<CR>}<ESC><UP><UP>
 inoremap <S-CR>  {<CR>}<ESC>O
-inoremap <C-SPACE> <TAB>= 
+inoremap <C-SPACE> <TAB>=
 inoremap <S-SPACE> _
 "inoremap <C-> <SPACE>{<CR>}i else {<CR>}<ESC> {
 "TAB mappings
