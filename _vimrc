@@ -46,7 +46,7 @@ set foldmethod=indent
 set foldexpr=getline(v:lnum)=~'^\\s*$'&&getline(v:lnum+1)=~'\\S'?'<1':1
 set foldclose=all
 set foldopen=all
-set foldnestmax=2
+set foldnestmax=1
 set showcmd
 set relativenumber
 set conceallevel=2
