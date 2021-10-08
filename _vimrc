@@ -358,3 +358,6 @@ nmap z+ :set foldnestmax=2<CR>
 :command! BW :bn|:bd#
 nmap <leader>bw :BW<CR>
 vnoremap <leader>p "_dP
+
+"AG The Silver Seacher
+let g:ackprg='ag --nogroup --nocolor --column'
