@@ -142,6 +142,8 @@ syn keyword gmlJoystickFunction joystick_exists joystick_name joystick_axes joys
 
 syn keyword gmlKeyboardConstant vk_nokey vk_anykey vk_left vk_right vk_up vk_down vk_enter vk_escape vk_space vk_shift vk_control vk_alt vk_backspace vk_tab vk_home vk_end vk_delete vk_insert vk_pageup vk_pagedown vk_pause vk_printscreen vk_multiply vk_divide vk_add vk_subtract vk_decimal keyboard_key
 
+syn keyword gmlConstant pointer_null null pointer_invalid NaN infinity pi
+
 syn match gmlKeyboardConstant 'vk_f[0-9]'
 syn match gmlKeyboardConstant 'vk_f1[0-2]'
 syn match gmlKeyboardConstant 'vk_numpad[0-9]'
@@ -459,17 +461,16 @@ hi def link gmlBufferFunction               gmlFunction
 hi def link gmlFunction                     Function
 
 
-hi def link gmlKeyboardConstant             gmlConstant
-hi def link gmlKeyboardModifierConstant     gmlConstant
-hi def link gmlMouseConstant                gmlConstant
-hi def link gmlParticleEffectConstant       gmlConstant
-hi def link gmlPhysicsJointConstant         gmlConstant
-hi def link gmlShaderConstant               gmlConstant
-hi def link gmlEventTypeConstant            gmlConstant
-hi def link gmlEventNumberConstant          gmlConstant
-hi def link gmlColorConstant                gmlConstant
-hi def link gmlDrawAlignConstant            gmlConstant
-
+hi def link gmlKeyboardConstant             Constant
+hi def link gmlKeyboardModifierConstant     Constant
+hi def link gmlMouseConstant                Constant
+hi def link gmlParticleEffectConstant       Constant
+hi def link gmlPhysicsJointConstant         Constant
+hi def link gmlShaderConstant               Constant
+hi def link gmlEventTypeConstant            Constant
+hi def link gmlEventNumberConstant          Constant
+hi def link gmlColorConstant                Constant
+hi def link gmlDrawAlignConstant            Constant
 hi def link gmlConstant                     Constant
 
 
