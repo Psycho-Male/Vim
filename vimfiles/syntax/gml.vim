@@ -351,7 +351,7 @@ syn match gmlEventNumberConstant '\v<ev_no_more(lives|health)>'
 syn keyword gmlEventTypeConstant ev_animation_end ev_end_of_path ev_close_button
 syn match gmlEventNumberConstant '\v<ev_user(1[0-5]|[0-9])>'
 
-syn keyword gmlColorConstant c_aqua c_black c_blue c_dkgray c_fuschia c_gray c_green c_lime c_ltgray c_maroon c_navy c_olive c_orange c_purple c_red c_silver c_teal c_white c_yellow
+syn keyword gmlColorConstant c_aqua c_black c_blue c_dkgray c_fuchsia c_gray c_green c_lime c_ltgray c_maroon c_navy c_olive c_orange c_purple c_red c_silver c_teal c_white c_yellow
 
 syn keyword gmlDrawAlignConstant fa_left fa_center fa_right fa_top fa_middle fa_bottom
 
