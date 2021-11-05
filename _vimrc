@@ -133,7 +133,7 @@ nnoremap <leader>gff :e scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
 nnoremap <leader>gfv :vs scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
 nnoremap <leader>gfs :sp scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
 "scripts\/expand("<cword>")\/expand("<cword>").gml
-cd C:\Users\Manko\Documents\GameMakerStudio2\Kalyzmyr
+cd C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost
 "cd C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost\objects\GameController
 "silent e C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost\scripts\InitGame\InitGame.gml
 nnoremap <Space> @
@@ -183,7 +183,7 @@ nmap <silent> <leader>sd oTrace("");<ESC>2hi
 nmap <silent> <leader>cx oTrace(""+str());<ESC>F"i
 nmap <silent> <leader>cs oTrace("--CALLSTACK--");for(var i=0,cs=debug_get_callstack();i<array_length(cs);i++) Trace(cs[i]);<ESC>
 nmap <silent> <leader>tp ^eaPop<ESC>
-nmap <silent> <leader>ww o//<ESC>50a-<ESC>a\\<CR>//<ESC>50a<SPACE><ESC>a\|\|<ESC>o//<ESC>50a-<ESC>A//<ESC>k^llR
+nmap <silent> <leader>ww o//<ESC>90a-<ESC>a\\<CR>//<ESC>90a<SPACE><ESC>a\|\|<ESC>o//<ESC>90a-<ESC>A//<ESC>k^llR
 
 nmap <silent> <leader>wd v$3hxjjv$3hx
 
@@ -272,6 +272,9 @@ map <S-k> <Nop>
 "    autocmd BufWinEnter * silent! loadview
 "augroup end
 
+"inoremap ( ()<LEFT>
+"inoremap " ""<LEFT>
+"inoremap [ []<LEFT>
 inoremap {  {<CR>}<ESC><UP>
 inoremap <C-S-CR> {}<LEFT>
 inoremap <M-[> []<LEFT>
