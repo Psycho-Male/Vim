@@ -359,7 +359,6 @@ command -nargs=? -bang Buffer if <q-args> != '' | exe 'buffer '.<q-args> | else 
 nmap + <C-w>+
 nmap - <C-w>-
 
-nmap <leader>sf :w<CR>
 nmap z- :set foldnestmax=1<CR>
 nmap z+ :set foldnestmax=2<CR>
 :command! BW :bn|:bd#
