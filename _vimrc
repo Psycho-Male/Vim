@@ -133,8 +133,8 @@ nnoremap <leader>gff :e scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
 nnoremap <leader>gfv :vs scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
 nnoremap <leader>gfs :sp scripts\<c-r><c-w>\<c-r><c-w>.gml<CR>
 "scripts\/expand("<cword>")\/expand("<cword>").gml
-cd C:\Users\Manko\Documents\GameMakerStudio2\Kalyzmyr
-"cd C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost
+"cd C:\Users\Manko\Documents\GameMakerStudio2\Kalyzmyr
+cd C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost
 "cd C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost\objects\GameController
 "silent e C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost\scripts\InitGame\InitGame.gml
 nnoremap <Space> @
