@@ -325,7 +325,8 @@ nmap <leader>bd :call DeleteHiddenBuffers()<CR>
 inoremap <S-ESC> <ESC>:w<CR>
 nmap <leader>sda :cd %:p:h<CR>:cd<CR>
 nmap <leader>sdw :lcd %:p:h<CR>:cd<CR>
-nmap <leader>/   /\<\><LEFT><LEFT>
+nmap <leader>//  /\<\><LEFT><LEFT>
+nmap <leader>/f  /function 
 
 "let g:ackprg = 'ag --nogroup --nocolor --column'
 let g:ackprg = 'ag --vimgrep'
