@@ -164,9 +164,9 @@ nmap <F2> :Syndo filetype detect<CR>
 nmap <F3> :let t:mytablabel = ''<Left>
 "GAMEMAKER MACROS
 nmap <silent> <leader>tt yiwiTrace("<ESC>A: "+str());<ESC>hhP
-nmap <silent> <leader>td yiwiDebugAddGuiMessage("<ESC>A: "+str());<ESC>hhP
+nmap <silent> <leader>td yiwiGuiTrace("<ESC>A: "+str());<ESC>hhP
 vmap <silent> <leader>tt   yiTrace("<ESC>A: "+str());<ESC>hhP
-vmap <silent> <leader>td yiDebugAddGuiMessage("<ESC>A: "+str());<ESC>hhP
+vmap <silent> <leader>td yiGuiTrace("<ESC>A: "+str());<ESC>hhP
 nmap <silent> <leader>to yiwiTrace("<ESC>A: "+object_get_name());<ESC>hhP
 vmap <silent> <leader>to   yiTrace("<ESC>A: "+object_get_name());<ESC>hhP
 nmap <silent> <leader>ts yiwiTrace("<ESC>A: "+sprite_get_name());<ESC>hhP
