@@ -12,7 +12,8 @@
 "cd C:\Users\Manko\Documents\GameMakerStudio2\Kalyzmyr
 "cd C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost
 "cd C:\Users\Manko\Documents\GameMakerStudio2\BaseProject
-cd C:\Users\Manko\Documents\GameMakerStudio2\Dekamara
+"cd C:\Users\Manko\Documents\GameMakerStudio2\Dekamara
+cd C:\Users\Manko\Documents\GameMakerStudio2\0xWRLD
 "cd C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost\objects\GameController
     "Auto save
     autocmd CursorHold * update
@@ -191,7 +192,7 @@ command! -nargs=+ Vrepyy
     nmap <F3> :let t:mytablabel = ''<Left>
     "GAMEMAKER MACROS
     nmap <silent> <leader>tt yiwiTrace("<ESC>A: "+str());<ESC>hhP
-    nmap <silent> <leader>td yiwiGuiTrace("<ESC>A: "+str());<ESC>hhP
+    nmap <silent> <leader>td yiwiGuiTrace("<ESC>A: ",);<ESC>hP
     nmap <silent> <leader>to yiwiTrace("<ESC>A: "+object_get_name());<ESC>hhP
     nmap <silent> <leader>ts yiwiTrace("<ESC>A: "+sprite_get_name());<ESC>hhP
     nmap <silent> <leader>tc yiwiTrace("<ESC>A: "+script_get_name());<ESC>hhP
@@ -205,7 +206,7 @@ command! -nargs=+ Vrepyy
     nmap <silent> <leader>cx oTrace(""+str());<ESC>F"i
     nmap <silent> <leader>cs oTrace("--CALLSTACK--");for(var i=0,cs=debug_get_callstack();i<array_length(cs);i++) Trace(cs[i]);<ESC>
     nmap <silent> <leader>tp ^eaPop<ESC>
-    nmap <silent> <leader>ww o//<ESC>90a-<ESC>a\\<CR>//<ESC>90a<SPACE><ESC>a\|\|<ESC>o//<ESC>90a-<ESC>A//<ESC>k^llR
+    nmap <silent> <leader>ww o//<ESC>90a-<ESC>a\\<CR>//<ESC>90a<SPACE><ESC>a\|\|<ESC>o//<ESC>90a-<ESC>A//<ESC>kk^llR@PsychoMale
 
     nmap <silent> <leader>wd v$3hxjjv$3hx
 
@@ -304,7 +305,7 @@ command! -nargs=+ Vrepyy
     vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
     vnoremap <leader>p "_dP
     vmap <silent> <leader>tt   yiTrace("<ESC>A: "+str());<ESC>hhP
-    vmap <silent> <leader>td yiGuiTrace("<ESC>A: "+str());<ESC>hhP
+    vmap <silent> <leader>td   yiGuiTrace("<ESC>A: ",);<ESC>hP
     vmap <silent> <leader>to   yiTrace("<ESC>A: "+object_get_name());<ESC>hhP
     vmap <silent> <leader>ts   yiTrace("<ESC>A: "+sprite_get_name());<ESC>hhP
     vmap <silent> <leader>tc   yiTrace("<ESC>A: "+script_get_name());<ESC>hhP
