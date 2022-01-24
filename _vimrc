@@ -13,7 +13,8 @@
 "cd C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost
 "cd C:\Users\Manko\Documents\GameMakerStudio2\BaseProject
 "cd C:\Users\Manko\Documents\GameMakerStudio2\Dekamara
-cd C:\Users\Manko\Documents\GameMakerStudio2\0xWRLD
+"cd C:\Users\Manko\Documents\GameMakerStudio2\0xWRLD
+cd C:\Users\Manko\Desktop\og22\og22
 "cd C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost\objects\GameController
     "Auto save
     autocmd CursorHold * update
