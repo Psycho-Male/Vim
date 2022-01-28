@@ -14,7 +14,8 @@
 "cd C:\Users\Manko\Documents\GameMakerStudio2\BaseProject
 "cd C:\Users\Manko\Documents\GameMakerStudio2\Dekamara
 "cd C:\Users\Manko\Documents\GameMakerStudio2\0xWRLD
-cd C:\Users\Manko\Desktop\og22\og22
+"cd C:\Users\Manko\Documents\GameMakerStudio2\OG22
+cd C:\Users\Manko\Documents\GameMakerStudio2\GGJ2022
 "cd C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost\objects\GameController
     "Auto save
     autocmd CursorHold * update
@@ -144,7 +145,7 @@ command! -nargs=+ Vrepyy
     map <M-k> zk<UP>
     map <M-u> [z
     map <M-d> ]z
-    map <leader>ti i["+str(i)+"]<ESC>
+    map <leader>ti i["+string(i)+"]<ESC>
 "--------------------------------------------------------------------------------------------\\
 "Normal maps                                                                                 ||
 "--------------------------------------------------------------------------------------------//
@@ -192,7 +193,7 @@ command! -nargs=+ Vrepyy
     nmap <F2> :Syndo filetype detect<CR>
     nmap <F3> :let t:mytablabel = ''<Left>
     "GAMEMAKER MACROS
-    nmap <silent> <leader>tt yiwiTrace("<ESC>A: "+str());<ESC>hhP
+    nmap <silent> <leader>tt yiwiTrace("<ESC>A: "+string());<ESC>hhP
     nmap <silent> <leader>td yiwiGuiTrace("<ESC>A: ",);<ESC>hP
     nmap <silent> <leader>to yiwiTrace("<ESC>A: "+object_get_name());<ESC>hhP
     nmap <silent> <leader>ts yiwiTrace("<ESC>A: "+sprite_get_name());<ESC>hhP
@@ -200,11 +201,11 @@ command! -nargs=+ Vrepyy
     nmap <silent> <leader>ta yiwiTrace("<ESC>A: "+audio_get_name());<ESC>hhP
     nmap <silent> <leader>tr yiwiTrace("<ESC>A: "+room_get_name());<ESC>hhP
     nmap <silent> <leader>tb yiwiTrace("<ESC>A: "+rb());<ESC>hhP
-    nmap <silent> <leader>cd o_text = "<ESC>pa: " + str(<ESC>pa);<CR>draw_text_transformed(_tx, _ty, _tt, .25, .25, 0);<ESC>
-    nmap <silent> <leader>cv oTrace_str("<ESC>pa");<ESC>kdd
-    nmap <silent> <leader>cz oTrace(": " + str());<ESC>2F"pf(p<UP>dd<DOWN>f:
+    nmap <silent> <leader>cd o_text = "<ESC>pa: " + string(<ESC>pa);<CR>draw_text_transformed(_tx, _ty, _tt, .25, .25, 0);<ESC>
+    nmap <silent> <leader>cv oTrace_string("<ESC>pa");<ESC>kdd
+    nmap <silent> <leader>cz oTrace(": " + string());<ESC>2F"pf(p<UP>dd<DOWN>f:
     nmap <silent> <leader>sd oTrace("");<ESC>2hi
-    nmap <silent> <leader>cx oTrace(""+str());<ESC>F"i
+    nmap <silent> <leader>cx oTrace(""+string());<ESC>F"i
     nmap <silent> <leader>cs oTrace("--CALLSTACK--");for(var i=0,cs=debug_get_callstack();i<array_length(cs);i++) Trace(cs[i]);<ESC>
     nmap <silent> <leader>tp ^eaPop<ESC>
     nmap <silent> <leader>ww o//<ESC>90a-<ESC>a\\<CR>//<ESC>90a<SPACE><ESC>a\|\|<ESC>o//<ESC>90a-<ESC>A//<ESC>kk^llR@PsychoMale
@@ -305,7 +306,7 @@ command! -nargs=+ Vrepyy
     vnoremap <leader>vv y:execute "Ack -G .gml <C-R>""<CR>
     vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
     vnoremap <leader>p "_dP
-    vmap <silent> <leader>tt   yiTrace("<ESC>A: "+str());<ESC>hhP
+    vmap <silent> <leader>tt   yiTrace("<ESC>A: "+string());<ESC>hhP
     vmap <silent> <leader>td   yiGuiTrace("<ESC>A: ",);<ESC>hP
     vmap <silent> <leader>to   yiTrace("<ESC>A: "+object_get_name());<ESC>hhP
     vmap <silent> <leader>ts   yiTrace("<ESC>A: "+sprite_get_name());<ESC>hhP
