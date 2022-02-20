@@ -9,13 +9,11 @@
 "-------------------------------------------------------------------------------------------\\
 "Setting                                                                                    ||
 "-------------------------------------------------------------------------------------------//
-"cd C:\Users\Manko\Documents\GameMakerStudio2\Kalyzmyr
+cd C:\Users\Manko\Documents\GameMakerStudio2\Kalyzmyr
 "cd C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost
 "cd C:\Users\Manko\Documents\GameMakerStudio2\BaseProject
 "cd C:\Users\Manko\Documents\GameMakerStudio2\Dekamara
 "cd C:\Users\Manko\Documents\GameMakerStudio2\0xWRLD
-"cd C:\Users\Manko\Documents\GameMakerStudio2\OG22
-cd C:\Users\Manko\Documents\GameMakerStudio2\GGJ2022
 "cd C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost\objects\GameController
     "Auto save
     autocmd CursorHold * update
