@@ -19,6 +19,7 @@ syn match gmlDefine     '\<\v[a-z][a-z]+[A-Z]\w+'
 syn match gmlDefine     '\v#define.*'
 syn match paren         /[\[\](){}]/
 syn match parenCurly    /[{}]/
+syn match gmlGlobal     /\v<\u\u/
 syn match gmlGlobal     /\v<\u\u\w+/
 syn match gmlLocal      /\(\<_\w\+\>\)/
 "Not working
