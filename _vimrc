@@ -206,7 +206,8 @@ command! -nargs=+ Vrepyy
     nmap <silent> <leader>cx oTrace(""+string());<ESC>F"i
     nmap <silent> <leader>cs oTrace("--CALLSTACK--");for(var i=0,cs=debug_get_callstack();i<array_length(cs);i++) Trace(cs[i]);<ESC>
     nmap <silent> <leader>tp ^eaPop<ESC>
-    nmap <silent> <leader>ww o//<ESC>90a-<ESC>a\\<CR>//<ESC>90a<SPACE><ESC>a\|\|<ESC>o//<ESC>90a-<ESC>A//<ESC>kk^llR@PsychoMale
+    nmap <silent> <leader>ww o//<ESC>90a-<ESC>a\\<CR>//<ESC>90a<SPACE><ESC>a\|\|<ESC>o//<ESC>90a-<ESC>A//<ESC>kk^ll
+    "R@PsychoMale
 
     nmap <silent> <leader>wd v$3hxjjv$3hx
 

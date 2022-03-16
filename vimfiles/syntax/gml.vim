@@ -14,17 +14,16 @@ syn keyword gmlRepeat while for repeat do while
 syn keyword gmlWith with
 syn keyword gmlDefine enum
 syn match gmlDefine     '\v#macro'
+syn match gmlDefine     '\<\v[a-z][a-z]+[A-Z]'
 syn match gmlDefine     '\<\v[a-z][a-z]+[A-Z]\w+'
 syn match gmlDefine     '\v#define.*'
 syn match paren         /[\[\](){}]/
 syn match parenCurly    /[{}]/
-syn match gmlGlobal     /\v<\u(\w\u+_*)+/
+syn match gmlGlobal     /\v<\u\u\w+/
 syn match gmlLocal      /\(\<_\w\+\>\)/
 "Not working
-syn match gmlEndMacro   '\<return.*'
 "syn match gmlLocal      /\<[i-k-j-l]\C\>/
 syn match gmlLocal      /\<.\>/
-syn keyword gmlLocal    fixargn
 syn keyword gmlTodo contained TODO FIXME NOTE XXX SEE
 syn keyword gmlType var globalvar static method constructor new toString delete
 syn keyword gmlBoolean true false
