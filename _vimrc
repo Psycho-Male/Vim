@@ -299,6 +299,8 @@ command! -nargs=+ Vrepyy
     nmap <F8> :cd M:\Unity\|\|E M:\Unity<CR>
     nmap <F9> :!start "C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost\Datafiles\GMLive\gmlive-server.exe"<CR>
     nmap <leader>str a={ofunc:function(){ja,<ESC>2kI
+    nmap dq df_
+    nmap dQ dt_
 "-------------------------------------------------------------------------------------------\\
 "Visual maps                                                                                ||
 "-------------------------------------------------------------------------------------------//
