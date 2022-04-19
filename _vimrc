@@ -187,7 +187,7 @@ command! -nargs=+ Vrepyy
     nmap <leader>ek :e C:\Users\Manko\Appdata\Roaming\Kingdom_Lost\
     nmap <silent> <leader>oo :only<CR>
     "nmap gx gf<CR>:vs<CR>:e #<CR>
-    nmap <F5> :w<ENTER>:!%<ENTER>
+    nmap <F6> :w<ENTER>:!%<ENTER>
     nmap <F2> :Syndo filetype detect<CR>
     nmap <F3> :let t:mytablabel = ''<Left>
     "GAMEMAKER MACROS
@@ -301,6 +301,9 @@ command! -nargs=+ Vrepyy
     nmap <leader>str a={ofunc:function(){ja,<ESC>2kI
     nmap dq df_
     nmap dQ dt_
+    nmap Q  :E %:h../..<CR>
+    nmap <leader>drw idraw_sprite(sprite_index,image_index,x,y);<ESC>
+    nmap <leader>dre idraw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);<ESC>
 "-------------------------------------------------------------------------------------------\\
 "Visual maps                                                                                ||
 "-------------------------------------------------------------------------------------------//
