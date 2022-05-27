@@ -174,6 +174,7 @@ command! -nargs=+ Vrepyy
     nmap <leader>eko1 :call SetLog1()<CR>
     nmap <leader>eko2 :call SetLog2()<CR>
     nmap <leader>eko3 :call SetLog3()<CR>
+    nmap <leader>eko4 :call SetLog4()<CR>
     nmap <leader>gml :term ++curwin datafiles\Gmlive\gmlive-server.exe<CR>
     nmap + <C-w>+
     nmap - <C-w>-
@@ -340,6 +341,20 @@ let g:ackprg = 'ag --vimgrep'
 fun! s:checktime(timer_id)
     checktime
 endfun
+func SetLog(path)
+    "view C:\Users\Manko\Appdata\Roaming\a:path\output.log
+    setlocal autoread
+    set syntax=logger
+    au CursorHold * checktime
+    set concealcursor=n
+    set nocuc
+    set nocul
+    echo a:path
+    let tmp_path='C:\Users\Manko\Appdata\Roaming\a:path\output.log'
+    view tmp_path
+    "let timer=timer_start(500,'UpdateFile',{'repeat':-1})
+    "call timer_start(500,function('s:checktime'),{'repeat':-1})
+endfunc
 func SetLog1()
     view C:\Users\Manko\Appdata\Roaming\Kingdom_Lost\output.log
     setlocal autoread
@@ -372,6 +387,15 @@ func SetLog3()
     set nocul
     let timer=timer_start(500,'UpdateFile',{'repeat':-1})
     call timer_start(500,function('s:checktime'),{'repeat':-1})
+endfunc
+func SetLog4()
+    view C:\Users\Manko\Appdata\Roaming\HAM\output.log
+    setlocal autoread
+    set syntax=logger
+    au CursorHold * checktime
+    set concealcursor=n
+    set nocuc
+    set nocul
 endfunc
 func UpdateFile(timer)
     $
