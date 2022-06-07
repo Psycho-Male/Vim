@@ -9,18 +9,17 @@
 "-------------------------------------------------------------------------------------------\\
 "Setting                                                                                    ||
 "-------------------------------------------------------------------------------------------//
-cd C:\Users\Manko\Documents\GameMakerStudio2\Kalyzmyr
-"cd C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost
-"cd C:\Users\Manko\Documents\GameMakerStudio2\BaseProject
-"cd C:\Users\Manko\Documents\GameMakerStudio2\Dekamara
-"cd C:\Users\Manko\Documents\GameMakerStudio2\0xWRLD
-"cd C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost\objects\GameController
+cd M:\GameMakerProjects\Kalyzmyr
+"cd M:\GameMakerProjects\Kingdom Lost
+"cd M:\GameMakerProjects\BaseProject
+"cd M:\GameMakerProjects\Dekamara
+"cd M:\GameMakerProjects\0xWRLD
     "Auto save
     autocmd CursorHold * update
     set updatetime=1
-    set directory=c:\tmp
-    set backupdir=c:\tmp
-    set undodir=c:\tmp
+    set directory=M:\Programs\Vim\tmp
+    set backupdir=M:\Programs\Vim\tmp
+    set undodir  =M:\Programs\Vim\tmp
     "set nocompatible
     set hidden "Don't delete unused buffers?
     set wildmenu

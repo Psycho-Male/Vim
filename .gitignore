@@ -2,3 +2,5 @@ vim82/
 compiler/
 keymap/
 vimfiles/view/
+tmp
+vimfiles/plugin/VimCompletesMe
