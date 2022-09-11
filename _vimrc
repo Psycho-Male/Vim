@@ -184,7 +184,7 @@ command! -nargs=+ Vrepyy
     nmap <silent> <leader>ev :e $MYVIMRC<CR>
     nmap <leader>ve :e C:\Program Files (x86)\Vim\Vimfiles\
     nmap <silent> <leader>eg :e C:\Program Files (x86)\Vim\Vimfiles\syntax\gml.vim<CR>
-    nmap <leader>ek :e C:\Users\Manko\Appdata\Roaming\Kingdom_Lost\
+    nmap <leader>ek :e C:\Users\Psy\Appdata\Roaming\Kingdom_Lost\
     nmap <silent> <leader>oo :only<CR>
     "nmap gx gf<CR>:vs<CR>:e #<CR>
     nmap <F6> :w<ENTER>:!%<ENTER>
@@ -294,16 +294,17 @@ command! -nargs=+ Vrepyy
     nmap <TAB>kz V$%zf
     nmap <TAB>jz V$%zf
     nmap <TAB><CR> s{ja<CR><ESC>ddkP>>
-    nmap <F6> :cd C:\Users\Manko\Documents\GameMakerStudio2\Merchant<CR>:e C:\Users\Manko\Documents\GameMakerStudio2\Merchant\scripts\GameInit\GameInit.gml<CR>
-    nmap <F7> :!start C:\Users\Manko\Documents\GameMakerStudio2\Merchant\Merchant.yyp<CR>
+    nmap <F6> :cd C:\Users\Psy\Documents\GameMakerStudio2\Merchant<CR>:e C:\Users\Psy\Documents\GameMakerStudio2\Merchant\scripts\GameInit\GameInit.gml<CR>
+    nmap <F7> :!start C:\Users\Psy\Documents\GameMakerStudio2\Merchant\Merchant.yyp<CR>
     nmap <F8> :cd M:\Unity\|\|E M:\Unity<CR>
-    nmap <F9> :!start "C:\Users\Manko\Documents\GameMakerStudio2\Kingdom Lost\Datafiles\GMLive\gmlive-server.exe"<CR>
+    nmap <F9> :!start "C:\Users\Psy\Documents\GameMakerStudio2\Kingdom Lost\Datafiles\GMLive\gmlive-server.exe"<CR>
     nmap <leader>str a={ofunc:function(){ja,<ESC>2kI
     nmap dq df_
     nmap dQ dt_
     nmap Q  :E %:h../..<CR>
     nmap <leader>drw idraw_sprite(sprite_index,image_index,x,y);<ESC>
     nmap <leader>dre idraw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);<ESC>
+    nmap <leader>gml Oif(live_call()) return live_result<ESC>;
 "-------------------------------------------------------------------------------------------\\
 "Visual maps                                                                                ||
 "-------------------------------------------------------------------------------------------//
@@ -341,7 +342,7 @@ fun! s:checktime(timer_id)
     checktime
 endfun
 func SetLog(path)
-    "view C:\Users\Manko\Appdata\Roaming\a:path\output.log
+    "view C:\Users\Psy\Appdata\Roaming\a:path\output.log
     setlocal autoread
     set syntax=logger
     au CursorHold * checktime
@@ -349,13 +350,13 @@ func SetLog(path)
     set nocuc
     set nocul
     echo a:path
-    let tmp_path='C:\Users\Manko\Appdata\Roaming\a:path\output.log'
+    let tmp_path='C:\Users\Psy\Appdata\Roaming\a:path\output.log'
     view tmp_path
     "let timer=timer_start(500,'UpdateFile',{'repeat':-1})
     "call timer_start(500,function('s:checktime'),{'repeat':-1})
 endfunc
 func SetLog1()
-    view C:\Users\Manko\Appdata\Roaming\Kingdom_Lost\output.log
+    view C:\Users\Psy\Appdata\Roaming\Kingdom_Lost\output.log
     setlocal autoread
     set syntax=logger
     au CursorHold * checktime
@@ -366,7 +367,7 @@ func SetLog1()
     call timer_start(500,function('s:checktime'),{'repeat':-1})
 endfunc
 func SetLog2()
-    view C:\Users\Manko\Appdata\Roaming\Kalyzmyr\output.log
+    view C:\Users\Psy\Appdata\Roaming\Kalyzmyr\output.log
     setlocal autoread
     set syntax=logger
     au CursorHold * checktime
@@ -377,7 +378,7 @@ func SetLog2()
     call timer_start(500,function('s:checktime'),{'repeat':-1})
 endfunc
 func SetLog3()
-    view C:\Users\Manko\Appdata\Roaming\Dekamara\output.log
+    view C:\Users\Psy\Appdata\Roaming\Dekamara\output.log
     setlocal autoread
     set syntax=logger
     au CursorHold * checktime
@@ -388,7 +389,7 @@ func SetLog3()
     call timer_start(500,function('s:checktime'),{'repeat':-1})
 endfunc
 func SetLog4()
-    view C:\Users\Manko\Appdata\Roaming\HAM\output.log
+    view C:\Users\Psy\Appdata\Roaming\HAM\output.log
     setlocal autoread
     set syntax=logger
     au CursorHold * checktime
